@@ -1,5 +1,7 @@
-# Mindustry Java Mod Template
-A Java Mindustry mod template that works on Android and PC. The Kotlin version of this mod can be seen [here](https://github.com/Anuken/MindustryKotlinModTemplate).
+# Project Abyss
+A mod that im starting to work on
+<br> will likely be archived when i lose motivation on continuing this
+<br> the way that you can compile or implement it are in the text below
 
 ## Building for Desktop Testing
 
