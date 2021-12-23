@@ -45,6 +45,7 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 5
 			));
 			consumes.power(5f);
+			outputItem = new ItemStack(AbyssItems.abyss, 2);
 		}};
 	}
 }
