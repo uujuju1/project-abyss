@@ -19,6 +19,8 @@ import mindustry.world.draw.*;
 
 import abyss.content.*;
 
+import static mindustry.type.ItemStack.with;
+
 public class AbyssBlocks implements ContentList {
 	public Block abyssForge;
 
