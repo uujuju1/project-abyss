@@ -12,10 +12,11 @@ import mindustry.ui.dialogs.*;
 import abyss.content.*;
 
 public class ProjectAbyss extends Mod{
-    public ProjectAbyss(){}
-    
-    @Override
-    public void loadContent(){
-    	new AbyssItems().load();
-    }
+	public ProjectAbyss(){}
+	
+	@Override
+	public void loadContent(){
+		new AbyssItems().load();
+		new AbyssBlocks().load();
+	}
 }
