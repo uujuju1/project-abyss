@@ -55,7 +55,7 @@ public class AbyssBlocks implements ContentList {
 				AbyssItems.abyss, 54
 			));
 			size = 3;
-			health 830 * 9;
+			health = 830 * 9;
 			damage = 750;
 			damageRadius = 120;
 		}};
