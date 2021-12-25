@@ -33,7 +33,7 @@ public class AbyssBlocks implements ContentList {
 	@Override
 	public void load() {
 		voidWall = new UnstableWall("void-wall") {{
-			requirements(Category.crafting, with(
+			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
 			));
 			size = 1;
@@ -42,7 +42,7 @@ public class AbyssBlocks implements ContentList {
 			damageRadius = 40;
 		}};
 		voidWallLarge = new  UnstableWall("void-wall-large") {{
-			requirements(Category.crafting, with(
+			requirements(Category.defense, with(
 				AbyssItems.abyss, 24
 			));
 			size = 2;
@@ -51,7 +51,7 @@ public class AbyssBlocks implements ContentList {
 			damageRadius = 80;
 		}};
 		voidWallHuge = new UnstableWall("void-wall-huge") {{
-			requirements(Category.crafting, with(
+			requirements(Category.defense, with(
 				AbyssItems.abyss, 54
 			));
 			size = 3;
