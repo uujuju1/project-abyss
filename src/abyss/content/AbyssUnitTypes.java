@@ -3,6 +3,8 @@ package abyss.content;
 import arc.graphics.Color;
 import mindustry.entities.*;
 import mindustry.entities.bullet.*;
+import mindustry.world.meta.*;
+import mindustry.gen.*;
 import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
