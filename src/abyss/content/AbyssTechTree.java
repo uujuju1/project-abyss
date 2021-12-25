@@ -82,11 +82,14 @@ public class AbyssTechTree implements ContentList {
 			nodeProduce(AbyssItems.abyss);
 		});
 		extendNode(Blocks.plastaniumWall, () -> {
-			node(AbyssBlocks.voidWall, Seq.with(new Produce(Items.thorium)), () -> {
+			node(AbyssBlocks.voidWall, Seq.with(new Produce(AbyssItems.abyss)), () -> {
 				node(AbyssBlocks.voidWallLarge, () -> {
 					node(AbyssBlocks.voidWallHuge);
 				});
 			});
+		});
+		extendNode(Blocks.plastaniumCompressor, () -> {
+			node(AbyssBlocks.abyssForge, Seq.with(new Produce(Items.thorium)));
 		});
 	}
 }
