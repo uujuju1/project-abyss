@@ -17,6 +17,7 @@ public class ProjectAbyss extends Mod{
 	@Override
 	public void loadContent(){
 		new AbyssItems().load();
+		new AbyssUnitTypes().load();
 		new AbyssBlocks().load();
 		new AbyssTechTree().load();
 	}
