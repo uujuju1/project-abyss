@@ -24,9 +24,8 @@ public class AbyssUnitTypes implements ContentList {
 			weapons.add(
 				new Weapon() {{
 					x = y = 0f;
-					reloadTime = 30f;
+					reload = 30f;
 					mirror = false;
-					shootSound = Sounds.plasmaBoom;
 					bullet = new BombBulletType(27f, 30f) {{
 						width = height = hitSize * 2f;
 						lifetime = 60f;
