@@ -9,7 +9,7 @@ import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
 public class AbyssUnitTypes implements ContentList {
-	public static UnitType antra;
+	public static UnitType antra, karma;
 
 	@Override
 	public void load() {
