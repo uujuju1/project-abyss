@@ -50,7 +50,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = 0f;
 					reload = 60f;
 					recoil = 1f;
-					bullet = new BasicBulletType(4f 30f) {{
+					bullet = new BasicBulletType(4f, 30f) {{
 						width = 9f;
 						height = 11f;
 						lifetime = 30f;
