@@ -65,7 +65,7 @@ public class AbyssBlocks implements ContentList {
 
 		abyssFactory = new UnitFactory("abyss-factory") {{
 			requirements(Category.units, with(
-				AbyssItems.Abyss, 120,
+				AbyssItems.abyss, 120,
 				Items.silicon, 150,
 				Items.graphite, 130
 			));
@@ -73,7 +73,7 @@ public class AbyssBlocks implements ContentList {
 			health = 220;
 			consumes.power(1.3f);
 			plans = Seq.with(
-				new UnitPlan(AbyssUnitTypes, 60f * 40f, with(Items.silicon, 20, AbyssItems.abyss, 35))
+				new UnitPlan(AbyssUnitTypes.antra, 60f * 40f, with(Items.silicon, 20, AbyssItems.abyss, 35))
 			);
 		}};
 		add = new Reconstructor("reconstructor3"){{
