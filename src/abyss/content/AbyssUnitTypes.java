@@ -17,7 +17,7 @@ public class AbyssUnitTypes implements ContentList {
 		antra = new UnitType("antra") {{
 			health = 250;
 			speed = 2f;
-			rotateSpeed = 8f;
+			rotateSpeed = speed;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 30f;
@@ -40,14 +40,14 @@ public class AbyssUnitTypes implements ContentList {
 		karma = new UnitType("karma") {{
 			health = 475;
 			speed = 1.7f;
-			rotateSpeed = 7f;
+			rotateSpeed = speed;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 120f;
 			hitSize = 10f;
 			maxRange = range;
 			weapons.add(
-				new Weapon("void-mount") {{
+				new Weapon("abyss-void-mount") {{
 					x = 2f;
 					y = 0f;
 					reload = 60f;
@@ -67,14 +67,16 @@ public class AbyssUnitTypes implements ContentList {
 		kalerbi = new UnitType("kalerbi") {{
 			health = 830;
 			speed = 1.5f;
-			rotateSpeed = 5f;
+			rotateSpeed = speed;
+			engineOffset = -2f;
+			engineSize = 5f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 200f;
 			maxRange = range;
 			hitSize = 14f;
 			weapons.add(
-				new Weapon("void-laser-mount") {{
+				new Weapon("abyss-void-laser-mount") {{
 					x = 5f;
 					y = 2.75f;
 					reload = 120f;
@@ -85,7 +87,7 @@ public class AbyssUnitTypes implements ContentList {
 						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 					}}; 
 				}},
-				new Weapon("void-mount") {{
+				new Weapon("abyss-void-mount") {{
 					x = 3f;
 					y = 6f;
 					reload = 30f;
