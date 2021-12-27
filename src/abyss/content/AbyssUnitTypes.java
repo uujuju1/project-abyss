@@ -1,6 +1,7 @@
 package abyss.content;
 
 import arc.graphics.Color;
+import arc.strut.*;
 import mindustry.entities.*;
 import mindustry.entities.bullet.*;
 import mindustry.world.meta.*;
@@ -81,7 +82,7 @@ public class AbyssUnitTypes implements ContentList {
 					bullet = new LaserBulletType() {{
 						length = 100f;
 						width = 8f;
-						colors = {Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 					}}; 
 				}},
 				new Weapon("void-mount") {{
