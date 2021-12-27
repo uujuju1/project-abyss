@@ -9,7 +9,7 @@ import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
 public class AbyssUnitTypes implements ContentList {
-	public static UnitType antra, karma;
+	public static UnitType antra, karma, kalerbi;
 
 	@Override
 	public void load() {
@@ -29,6 +29,7 @@ public class AbyssUnitTypes implements ContentList {
 					bullet = new BombBulletType(27f, 30f) {{
 						width = height = hitSize * 2f;
 						lifetime = 60f;
+						keepVelocity = false;
 						frontColor = Color.valueOf("2E2E2E");
 						backColor = Color.valueOf("1C1C1C");
 					}};
@@ -42,6 +43,7 @@ public class AbyssUnitTypes implements ContentList {
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 120f;
+			hitSize = 10f;
 			maxRange = range;
 			weapons.add(
 				new Weapon("void-mount") {{
@@ -53,6 +55,44 @@ public class AbyssUnitTypes implements ContentList {
 						width = 9f;
 						height = 11f;
 						lifetime = 30f;
+						splashDamage = 20;
+						splashDamageRadius = 32f;
+						frontColor = Color.valueOf("2E2E2E");
+						backColor = Color.valueOf("1C1C1C");
+					}};
+				}}
+			);
+		}};
+		kalerbi = new UnitType("kalerbi") {{
+			health = 830;
+			speed = 1.5f;
+			rotateSpeed = 5f;
+			flying = true;
+			constructor = UnitEntity::create;
+			range = 200f;
+			maxRange = range;
+			hitSize = 14f;
+			weapons.add(
+				new Weapon("void-laser-mount") {{
+					x = 5f;
+					y = 2.75f;
+					reload = 120f;
+					recoil = 1.5f;
+					bullet = new LaserBulletType() {{
+						length = 100f;
+						width = 8f;
+						colors = {Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+					}}; 
+				}},
+				new Weapon("void-mount") {{
+					x = 3f;
+					y = 6f;
+					reload = 30f;
+					recoil = 0.5f;
+					bullet = new BasicBulletType(4f, 30f) {{
+						width = 7f;
+						height = 9f;
+						lifetime = 50f;
 						frontColor = Color.valueOf("2E2E2E");
 						backColor = Color.valueOf("1C1C1C");
 					}};
