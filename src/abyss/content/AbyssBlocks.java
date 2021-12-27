@@ -13,6 +13,7 @@ import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
+import mindustry.world.blocks.units.*;
 import mindustry.world.blocks.production.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.world.meta.*;
@@ -27,6 +28,8 @@ public class AbyssBlocks implements ContentList {
 	public static Block 
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
+		// units
+		abyssFactory, add, mult, exp, tetr,
 		// production 
 		abyssForge;
 
@@ -58,6 +61,46 @@ public class AbyssBlocks implements ContentList {
 			health = 830 * 9;
 			damage = 750;
 			damageRadius = 120;
+		}};
+
+		abyssFactory = new UnitFactory("abyss-factory") {{
+			requirements(Category.units, with(
+				AbyssItems.Abyss, 120,
+				Items.silicon, 150,
+				Items.graphite, 130
+			));
+			size = 3;
+			health = 220;
+			consumes.power(1.3f);
+			plans = Seq.with(
+				new UnitPlan(AbyssUnitTypes, 60f * 40f, with(Items.silicon, 20, AbyssItems.abyss, 35))
+			);
+		}};
+		add = new Reconstructor("reconstructor3"){{
+			requirements(Category.units, with(Items.copper, 200, Items.lead, 120, Items.silicon, 90));
+
+			size = 3;
+			consumes.power(3f);
+			consumes.items(with(Items.silicon, 40, Items.graphite, 40));
+
+			constructTime = 60f * 10f;
+
+			upgrades.addAll(
+				new UnitType[]{AbyssUnitTypes.antra, AbyssUnitTypes.karma}
+			);
+		}};
+		mult = new Reconstructor("reconstructor5"){{
+			requirements(Category.units, with(Items.lead, 650, Items.silicon, 450, Items.titanium, 350, Items.thorium, 650));
+
+			size = 5;
+			consumes.power(6f);
+			consumes.items(with(Items.silicon, 130, Items.titanium, 80, Items.metaglass, 40));
+
+			constructTime = 60f * 30f;
+
+			upgrades.addAll(
+				new UnitType[]{AbyssUnitTypes.karma, AbyssUnitTypes.kalerbi}
+			);
 		}};
 
 		abyssForge = new GenericCrafter("abyss-forge") {{

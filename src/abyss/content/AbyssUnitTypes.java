@@ -68,7 +68,7 @@ public class AbyssUnitTypes implements ContentList {
 			health = 830;
 			speed = 1.5f;
 			rotateSpeed = speed;
-			engineOffset = -2f;
+			engineOffset = 0.5f;
 			engineSize = 5f;
 			flying = true;
 			constructor = UnitEntity::create;
