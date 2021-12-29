@@ -76,7 +76,7 @@ public class AbyssBlocks implements ContentList {
 				new UnitPlan(AbyssUnitTypes.antra, 60f * 40f, with(Items.silicon, 20, AbyssItems.abyss, 35))
 			);
 		}};
-		add = new Reconstructor("reconstructor3"){{
+		add = new Reconstructor("reconstructor3") {{
 			requirements(Category.units, with(Items.copper, 200, Items.lead, 120, Items.silicon, 90));
 
 			size = 3;
@@ -89,7 +89,7 @@ public class AbyssBlocks implements ContentList {
 				new UnitType[]{AbyssUnitTypes.antra, AbyssUnitTypes.karma}
 			);
 		}};
-		mult = new Reconstructor("reconstructor5"){{
+		mult = new Reconstructor("reconstructor5") {{
 			requirements(Category.units, with(Items.lead, 650, Items.silicon, 450, Items.titanium, 350, Items.thorium, 650));
 
 			size = 5;
@@ -100,6 +100,21 @@ public class AbyssBlocks implements ContentList {
 
 			upgrades.addAll(
 				new UnitType[]{AbyssUnitTypes.karma, AbyssUnitTypes.kalerbi}
+			);
+		}};
+		exp = new Reconstructor("reconstructor7") {{
+			requirements(Category.units, with(Items.lead, 2000, Items.silicon, 1000, Items.titanium, 2000, Items.thorium, 750, Items.plastanium, 450, Items.phaseFabric, 600));
+
+			size = 7;
+			consumes.power(13f);
+			consumes.items(with(Items.silicon, 850, Items.titanium, 750, Items.plastanium, 650));
+			consumes.liquid(Liquids.cryofluid, 1f);
+
+			constructTime = 60f * 60f * 1.5f;
+			liquidCapacity = 60f;
+
+			upgrades.addAll(
+				new UnitType[]{AbyssUnitTypes.kalerbi, AbyssUnitTypes.kodene}
 			);
 		}};
 

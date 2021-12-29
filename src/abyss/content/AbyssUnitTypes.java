@@ -10,14 +10,14 @@ import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
 public class AbyssUnitTypes implements ContentList {
-	public static UnitType antra, karma, kalerbi;
+	public static UnitType antra, karma, kalerbi, kodene;
 
 	@Override
 	public void load() {
 		antra = new UnitType("antra") {{
 			health = 250;
 			speed = 2f;
-			rotateSpeed = speed;
+			rotateSpeed = 0.4f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 30f;
@@ -40,11 +40,11 @@ public class AbyssUnitTypes implements ContentList {
 		karma = new UnitType("karma") {{
 			health = 475;
 			speed = 1.7f;
-			rotateSpeed = speed;
+			rotateSpeed = 0.3f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 120f;
-			hitSize = 10f;
+			hitSize = 9f;
 			maxRange = range;
 			weapons.add(
 				new Weapon("abyss-void-mount") {{
@@ -66,19 +66,19 @@ public class AbyssUnitTypes implements ContentList {
 		}};
 		kalerbi = new UnitType("kalerbi") {{
 			health = 830;
-			speed = 1.5f;
-			rotateSpeed = speed;
+			speed = 1.4f;
+			rotateSpeed = 0.2f;
 			engineOffset = 0.5f;
 			engineSize = 5f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 200f;
 			maxRange = range;
-			hitSize = 14f;
+			hitSize = 12f;
 			weapons.add(
 				new Weapon("abyss-void-laser-mount") {{
 					x = 5f;
-					y = 2.75f;
+					y = -2.75f;
 					reload = 120f;
 					recoil = 1.5f;
 					bullet = new LaserBulletType() {{
@@ -96,6 +96,45 @@ public class AbyssUnitTypes implements ContentList {
 						width = 7f;
 						height = 9f;
 						lifetime = 50f;
+						frontColor = Color.valueOf("2E2E2E");
+						backColor = Color.valueOf("1C1C1C");
+					}};
+				}}
+			);
+		}};
+		kodene = new UnitType("kodene") {{
+			health = 4000;
+			speed = 1.2f;
+			rotateSpeed = 0.1f;
+			exgineSize = 6f;
+			engineOffset = 24f;
+			flying = true;
+			constructor = UnitEntity::create;
+			range = 280f;
+			maxRange = range;
+			hitSize = 28f;
+			weapons.add(
+				new Weapon("abyss-void-missile-mount") {{
+					x = 7.25f;
+					y = -8.75f;
+					reload = 240f;
+					recoil = 4f;
+					bullet = new MissileBulletType(4f, 200f) {{
+						width = 21f;
+						height = 27f;
+						lifetime = 70f;
+						frontColor = Color.valueOf("2E2E2E");
+						backColor = Color.valueOf("1C1C1C");
+					}};
+				}},
+				new Weapon("abyss-void-artillery-mount") {{
+					x = 5.5f;
+					y = 8f;
+					reload = 30f;
+					recoil =2f;
+					bullet = new ArtilleryBulletType(4f, 75f) {{
+						width = height = 16f;
+						maxRange = 70f;
 						frontColor = Color.valueOf("2E2E2E");
 						backColor = Color.valueOf("1C1C1C");
 					}};
