@@ -104,10 +104,10 @@ public class AbyssUnitTypes implements ContentList {
 		}};
 		kodene = new UnitType("kodene") {{
 			health = 4000;
-			speed = 0.6f;
+			speed = 1f;
 			rotateSpeed = 0.1f;
 			engineSize = 6f;
-			engineOffset = -24f;
+			engineOffset = -12f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 280f;
@@ -147,10 +147,10 @@ public class AbyssUnitTypes implements ContentList {
 		}};
 		tolonia = new UnitType("tolonia") {{
 			health = 22000;
-			speed = 0.3f;
+			speed = 0.5f;
 			rotateSpeed = 0.01f;
 			engineSize = 8f;
-			engineOffset = -30f;
+			engineOffset = -15f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 320f;
