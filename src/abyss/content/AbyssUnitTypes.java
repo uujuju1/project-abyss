@@ -107,7 +107,7 @@ public class AbyssUnitTypes implements ContentList {
 			speed = 1f;
 			rotateSpeed = 0.1f;
 			engineSize = 6f;
-			engineOffset = -12f;
+			engineOffset = -1.7f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 280f;
@@ -150,7 +150,7 @@ public class AbyssUnitTypes implements ContentList {
 			speed = 0.5f;
 			rotateSpeed = 0.01f;
 			engineSize = 8f;
-			engineOffset = -15f;
+			engineOffset = -2f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 320f;
