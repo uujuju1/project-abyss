@@ -123,6 +123,8 @@ public class AbyssUnitTypes implements ContentList {
 						width = 21f;
 						height = 27f;
 						lifetime = 70f;
+						splashDamage = 75f;
+						splashDamageRadius = 32f;
 						frontColor = Color.valueOf("2E2E2E");
 						backColor = Color.valueOf("1C1C1C");
 					}};
@@ -135,6 +137,8 @@ public class AbyssUnitTypes implements ContentList {
 					bullet = new ArtilleryBulletType(4f, 75f) {{
 						width = height = 16f;
 						maxRange = 70f;
+						splashDamage = 75f;
+						splashDamageRadius = 32f;
 						frontColor = Color.valueOf("2E2E2E");
 						backColor = Color.valueOf("1C1C1C");
 					}};
@@ -168,11 +172,12 @@ public class AbyssUnitTypes implements ContentList {
 				new Weapon("abyss-void-laser-weapon") {{
 					x = 14f;
 					y = 5f;
+					alternate = true;
 					reload = 120f;
 					recoil = 4f;
 					bullet = new ContinuousLaserBulletType(24f) {{
-						width = 6f;
-						length = maxRange;
+						length = maxRange;						
+						lifetime = 60f;
 						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 					}};
 				}},
@@ -182,8 +187,8 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 120f;
 					recoil = 4f;
 					bullet = new ContinuousLaserBulletType(24f) {{
-						width = 6f;
 						length = maxRange;
+						lifetime = 60f;
 						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 					}};
 				}}
