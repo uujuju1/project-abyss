@@ -10,7 +10,7 @@ import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
 public class AbyssUnitTypes implements ContentList {
-	public static UnitType antra, karma, kalerbi, kodene;
+	public static UnitType antra, karma, kalerbi, kodene, tolonia;
 
 	@Override
 	public void load() {
@@ -104,10 +104,10 @@ public class AbyssUnitTypes implements ContentList {
 		}};
 		kodene = new UnitType("kodene") {{
 			health = 4000;
-			speed = 1.2f;
+			speed = 0.6f;
 			rotateSpeed = 0.1f;
 			engineSize = 6f;
-			engineOffset = 24f;
+			engineOffset = -24f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 280f;
@@ -137,6 +137,54 @@ public class AbyssUnitTypes implements ContentList {
 						maxRange = 70f;
 						frontColor = Color.valueOf("2E2E2E");
 						backColor = Color.valueOf("1C1C1C");
+					}};
+				}}
+			);
+		}};
+		tolonia = new UnitType("tolonia") {{
+			health = 22000;
+			speed = 0.3f;
+			rotateSpeed = 0.01f;
+			engineSize = 8f;
+			engineOffset = -30f;
+			flying = true;
+			constructor = UnitEntity::create;
+			range = 320f;
+			maxRange = range;
+			hitSize = 36f;
+			weapons.add(
+				new Weapon("abyss-void-artillery-mount") {{
+					x = 5f;
+					y = 10f;
+					reload = 10f;
+					recoil = 3f;
+					bullet = new BasicBulletType(6f, 100f) {{
+						width = height = 16f;
+						lifetime = 53f;
+						frontColor = Color.valueOf("2E2E2E");
+						backColor = Color.valueOf("1C1C1C");
+					}};
+				}},
+				new Weapon("abyss-void-laser-weapon") {{
+					x = 14f;
+					y = 5f;
+					reload = 120f;
+					recoil = 4f;
+					bullet = new ContinuousLaserBulletType(24f) {{
+						width = 6f;
+						length = maxRange;
+						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+					}};
+				}},
+				new Weapon("abyss-void-laser-weapon") {{
+					x = 9.5f;
+					y = -11f;
+					reload = 120f;
+					recoil = 4f;
+					bullet = new ContinuousLaserBulletType(24f) {{
+						width = 6f;
+						length = maxRange;
+						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 					}};
 				}}
 			);
