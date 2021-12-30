@@ -41,7 +41,7 @@ public class AbyssUnitTypes implements ContentList {
 			health = 475;
 			speed = 1.7f;
 			rotateSpeed = 0.3f;
-			engineOffset = 0.3f;
+			engineOffset = 6f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 120f;
@@ -151,7 +151,7 @@ public class AbyssUnitTypes implements ContentList {
 			speed = 0.5f;
 			rotateSpeed = 0.01f;
 			engineSize = 8f;
-			engineOffset = -1.7f;
+			engineOffset = 8f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 320f;
@@ -176,9 +176,19 @@ public class AbyssUnitTypes implements ContentList {
 					alternate = true;
 					reload = 120f;
 					recoil = 4f;
-					bullet = new ContinuousLaserBulletType(24f) {{
-						length = maxRange;						
+					bullet = new ContinuousLaserBulletType() {{
+						maxRange = range;
+						damage = 24f;
+						length = range;
+						hitEffect = Fx.hitMeltHeal;
+						drawSize = 200f;
 						lifetime = 60f;
+						shake = 1f;
+						width = 6f;
+						largeHit = true;
+						incendChance = 0.03f;
+						incendSpread = 5f;
+						incendAmount = 1;
 						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 					}};
 				}},
@@ -187,9 +197,19 @@ public class AbyssUnitTypes implements ContentList {
 					y = -11f;
 					reload = 120f;
 					recoil = 4f;
-					bullet = new ContinuousLaserBulletType(24f) {{
-						length = maxRange;
+					bullet = new ContinuousLaserBulletType() {{
+						maxRange = range;
+						damage = 24f;
+						length = range;
+						hitEffect = Fx.hitMeltHeal;
+						drawSize = 200f;
 						lifetime = 60f;
+						shake = 1f;
+						width = 6f;
+						largeHit = true;
+						incendChance = 0.03f;
+						incendSpread = 5f;
+						incendAmount = 1;
 						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 					}};
 				}}
