@@ -180,7 +180,6 @@ public class AbyssUnitTypes implements ContentList {
 						maxRange = range;
 						damage = 24f;
 						length = range;
-						hitEffect = Fx.hitMeltHeal;
 						drawSize = 200f;
 						lifetime = 60f;
 						shake = 1f;
@@ -201,7 +200,6 @@ public class AbyssUnitTypes implements ContentList {
 						maxRange = range;
 						damage = 24f;
 						length = range;
-						hitEffect = Fx.hitMeltHeal;
 						drawSize = 200f;
 						lifetime = 60f;
 						shake = 1f;
