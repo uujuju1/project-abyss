@@ -18,6 +18,12 @@ public class UnstableWall extends Wall {
 		super(name);
 	}
 
+	@Override
+	public void setStats() {
+		stat.add(Stat.damage, damage);
+		stat.add(Stat.range, damageRadius/8, StatUnit.blocks);
+	}
+
 	public class UnstableWallBuild extends WallBuild {
 		@Override
 		public void onDestroyed() {

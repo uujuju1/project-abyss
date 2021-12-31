@@ -16,10 +16,12 @@ import mindustry.world.blocks.*;
 import mindustry.world.blocks.units.*;
 import mindustry.world.blocks.production.*;
 import mindustry.world.blocks.defense.*;
+import mindustry.world.blocks.defense.turrets.*;
 import mindustry.world.meta.*;
 import mindustry.world.draw.*;
 
 import abyss.content.*;
+import abyss.graphics.*;
 import abyss.world.blocks.defense.*;
 
 import static mindustry.type.ItemStack.with;
@@ -31,7 +33,9 @@ public class AbyssBlocks implements ContentList {
 		// units
 		abyssFactory, add, mult, exp, tetr,
 		// production 
-		abyssForge;
+		abyssForge,
+		// turrets
+		kardone, delamine, selena;
 
 	@Override
 	public void load() {
@@ -43,6 +47,7 @@ public class AbyssBlocks implements ContentList {
 			health = 830;
 			damage = 120;
 			damageRadius = 40;
+			explodeEffect = AbyssFx.smallVoidExplosion;
 		}};
 		voidWallLarge = new  UnstableWall("void-wall-large") {{
 			requirements(Category.defense, with(
@@ -52,6 +57,7 @@ public class AbyssBlocks implements ContentList {
 			health = 830 * 4;
 			damage = 300;
 			damageRadius = 80;
+			explodeEffect = AbyssFx.mediumVoidExplosion;
 		}};
 		voidWallHuge = new UnstableWall("void-wall-huge") {{
 			requirements(Category.defense, with(
@@ -61,6 +67,7 @@ public class AbyssBlocks implements ContentList {
 			health = 830 * 9;
 			damage = 750;
 			damageRadius = 120;
+			explodeEffect = AbyssFx.largeVoidExplosion;
 		}};
 
 		abyssFactory = new UnitFactory("abyss-factory") {{
@@ -153,6 +160,62 @@ public class AbyssBlocks implements ContentList {
 			));
 			consumes.power(5f);
 			outputItem = new ItemStack(AbyssItems.abyss, 2);
+		}};
+
+		kardone = new ItemTurret("kardone") {{
+			requirements(Category.turret, with(
+				AbyssItems.abyss, 20,
+				Items.silicon, 15
+			));
+			size = 1;
+			health = 220f;
+			reloadTime = 30f;
+			range = 160f;
+			inaccuracy = 2f;
+			rotateSpeed = 7f;
+			maxAmmo = 15;
+			restitution = 0.05f;
+			ammo(
+				AbyssItems.abyss, AbyssBullets.voidBullet1
+			);
+		}};
+		delamine = new ItemTurret("delamine") {{
+			requirements(Category.turret, with(
+				AbyssItems.abyss, 50,
+				Items.silicon, 75,
+				Items.plastanium, 25
+			));
+			size = 2;
+			health 880;
+			reloadTime = 60f;
+			shots = 2;
+			burstSpacing = 5f;
+			range = 240f;
+			maxAmmo = 35;
+			restitution = 0.05f;
+			inaccuracy = 2f;
+			ammo(
+				AbyssItems.abyss, AbyssBullets.voidBullet2
+			);
+		}};
+		selena = new ItemTurret("selena") {{
+			requirements(Category.turret, with(
+				AbyssItems.abyss, 50,
+				Items.silicon, 75,
+				Items.plastanium, 25
+			));
+			size = 2;
+			health 1980;
+			reloadTime = 120f;
+			shots = 6;
+			burstSpacing = 5f;
+			range = 280f;
+			maxAmmo = 35;
+			restitution = 0.05f;
+			inaccuracy = 2f;
+			ammo(
+				AbyssItems.abyss, AbyssBullets.voidBullet3
+			);
 		}};
 	}
 }
