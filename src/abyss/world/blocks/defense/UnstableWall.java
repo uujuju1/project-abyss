@@ -22,8 +22,8 @@ public class UnstableWall extends Wall {
 	@Override
 	public void setStats() {
 		super.setStats();
-		stat.add(Stat.damage, damage);
-		stat.add(Stat.range, damageRadius/8, StatUnit.blocks);
+		stats.add(Stat.damage, damage);
+		stats.add(Stat.range, damageRadius/8, StatUnit.blocks);
 	}
 
 	public class UnstableWallBuild extends WallBuild {
