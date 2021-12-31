@@ -21,6 +21,7 @@ public class UnstableWall extends Wall {
 
 	@Override
 	public void setStats() {
+		super.setStats();
 		stat.add(Stat.damage, damage);
 		stat.add(Stat.range, damageRadius/8, StatUnit.blocks);
 	}
@@ -30,6 +31,7 @@ public class UnstableWall extends Wall {
 		public void onDestroyed() {
 			Damage.damage(this.team, x, y, damageRadius, damage);
 			explodeEffect.at(x, y);
+			super.onDestroyed();
 		}
 	}
 }
