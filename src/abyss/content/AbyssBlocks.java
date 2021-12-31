@@ -168,7 +168,7 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 15
 			));
 			size = 1;
-			health = 220f;
+			health = 220;
 			reloadTime = 30f;
 			range = 160f;
 			inaccuracy = 2f;

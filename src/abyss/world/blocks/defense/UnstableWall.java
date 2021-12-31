@@ -8,6 +8,7 @@ import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.entities.*;
 import mindustry.world.blocks.defense.Wall;
+import mindustry.world.meta.*;
 
 public class UnstableWall extends Wall {
 	public int damage = 69;
