@@ -186,7 +186,7 @@ public class AbyssBlocks implements ContentList {
 				Items.plastanium, 25
 			));
 			size = 2;
-			health 880;
+			health = 880;
 			reloadTime = 60f;
 			shots = 2;
 			burstSpacing = 5f;
@@ -205,7 +205,7 @@ public class AbyssBlocks implements ContentList {
 				Items.plastanium, 25
 			));
 			size = 2;
-			health 1980;
+			health = 1980;
 			reloadTime = 120f;
 			shots = 6;
 			burstSpacing = 5f;
