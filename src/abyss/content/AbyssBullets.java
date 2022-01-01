@@ -31,6 +31,8 @@ public class AbyssBullets implements ContentList {
 			height = 13f;
 			ammoMultiplier = 3;
 			lifetime = 40f;
+			fragBullets = 2;
+			fragBullet = voidBullet1;
 			frontColor = Color.valueOf("2E2E2E");
 			backColor = Color.valueOf("1C1C1C");
 		}};
@@ -38,6 +40,9 @@ public class AbyssBullets implements ContentList {
 			width = 11f;
 			height = 13f;
 			ammoMultiplier = 3;
+			lifetime = 45f;
+			fragBullets = 5;
+			fragBullet = voidBullet2;
 			frontColor = Color.valueOf("2E2E2E");
 			backColor = Color.valueOf("1C1C1C");
 		}};

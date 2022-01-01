@@ -35,7 +35,7 @@ public class AbyssBlocks implements ContentList {
 		// production 
 		abyssForge,
 		// turrets
-		kardone, delamine, selena;
+		kardone, delamine, selena, kardeni;
 
 	@Override
 	public void load() {
@@ -183,7 +183,7 @@ public class AbyssBlocks implements ContentList {
 			requirements(Category.turret, with(
 				AbyssItems.abyss, 50,
 				Items.silicon, 75,
-				Items.plastanium, 25
+				Items.titanium, 25
 			));
 			size = 2;
 			health = 880;
@@ -200,21 +200,45 @@ public class AbyssBlocks implements ContentList {
 		}};
 		selena = new ItemTurret("selena") {{
 			requirements(Category.turret, with(
-				AbyssItems.abyss, 50,
-				Items.silicon, 75,
-				Items.plastanium, 25
+				AbyssItems.abyss, 80,
+				Items.silicon, 125,
+				Items.thorium, 50,
+				Items.titanium, 100,
+				Items.plastanium, 80
 			));
-			size = 2;
+			size = 3;
 			health = 1980;
 			reloadTime = 120f;
 			shots = 6;
 			burstSpacing = 5f;
 			range = 280f;
-			maxAmmo = 35;
+			maxAmmo = 75;
 			restitution = 0.05f;
 			inaccuracy = 2f;
 			ammo(
 				AbyssItems.abyss, AbyssBullets.voidBullet3
+			);
+		}};
+		kardeni = new ItemTurret("selena") {{
+			requirements(Category.turret, with(
+				AbyssItems.abyss, 200,
+				Items.surgeAlloy, 100,
+				Items.silicon, 350,
+				Items.thorium, 250,
+				Items.titanium, 400,
+				Items.graphite, 400
+			));
+			size = 4;
+			health = 3520;
+			reloadTime = 15f;
+			shots = 2;
+			burstSpacing = 1f;
+			range = 360f;
+			maxAmmo = 100;
+			restitution = 0.05f;
+			inaccuracy = 2f;
+			ammo(
+				AbyssItems.abyss, AbyssBullets.voidBullet4
 			);
 		}};
 	}
