@@ -112,7 +112,7 @@ public class AbyssTechTree implements ContentList {
 					node(AbyssUnitTypes.karma, Seq.with(new Research(AbyssBlocks.add)), () -> {
 						node(AbyssUnitTypes.kalerbi, Seq.with(new Research(AbyssBlocks.mult)), () -> {
 							node(AbyssUnitTypes.kodene, Seq.with(new Research(AbyssBlocks.exp)), () -> {
-								node(AbyssUnitTypes.tolonia, Seq.with(new Research(AbyssBlocks.tetr)))
+								node(AbyssUnitTypes.tolonia, Seq.with(new Research(AbyssBlocks.tetr)));
 							});
 						});
 					});
