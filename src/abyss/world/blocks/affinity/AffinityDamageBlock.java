@@ -19,7 +19,7 @@ public class AffinityDamageBlock extends Block {
 		@Override
 		public void updateTile() {
 			for (int i = 0; i < this.proximity.size; i++) {
-				if (this.proximity.get(i).block instanceof AffinityBlock.AffinityBlockBuild) {
+				if (this.proximity.get(i).block instanceof AffinityBlock) {
 					Core.app.exit();
 				}
 			}
