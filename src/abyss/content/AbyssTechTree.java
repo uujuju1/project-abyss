@@ -81,6 +81,9 @@ public class AbyssTechTree implements ContentList {
 		extendNode(Items.plastanium, () -> {
 			nodeProduce(AbyssItems.abyss);
 		});
+		extendNode(Items.metaglass, () -> {
+			nodeProduce(AbyssItems.balestenite);
+		});
 		extendNode(Blocks.plastaniumWall, () -> {
 			node(AbyssBlocks.voidWall, Seq.with(new Produce(AbyssItems.abyss)), () -> {
 				node(AbyssBlocks.voidWallLarge, () -> {
@@ -90,6 +93,31 @@ public class AbyssTechTree implements ContentList {
 		});
 		extendNode(Blocks.plastaniumCompressor, () -> {
 			node(AbyssBlocks.abyssForge, Seq.with(new Produce(Items.thorium)));
+		});
+		extendNode(Blocks.additiveReconstructor, () -> {
+			node(AbyssBlocks.add, ItemStack.with(Items.copper, 1));
+		});
+		extendNode(Blocks.multiplicativeReconstructor, () -> {
+			node(AbyssBlocks.mult, ItemStack.with(Items.copper, 1));
+		});
+		extendNode(Blocks.exponentialReconstructor, () -> {
+			node(AbyssBlocks.exp, ItemStack.with(Items.copper, 1));
+		});
+		extendNode(Blocks.tetrativeReconstructor, () -> {
+			node(AbyssBlocks.tetr, ItemStack.with(Items.copper, 1));
+		});
+		extendNode(Blocks.navalFactory, () -> {
+			node(AbyssBlocks.abyssFactory, Seq.with(new Produce(AbyssItems.abyss)), () -> {
+				node(AbyssUnitTypes.antra, () -> {
+					node(AbyssUnitTypes.karma, Seq.with(new Research(AbyssBlocks.add)), () -> {
+						node(AbyssUnitTypes.kalerbi, Seq.with(new Research(AbyssBlocks.mult)), () -> {
+							node(AbyssUnitTypes.kodene, Seq.with(new Research(AbyssBlocks.exp)), () -> {
+								node(AbyssUnitTypes.tolonia, Seq.with(new Research(AbyssBlocks.tetr)))
+							});
+						});
+					});
+				});
+			});
 		});
 	}
 }
