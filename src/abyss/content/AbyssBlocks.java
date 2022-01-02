@@ -219,7 +219,7 @@ public class AbyssBlocks implements ContentList {
 				AbyssItems.abyss, AbyssBullets.voidBullet3
 			);
 		}};
-		kardeni = new ItemTurret("selena") {{
+		kardeni = new ItemTurret("kardeni") {{
 			requirements(Category.turret, with(
 				AbyssItems.abyss, 200,
 				Items.surgeAlloy, 100,
