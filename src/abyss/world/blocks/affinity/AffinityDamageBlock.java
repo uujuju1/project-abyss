@@ -1,5 +1,6 @@
 package abyss.world.blocks.defense;
 
+import arc.Core;
 import mindustry.gen.*;
 import mindustry.world.Block;
 import abyss.world.blocks.affinity.*;
@@ -18,7 +19,7 @@ public class AffinityDamageBlock extends Block {
 		@Override
 		public void updateTile() {
 			for (int i = 0; i < this.proximity.size; i++) {
-				if (this.proximity.get(i).block instanceof AffinityBlockBuild) {
+				if (this.proximity.get(i).block instanceof AffinityBlock.AffinityBlockBuild) {
 					Core.app.exit();
 				}
 			}
