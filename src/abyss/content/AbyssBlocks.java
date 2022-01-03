@@ -245,7 +245,7 @@ public class AbyssBlocks implements ContentList {
 			);
 		}};
 
-		test = new ScatterSilo("heal-scatter") {{
+		scatter = new ScatterSilo("heal-scatter") {{
 			requirements(Category.turret, with(
 				AbyssItems.balestenite, 100,
 				Items.silicon, 75,
