@@ -35,7 +35,10 @@ public class AbyssBlocks implements ContentList {
 		// production 
 		abyssForge,
 		// turrets
-		kardone, delamine, selena, kardeni;
+		kardone, delamine, selena, kardeni,
+		// test
+		scatter;
+
 
 	@Override
 	public void load() {
@@ -240,6 +243,17 @@ public class AbyssBlocks implements ContentList {
 			ammo(
 				AbyssItems.abyss, AbyssBullets.voidBullet4
 			);
+		}};
+
+		test = new ScatterSilo("heal-scatter") {{
+			requirements(Category.turret, with(
+				AbyssItems.balestenite, 100,
+				Items.silicon, 75,
+				Items.titanium, 40
+			));
+			size = 2;
+			health = 160;
+			shots = 69;
 		}};
 	}
 }

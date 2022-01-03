@@ -10,7 +10,7 @@ import mindustry.world.Block;
 
 public class ScatterSilo extends Block {
 	public float reloadTime = 60f;
-	public int bulletAmount = 10;
+	public int shots = 10;
 	public BulletType bullet = Bullets.standardCopper;
 
 	public ScatterSilo(String name) {
@@ -30,7 +30,7 @@ public class ScatterSilo extends Block {
 		}
 
 		public void shoot() {
-			for (int i = 0; i < bulletAmount; i++) {
+			for (int i = 0; i < shots; i++) {
 				bullet.create(this, this.team, x, y, Mathf.random() * 360f);
 			}
 		}
