@@ -7,6 +7,7 @@ import mindustry.gen.*;
 import mindustry.entities.bullet.*;
 import mindustry.content.*;
 import mindustry.world.Block;
+import mindustry.world.consumes.*;
 
 public class ScatterSilo extends Block {
 	public float reloadTime = 60f;
@@ -15,7 +16,7 @@ public class ScatterSilo extends Block {
 
 	public ScatterSilo(String name) {
 		super(name);
-		solid = destructible = update = configurable = true;
+		solid = destructible = update = configurable = hasItems = true;
 	}
 
 	public class ScatterSiloBuild extends Building {
@@ -25,13 +26,17 @@ public class ScatterSilo extends Block {
 			table.button(Icon.upload, () -> {
 				if (timer <= 0f) {
 					this.shoot();
+					timer = reloadTime;
 				}
 			});
 		}
 
 		public void shoot() {
-			for (int i = 0; i < shots; i++) {
-				bullet.create(this, this.team, x, y, Mathf.random() * 360f);
+			if (cons.valid()) {
+				consume();
+				for (int i = 0; i < shots; i++) {
+					bullet.create(this, this.team, x, y, Mathf.random() * 360f);
+				}
 			}
 		}
 

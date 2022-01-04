@@ -253,7 +253,9 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 2;
 			health = 160;
-			shots = 69;
+			consumes.items(with(
+				AbyssItems.balestenite, 10
+			));
 		}};
 	}
 }
