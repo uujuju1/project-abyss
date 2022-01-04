@@ -30,7 +30,7 @@ public class ProximityCrafter extends Block {
 			float mult;
 			for (int i = 0; i < this.proximity.size; i++) {
 				if (this.proximity.get(i) instanceof WallBuild) {
-					mult + 0.2f;
+					mult =+ 0.2f;
 				}
 			}
 			return mult;
