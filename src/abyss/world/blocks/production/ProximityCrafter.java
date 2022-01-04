@@ -41,7 +41,7 @@ public class ProximityCrafter extends Block {
 		public void updateTile() {
 			reload = craftTime*this.getProximityBlocks();
 			if (cons.valid()) {
-				reloadTime += Time.delta();
+				reloadTime += Time.delta;
 				if (reloadTime >= reload) {
 					for (int i = 0; i < outputItem.amount; i++) {
 						offload(outputItem.item);
