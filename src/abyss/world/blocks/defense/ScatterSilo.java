@@ -8,6 +8,7 @@ import mindustry.entities.bullet.*;
 import mindustry.content.*;
 import mindustry.world.Block;
 import mindustry.world.consumers.*;
+import mindustry.world.meta.*;
 
 public class ScatterSilo extends Block {
 	public float reloadTime = 60f;
@@ -17,6 +18,13 @@ public class ScatterSilo extends Block {
 	public ScatterSilo(String name) {
 		super(name);
 		solid = destructible = update = configurable = hasItems = true;
+	}
+
+	@Override
+	public void setStats() {
+		stats.add(Stat.damage, damage);
+		stats.add(Stat.reload, reloadTime, StatUnit.seconds);
+		stats.add(Stat.range, range, StatUnit.blocks);
 	}
 
 	public class ScatterSiloBuild extends Building {

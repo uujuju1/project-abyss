@@ -23,6 +23,7 @@ import mindustry.world.draw.*;
 import abyss.content.*;
 import abyss.graphics.*;
 import abyss.world.blocks.defense.*;
+import abyss.world.blocks.production.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -33,11 +34,11 @@ public class AbyssBlocks implements ContentList {
 		// units
 		abyssFactory, add, mult, exp, tetr,
 		// production 
-		abyssForge,
+		abyssForge, proximitySmelter,
 		// turrets
 		kardone, delamine, selena, kardeni,
-		// test
-		scatter;
+		// scatters
+		assaultScatter, supportScatter, specialistCrafter;
 
 
 	@Override
@@ -164,6 +165,15 @@ public class AbyssBlocks implements ContentList {
 			consumes.power(5f);
 			outputItem = new ItemStack(AbyssItems.abyss, 2);
 		}};
+		proximitySmelter = new ProximityCrafter("proximity-smelter") {{
+			size = 2;
+			health = 160;
+			consumes.items(with(
+				Items.copper, 2,
+				Items.metaglass, 1
+			));
+			outputItem = new ItemStack(AbyssItems.balestenite, 1);
+		}};
 
 		kardone = new ItemTurret("kardone") {{
 			requirements(Category.turret, with(
@@ -245,7 +255,7 @@ public class AbyssBlocks implements ContentList {
 			);
 		}};
 
-		scatter = new ScatterSilo("heal-scatter") {{
+		assaultScatter = new ScatterSilo("assault-scatter") {{
 			requirements(Category.turret, with(
 				AbyssItems.balestenite, 100,
 				Items.silicon, 75,
@@ -256,6 +266,25 @@ public class AbyssBlocks implements ContentList {
 			consumes.items(with(
 				AbyssItems.balestenite, 10
 			));
+			bullet = new BasicBulletType(4f, 15) {{
+				width = 9f;
+				height = 11f;
+				lifetime = 20f;
+			}};
+		}};
+		supportScatter = new ScatterSilo("support-scatter") {{
+			requirements(Category.turret, with(
+				AbyssItems.balestenite, 100,
+				Items.silicon, 115
+			));
+			size = 2;
+			health = 160;
+			consumes.power(1f);
+			bullet = new BasicBulletType(4f, 15) {{
+				width = 9f;
+				height = 11f;
+				lifetime = 20f;
+			}};
 		}};
 	}
 }
