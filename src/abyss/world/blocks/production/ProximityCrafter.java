@@ -1,6 +1,7 @@
 package abyss.world.blocks.production;
 
-import arc.util.*;
+import arc.util.Time;
+import arc.struct.*;
 import mindustry.gen.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.defense.Wall.*;

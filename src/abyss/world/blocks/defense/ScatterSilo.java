@@ -11,8 +11,13 @@ import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
 
 public class ScatterSilo extends Block {
+	// time needed to shoot again
 	public float reloadTime = 60f;
+	// range for setStats 
+	public float range = 80f;
+	// amount of bullets that are created
 	public int shots = 10;
+	// bullet created when button pressed
 	public BulletType bullet = Bullets.standardCopper;
 
 	public ScatterSilo(String name) {
@@ -22,7 +27,6 @@ public class ScatterSilo extends Block {
 
 	@Override
 	public void setStats() {
-		stats.add(Stat.damage, damage);
 		stats.add(Stat.reload, reloadTime, StatUnit.seconds);
 		stats.add(Stat.range, range, StatUnit.blocks);
 	}
