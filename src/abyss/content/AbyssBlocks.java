@@ -40,6 +40,7 @@ public class AbyssBlocks implements ContentList {
 		kardone, delamine, selena, kardeni,
 		// scatters
 		assaultScatter, supportScatter, specialistCrafter;
+		// test
 
 
 	@Override
@@ -167,6 +168,11 @@ public class AbyssBlocks implements ContentList {
 			outputItem = new ItemStack(AbyssItems.abyss, 2);
 		}};
 		proximitySmelter = new ProximityCrafter("proximity-smelter") {{
+			requirements(Category.crafting, with(
+				Items.silicon, 40,
+				Items.titanium, 25,
+				Items.graphite, 50
+			));
 			size = 2;
 			health = 160;
 			consumes.items(with(

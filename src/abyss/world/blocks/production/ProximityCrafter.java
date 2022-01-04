@@ -43,8 +43,10 @@ public class ProximityCrafter extends Block {
 			if (cons.valid()) {
 				reloadTime += Time.delta;
 				if (reloadTime >= reload) {
-					for (int i = 0; i < outputItem.amount; i++) {
-						offload(outputItem.item);
+					if (outputItem != null) {
+						for (int i = 0; i < outputItem.amount; i++) {
+							offload(outputItem.item);
+						}
 					}
 					reloadTime = 0f;
 				}
