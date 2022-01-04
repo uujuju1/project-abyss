@@ -7,7 +7,7 @@ import mindustry.gen.*;
 import mindustry.entities.bullet.*;
 import mindustry.content.*;
 import mindustry.world.Block;
-import mindustry.world.consumes.*;
+import mindustry.world.consumers.*;
 
 public class ScatterSilo extends Block {
 	public float reloadTime = 60f;
