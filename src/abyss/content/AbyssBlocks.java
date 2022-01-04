@@ -281,10 +281,12 @@ public class AbyssBlocks implements ContentList {
 			size = 2;
 			health = 160;
 			consumes.power(1f);
-			bullet = new BasicBulletType(4f, 15) {{
-				width = 9f;
-				height = 11f;
-				lifetime = 20f;
+			bullet = new LaserBoltBulletType(4f, 10){{
+				lifetime = 30f;
+				healPercent = 0.5f;
+				collidesTeam = true;
+				frontColor = Pal.heal;
+				backColor = Color.white;
 			}};
 		}};
 	}
