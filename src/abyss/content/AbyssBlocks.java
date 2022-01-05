@@ -38,6 +38,7 @@ public class AbyssBlocks implements ContentList {
 		abyssForge, proximitySmelter,
 		// turrets
 		kardone, delamine, selena, kardeni,
+		liner, point,
 		// scatters
 		assaultScatter, supportScatter, specialistScatter;
 
@@ -259,6 +260,35 @@ public class AbyssBlocks implements ContentList {
 			ammo(
 				AbyssItems.abyss, AbyssBullets.voidBullet4
 			);
+		}};
+		liner = new PowerTurret("liner") {{
+			requirements(Category.turret, with(
+				AbyssItems.balestenite, 20,
+				Items.silicon, 35
+			));
+			size = 1;
+			health = 160,
+			powerUse = 2.5f;
+			reloadTime = 30f;
+			shots = 3;
+			burstSpacing = 5f;
+			range = 120f;
+			restitution, 0.05f;
+			shootType = AbyssBullets.electaBullet1;
+		}};
+		point = new PowerTurret("point") {{
+			requirements(Category.turret, with(
+				AbyssItems.balestenite, 60,
+				Items.silicon, 120,
+				Items.titanium, 90
+			));
+			size = 2;
+			health = 640;
+			powerUse = 3.33f;
+			reloadTime = 160f;
+			range = 160f;
+			restitution = 0.05f;
+			shootType = AbyssBullets.electaBullet2;
 		}};
 
 		assaultScatter = new ScatterSilo("assault-scatter") {{

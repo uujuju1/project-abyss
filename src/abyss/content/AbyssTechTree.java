@@ -112,6 +112,22 @@ public class AbyssTechTree implements ContentList {
 		extendNode(Blocks.tetrativeReconstructor, () -> {
 			node(AbyssBlocks.tetr, ItemStack.with(Items.copper, 1));
 		});
+
+		extendNode(Blocks.salvo, () -> {
+			node(AbyssBlocks.kardone, Seq.with(new Produce(AbyssItems.abyss)), () -> {
+				node(AbyssBlocks.delamine, Seq.with(new Produce(Items.titanium)), () -> {
+					node(AbyssBlocks.selena, Seq.with(new Produce(Items.thorium)), () -> {
+						node(AbyssBlocks.kardeni, Seq.with(new Produce(Items.surgeAlloy)));
+					});
+				});
+			});
+		});
+		extendNode(Blocks.arc, () -> {
+			node(AbyssBlocks.liner, Seq.with(new Produce(AbyssItems.balestenite)));
+		});
+		extendNode(Blocks.lancer, () -> {
+			node(AbyssBlocks.point, Seq.with(new Produce(AbyssItems.balestenite)));
+		});
 		
 		extendNode(Blocks.navalFactory, () -> {
 			node(AbyssBlocks.abyssFactory, Seq.with(new Produce(AbyssItems.abyss)), () -> {
