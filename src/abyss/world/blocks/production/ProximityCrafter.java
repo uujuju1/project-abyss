@@ -13,6 +13,8 @@ public class ProximityCrafter extends Block {
 	public float craftTime = 60f;
 	public @Nullable ItemStack outputItem;
 
+	public TextureRegion[] 
+
 	public ProximityCrafter(String name) {
 		super(name);
 		update = true;
@@ -25,13 +27,12 @@ public class ProximityCrafter extends Block {
 	}
 
 	public class ProximityCrafterBuild extends Building {
-		float reload;
-		float reloadTime;
+		float reloadTime = 0f;
 		public float getProximityBlocks() {
 			float mult = 0f;
 			for (int i = 0; i < this.proximity.size; i++) {
 				if (this.proximity.get(i) instanceof WallBuild) {
-					mult += (2/this.proximity.size);
+					mult += 0.1f;
 				}
 			}
 			return mult;
