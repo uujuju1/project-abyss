@@ -9,7 +9,7 @@ public class AbyssBullets implements ContentList {
 	public static BulletType
 		voidBullet1, voidBullet2, voidBullet3, voidBullet4,
 
-		elecraBullet1, elecraBullet2;
+		electraBullet1, electraBullet2;
 
 	@Override
 	public void load() {
@@ -50,12 +50,12 @@ public class AbyssBullets implements ContentList {
 			backColor = Color.valueOf("1C1C1C");
 		}};
 
-		elecraBullet1 = new LaserBulletType(30f) {{
+		electraBullet1 = new LaserBulletType(30f) {{
 			width = 4f;
-			height = 160f;
+			length = 160f;
 			colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 		}};
-		elecraBullet2 = new PointBulletType() {{
+		electraBullet2 = new PointBulletType() {{
 			shootEffect = Fx.instShoot;
 			hitEffect = Fx.instHit;
 			smokeEffect = Fx.smokeCloud;

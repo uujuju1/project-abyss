@@ -97,7 +97,7 @@ public class AbyssTechTree implements ContentList {
 			node(AbyssBlocks.abyssForge, Seq.with(new Produce(Items.thorium)));
 		});
 		extendNode(Blocks.kiln, () -> {
-			node(AbyssBlocks.proximityCrafter, Seq.with(new Produce(Items.titanium)));
+			node(AbyssBlocks.proximitySmelter, Seq.with(new Produce(Items.titanium)));
 		});
 
 		extendNode(Blocks.additiveReconstructor, () -> {
