@@ -51,6 +51,9 @@ public class ProximityCrafter extends Block {
 			if(outputItem != null && items.get(outputItem.item) + outputItem.amount > itemCapacity){
 				return false;
 			}
+			if (this.getProximityBlocks() == 0f) {
+				return false;
+			}
 			return true;
 		}
 
@@ -67,6 +70,9 @@ public class ProximityCrafter extends Block {
 					}
 					reloadTime = 0f;
 				}
+			}
+			if (outputItem != null) {
+				dump(outputItem.item);
 			}
 		}
 	}

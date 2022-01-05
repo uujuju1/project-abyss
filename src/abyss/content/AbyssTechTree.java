@@ -84,6 +84,7 @@ public class AbyssTechTree implements ContentList {
 		extendNode(Items.metaglass, () -> {
 			nodeProduce(AbyssItems.balestenite);
 		});
+
 		extendNode(Blocks.plastaniumWall, () -> {
 			node(AbyssBlocks.voidWall, Seq.with(new Produce(AbyssItems.abyss)), () -> {
 				node(AbyssBlocks.voidWallLarge, () -> {
@@ -91,9 +92,14 @@ public class AbyssTechTree implements ContentList {
 				});
 			});
 		});
+
 		extendNode(Blocks.plastaniumCompressor, () -> {
 			node(AbyssBlocks.abyssForge, Seq.with(new Produce(Items.thorium)));
 		});
+		extendNode(Blocks.kiln, () -> {
+			node(AbyssBlocks.proximityCrafter, Seq.with(new Produce(Items.titanium)));
+		});
+
 		extendNode(Blocks.additiveReconstructor, () -> {
 			node(AbyssBlocks.add, ItemStack.with(Items.copper, 1));
 		});
@@ -106,6 +112,7 @@ public class AbyssTechTree implements ContentList {
 		extendNode(Blocks.tetrativeReconstructor, () -> {
 			node(AbyssBlocks.tetr, ItemStack.with(Items.copper, 1));
 		});
+		
 		extendNode(Blocks.navalFactory, () -> {
 			node(AbyssBlocks.abyssFactory, Seq.with(new Produce(AbyssItems.abyss)), () -> {
 				node(AbyssUnitTypes.antra, () -> {
