@@ -301,13 +301,13 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 30
 			));
 			size = 2;
-			health = 160
+			health = 160;
 			consumes.items(with(
 				Items.sporePod, 10
 			));
 			bullet = new MissileBulletType(4f, 15) {{
 				lifetime = 30f;
-				width 9f;
+				width = 9f;
 				height = 11f;
 				frontColor = Pal.sapBullet;
 				backColor = Pal.sapBulletBack;
