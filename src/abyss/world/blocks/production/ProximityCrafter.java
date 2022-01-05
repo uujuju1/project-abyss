@@ -70,6 +70,7 @@ public class ProximityCrafter extends Block {
 			if (cons.valid()) {
 				reloadTime += (Time.delta*this.getProximityBlocks());
 				if (reloadTime >= craftTime) {
+					consume();
 					if (outputItem != null) {
 						for (int i = 0; i < outputItem.amount; i++) {
 							offload(outputItem.item);
