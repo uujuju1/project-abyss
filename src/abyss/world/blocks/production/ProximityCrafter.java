@@ -33,25 +33,6 @@ public class ProximityCrafter extends Block {
 			stats.add(Stat.output, StatValues.items(craftTime, outputItem));
 		}
 	}
-/*code broken for now
-	// code repeated since im scared that it cant get build code
-	public float getProximityBlocks() {
-			float mult = 0f;
-			for (int i = 0; i < this.proximity.size; i++) {
-				if (this.proximity.get(i) instanceof WallBuild) {
-					mult += 0.1f;
-				}
-			}
-			return mult;
-		}
-
-	@Override
-	public void setBars() {
-		super.setBars();
-		// this will likely break if a block passes size 10
-		bars.add("Efficiency", e -> new Bar(Core.bundle.format("bar.efficiency"), Pal.power, () -> this.proximity.size/this.getProximityBlocks() * 10f));
-	}
-*/
 
 	public class ProximityCrafterBuild extends Building {
 		float reloadTime = 0f;
@@ -66,10 +47,18 @@ public class ProximityCrafter extends Block {
 		}
 
 		@Override
+		public boolean shouldConsume(){
+			if(outputItem != null && items.get(outputItem.item) + outputItem.amount > itemCapacity){
+				return false;
+			}
+			return true;
+		}
+
+		@Override
 		public void updateTile() {
 			if (cons.valid()) {
 				reloadTime += (Time.delta*this.getProximityBlocks());
-				if (reloadTime >= craftTime) {
+				if (reloadTime >= craftTime && shouldConsume()) {
 					consume();
 					if (outputItem != null) {
 						for (int i = 0; i < outputItem.amount; i++) {
