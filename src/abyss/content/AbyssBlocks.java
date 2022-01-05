@@ -274,7 +274,7 @@ public class AbyssBlocks implements ContentList {
 			burstSpacing = 5f;
 			range = 120f;
 			restitution = 0.05f;
-			shootType = AbyssBullets.electaBullet1;
+			shootType = AbyssBullets.electraBullet1;
 		}};
 		point = new PowerTurret("point") {{
 			requirements(Category.turret, with(
@@ -288,7 +288,7 @@ public class AbyssBlocks implements ContentList {
 			reloadTime = 160f;
 			range = 160f;
 			restitution = 0.05f;
-			shootType = AbyssBullets.electaBullet2;
+			shootType = AbyssBullets.electraBullet2;
 		}};
 
 		assaultScatter = new ScatterSilo("assault-scatter") {{

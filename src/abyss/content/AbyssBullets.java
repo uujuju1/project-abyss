@@ -1,6 +1,7 @@
 package abyss.content;
 
 import arc.graphics.Color;
+import mindustry.content.*;
 import mindustry.ctype.ContentList;
 import mindustry.entities.bullet.*;
 
@@ -63,7 +64,7 @@ public class AbyssBullets implements ContentList {
 			trailSpacing = 20f;
 			damage = 200;
 			buildingDamageMultiplier = 0.25f;
-			speed = brange;
+			speed = 160f;
 			hitShake = 6f;
 			ammoMultiplier = 1f;
 		}};
