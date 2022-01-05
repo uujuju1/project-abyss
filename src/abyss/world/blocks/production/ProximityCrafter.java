@@ -33,6 +33,7 @@ public class ProximityCrafter extends Block {
 			stats.add(Stat.output, StatValues.items(craftTime, outputItem));
 		}
 	}
+/*code broken for now
 	// code repeated since im scared that it cant get build code
 	public float getProximityBlocks() {
 			float mult = 0f;
@@ -43,14 +44,14 @@ public class ProximityCrafter extends Block {
 			}
 			return mult;
 		}
-/*
-	code broken for now
+
 	@Override
 	public void setBars() {
 		super.setBars();
 		// this will likely break if a block passes size 10
 		bars.add("Efficiency", e -> new Bar(Core.bundle.format("bar.efficiency"), Pal.power, () -> this.proximity.size/this.getProximityBlocks() * 10f));
-	}*/
+	}
+*/
 
 	public class ProximityCrafterBuild extends Building {
 		float reloadTime = 0f;
