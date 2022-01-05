@@ -13,8 +13,6 @@ public class ProximityCrafter extends Block {
 	public float craftTime = 60f;
 	public @Nullable ItemStack outputItem;
 
-	public TextureRegion[] 
-
 	public ProximityCrafter(String name) {
 		super(name);
 		update = true;

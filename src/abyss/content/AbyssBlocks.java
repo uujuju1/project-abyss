@@ -39,8 +39,7 @@ public class AbyssBlocks implements ContentList {
 		// turrets
 		kardone, delamine, selena, kardeni,
 		// scatters
-		assaultScatter, supportScatter, specialistCrafter;
-		// test
+		assaultScatter, supportScatter, specialistScatter;
 
 
 	@Override
@@ -273,7 +272,7 @@ public class AbyssBlocks implements ContentList {
 			consumes.items(with(
 				AbyssItems.balestenite, 10
 			));
-			bullet = new BasicBulletType(4f, 15) {{
+			bullet = new BasicBulletType(4f, 20) {{
 				width = 9f;
 				height = 11f;
 				lifetime = 20f;
@@ -293,6 +292,27 @@ public class AbyssBlocks implements ContentList {
 				collidesTeam = true;
 				frontColor = Pal.heal;
 				backColor = Color.white;
+			}};
+		}};
+		specialistScatter = new ScatterSilo("specialist-scatter") {{
+			requirements(Category.turret, with(
+				AbyssItems.balestenite, 120,
+				Items.plastanium, 45,
+				Items.silicon, 30
+			));
+			size = 2;
+			health = 160
+			consumes.items(with(
+				Items.sporePod, 10
+			));
+			bullet = new MissileBulletType(4f, 15) {{
+				lifetime = 30f;
+				width 9f;
+				height = 11f;
+				frontColor = Pal.sapBullet;
+				backColor = Pal.sapBulletBack;
+				status = StatusEffects.sapped;
+				statusDuration = 60f * 10f;
 			}};
 		}};
 	}

@@ -27,6 +27,7 @@ public class ScatterSilo extends Block {
 
 	@Override
 	public void setStats() {
+		super.setStats();
 		stats.add(Stat.reload, reloadTime, StatUnit.seconds);
 		stats.add(Stat.range, range, StatUnit.blocks);
 	}
