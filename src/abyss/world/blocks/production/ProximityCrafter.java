@@ -43,13 +43,14 @@ public class ProximityCrafter extends Block {
 			}
 			return mult;
 		}
-
+/*
+	code broken for now
 	@Override
 	public void setBars() {
 		super.setBars();
 		// this will likely break if a block passes size 10
-		bars.add("Efficiency", e -> new Bar(Core.bundle.format("bar.efficiency"), Pal.power, () -> this.proximity.size/this.getProximityBlocks() * 10));
-	}
+		bars.add("Efficiency", e -> new Bar(Core.bundle.format("bar.efficiency"), Pal.power, () -> this.proximity.size/this.getProximityBlocks() * 10f));
+	}*/
 
 	public class ProximityCrafterBuild extends Building {
 		float reloadTime = 0f;
