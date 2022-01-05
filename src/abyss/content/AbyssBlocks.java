@@ -267,13 +267,13 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 35
 			));
 			size = 1;
-			health = 160,
+			health = 160;
 			powerUse = 2.5f;
 			reloadTime = 30f;
 			shots = 3;
 			burstSpacing = 5f;
 			range = 120f;
-			restitution, 0.05f;
+			restitution = 0.05f;
 			shootType = AbyssBullets.electaBullet1;
 		}};
 		point = new PowerTurret("point") {{
