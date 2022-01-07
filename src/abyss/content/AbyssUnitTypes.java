@@ -9,8 +9,13 @@ import mindustry.gen.*;
 import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
+import abyss.type.*;
+import abyss.type.draw.*;
+
 public class AbyssUnitTypes implements ContentList {
-	public static UnitType antra, karma, kalerbi, kodene, tolonia;
+	public static UnitType 
+		antra, karma, kalerbi, kodene, tolonia,
+		katerni;
 
 	@Override
 	public void load() {
@@ -41,7 +46,7 @@ public class AbyssUnitTypes implements ContentList {
 			health = 475;
 			speed = 1.7f;
 			rotateSpeed = 0.3f;
-			engineOffset = 6f;
+			engineOffset = 6.5f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 120f;
@@ -209,6 +214,51 @@ public class AbyssUnitTypes implements ContentList {
 						incendSpread = 5f;
 						incendAmount = 1;
 						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+					}};
+				}}
+			);
+		}};
+
+		katerni = new RotorUnitType("katerni") {{
+			health = 200;
+			speed = 1.8f;
+			range = 120f;
+			maxRange = range;
+			hitSize = 8f;
+
+			rotors.add(
+				new DrawRotor("katerni-rotor") {{
+					x = 0f;
+					y = 5f;
+					s = 20f;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("copter-mount") {{
+					x =5f;
+					y =8f;
+					reload = 30f;
+					recoil = 1f;
+					bullet = new BasicBulletType(4f, 15) {{
+						lifetime = 30f;
+						width = 7f;
+						height = 9f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
+					}};
+				}},
+				new Weapon("copter-mount") {{
+					x =3f;
+					y =10f;
+					reload = 30f;
+					recoil = 1f;
+					bullet = new BasicBulletType(4f, 15) {{
+						lifetime = 30f;
+						width = 7f;
+						height = 9f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
 					}};
 				}}
 			);
