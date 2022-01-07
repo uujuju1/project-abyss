@@ -227,7 +227,7 @@ public class AbyssUnitTypes implements ContentList {
 			hitSize = 8f;
 
 			rotors.add(
-				new DrawRotor("katerni-rotor") {{
+				new DrawRotor("abyss-katerni-rotor") {{
 					x = 0f;
 					y = 5f;
 					s = 20f;

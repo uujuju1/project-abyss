@@ -24,14 +24,11 @@ public class DrawRotor {
 		jointRegion = Core.atlas.find(name + "-joint");
 	}
 
-	public void update() {
+	public void draw(Unit unit) {
 		rotation += Time.delta * s;
 		if (rotation > 360f) {
 			rotation -= 360f;
 		}
-	}
-
-	public void draw(Unit unit) {
 		float rx = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float ry = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
 

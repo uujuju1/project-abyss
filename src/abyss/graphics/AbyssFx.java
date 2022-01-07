@@ -53,6 +53,28 @@ public class AbyssFx {
 			Angles.randLenVectors(e.id, 30, 120f * e.finpow(), (x, y) -> {
 				Fill.circle(e.x + x, e.y + y, e.fout() * 4f + 0.5f);
 			});
-		});
+		}),
 		
+		blastHit = new Effect(20f, e -> {
+			float w = 16f * e.fout();
+			float r = 10f;
+
+			Draw.alpha(e.fout());
+
+			Drawf.tri(e.x, e.y, 8f, w, e.rotation);
+			Drawf.tri(e.x, e.y, 8f, w, e.rotation + 45);
+			Drawf.tri(e.x, e.y, 8f, w, e.rotation - 45);
+			Drawf.tri(e.x, e.y, 8f, -w, e.rotation);
+
+			Lines.stroke(3f * e.fout());
+			Lines.circle(e.x, e.y, r * 5f * e.fin());
+
+			Draw.alpha(e.fout()/2f);
+
+			Fill.circle(e.x, e.y, r);
+
+			Draw.alpha(1f);
+
+			Lines.circle(e.x, e.y, r);
+		});
 }
