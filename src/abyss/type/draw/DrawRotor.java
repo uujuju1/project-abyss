@@ -1,7 +1,7 @@
 package abyss.type.draw;
 
 import arc.Core;
-import arc.util
+import arc.util.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.util.Time;
