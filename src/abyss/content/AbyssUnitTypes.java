@@ -304,10 +304,10 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					reload = 180f;
 					recoil = 0f;
-					shootEffect = Fx.none;
 					bullet = new MissileBulletType(8f, 180) {{
 						width = 14f;
 						height = 20f;
+						shootEffect = Fx.none;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
 					}};
