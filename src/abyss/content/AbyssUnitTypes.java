@@ -22,7 +22,7 @@ public class AbyssUnitTypes implements ContentList {
 		antra = new UnitType("antra") {{
 			health = 250;
 			speed = 2f;
-			rotateSpeed = 0.4f;
+			rotateSpeed = 4f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 30f;
