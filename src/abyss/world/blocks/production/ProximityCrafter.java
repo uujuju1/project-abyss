@@ -20,9 +20,6 @@ public class ProximityCrafter extends Block {
 
 	public @Nullable ItemStack outputItem;
 
-	public Color flameColor = Color.valueOf("ffc999"), flameColorIn = Color.valueOf("ffffff");
-	public float flameRadius = 3f;
-
 	public TextureRegion topRegion;
 
 	public ProximityCrafter(String name) {
@@ -78,7 +75,6 @@ public class ProximityCrafter extends Block {
 		@Override
 		public void updateTile() {
 			if (cons.valid()) {
-				warmup = Mathf.approachDelta(warmup, 1f, warmupSpeed);
 				reloadTime += (Time.delta*this.getProximityBlocks());
 				if (reloadTime >= craftTime && shouldConsume()) {
 					consume();
@@ -89,23 +85,10 @@ public class ProximityCrafter extends Block {
 					}
 					reloadTime = 0f;
 				}
-			} else {
-				warmup = Mathf.approachDelta(warmup, 0f, warmupSpeed);
 			}
 			if (outputItem != null) {
 				dump(outputItem.item);
 			}
-		}
-
-		@Override
-		public void draw() {
-			Draw.alpha(warmup);
-			Draw.rect(topRegion, x, y, 0);
-			Draw.color(flameColor);
-			Fill.circle(x, y, flameRadius);
-			Draw.color(flameColorIn);
-			Fill.circle(x, y, flameRadius/2);
-			Draw.color();
 		}
 	}
 }
