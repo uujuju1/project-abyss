@@ -169,17 +169,18 @@ public class AbyssBlocks implements ContentList {
 		}};
 		proximitySmelter = new ProximityCrafter("proximity-smelter") {{
 			requirements(Category.crafting, with(
-				Items.silicon, 40,
-				Items.titanium, 25,
-				Items.graphite, 50
+				Items.silicon, 200,
+				Items.titanium, 150,
+				Items.graphite, 250,
+				Items.plastanium, 100
 			));
-			size = 2;
-			health = 160;
+			size = 3;
+			health = 220;
 			consumes.items(with(
-				Items.copper, 2,
-				Items.metaglass, 1
+				Items.copper, 4,
+				Items.metaglass, 2
 			));
-			outputItem = new ItemStack(AbyssItems.balestenite, 1);
+			outputItem = new ItemStack(AbyssItems.balestenite, 2);
 		}};
 
 		kardone = new ItemTurret("kardone") {{

@@ -15,14 +15,13 @@ import abyss.type.draw.*;
 public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
-		katerni;
+		katerni, termina;
 
 	@Override
 	public void load() {
 		antra = new UnitType("antra") {{
 			health = 250;
 			speed = 2f;
-			rotateSpeed = 4f;
 			flying = true;
 			constructor = UnitEntity::create;
 			range = 30f;
@@ -45,7 +44,6 @@ public class AbyssUnitTypes implements ContentList {
 		karma = new UnitType("karma") {{
 			health = 475;
 			speed = 1.7f;
-			rotateSpeed = 0.3f;
 			engineOffset = 6.5f;
 			flying = true;
 			constructor = UnitEntity::create;
@@ -73,7 +71,6 @@ public class AbyssUnitTypes implements ContentList {
 		kalerbi = new UnitType("kalerbi") {{
 			health = 830;
 			speed = 1.4f;
-			rotateSpeed = 0.2f;
 			engineOffset = 0.5f;
 			engineSize = 5f;
 			flying = true;
@@ -111,7 +108,7 @@ public class AbyssUnitTypes implements ContentList {
 		kodene = new UnitType("kodene") {{
 			health = 4000;
 			speed = 1f;
-			rotateSpeed = 0.1f;
+			rotateSpeed = 1.9f;
 			engineSize = 6f;
 			engineOffset = -1.7f;
 			flying = true;
@@ -154,7 +151,7 @@ public class AbyssUnitTypes implements ContentList {
 		tolonia = new UnitType("tolonia") {{
 			health = 22000;
 			speed = 0.5f;
-			rotateSpeed = 0.01f;
+			rotateSpeed = 1f;
 			engineSize = 8f;
 			engineOffset = 8f;
 			flying = true;
@@ -227,7 +224,7 @@ public class AbyssUnitTypes implements ContentList {
 			hitSize = 8f;
 
 			rotors.add(
-				new DrawRotor("abyss-katerni-rotor") {{
+				new DrawRotor(name + "-rotor") {{
 					x = 0f;
 					y = 5f;
 					s = 20f;
@@ -235,9 +232,9 @@ public class AbyssUnitTypes implements ContentList {
 			);
 
 			weapons.add(
-				new Weapon("copter-mount") {{
-					x =5f;
-					y =8f;
+				new Weapon("abyss-copter-mount") {{
+					x = 5f;
+					y = 8f;
 					reload = 30f;
 					recoil = 1f;
 					bullet = new BasicBulletType(4f, 15) {{
@@ -248,15 +245,69 @@ public class AbyssUnitTypes implements ContentList {
 						backColor = Color.valueOf("B0B0B0");
 					}};
 				}},
-				new Weapon("copter-mount") {{
-					x =3f;
-					y =10f;
+				new Weapon("abyss-copter-mount") {{
+					x = 3f;
+					y = 10f;
 					reload = 30f;
 					recoil = 1f;
-					bullet = new BasicBulletType(4f, 15) {{
-						lifetime = 30f;
+					bullet = new MissileBulletType(6f, 20) {{
+						lifetime = 20f;
 						width = 7f;
 						height = 9f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
+					}};
+				}}
+			);
+		}};
+		termina = new RotorUnitType("termina") {{
+			health = 530;
+			speed = 1.7f;
+			range = 200f;
+			maxRange = range;
+			hitSize = 10f;
+
+			rotors.add(
+				new DrawRotor(name + "-rotor") {{
+					x = 0f;
+					y = 4f;
+					s = 20f;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("abyss-copter-mount") {{
+					x = 3f;
+					y = 12f;
+					reload = 10f;
+					recoil = 0.5f;
+					bullet = new BasicBulletType(4f, 25) {{
+						lifetime = 50f;
+						width = 7f;
+						height = 9f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
+					}};
+				}},
+				new Weapon("abyss-missile-copter-mount") {{
+					x = 5.75f;
+					y = 6f;
+					reload = 60f;
+					recoil = 2f;
+					bullet = new LaserBulletType(30) {{
+						width = 6f;
+						length = 200f;
+						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+					}};
+				}},
+				new Weapon() {{
+					x = y = 0f;
+					reload = 180f;
+					recoil = 0f;
+					shootEffect = Fx.none;
+					bullet = new MissileBulletType(8f, 180) {{
+						width = 14f;
+						height = 20f;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
 					}};
