@@ -31,6 +31,6 @@ public class DrawRotor {
 		float ry = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
 
 		Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation);
-		Draw.rect(jointRegion, rx, ry, 90 + unit.rotation);
+		Draw.rect(jointRegion, rx, ry, 90 - unit.rotation);
 	}
 }
