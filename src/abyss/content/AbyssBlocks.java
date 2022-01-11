@@ -96,7 +96,7 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 120,
 				Items.titanium, 100
 			));
-			size = 3f;
+			size = 3;
 			health = 220;
 			consumes.power(2f);
 			plans = Seq.with(
