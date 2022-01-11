@@ -33,7 +33,8 @@ public class AbyssBlocks implements ContentList {
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
 		// units
-		abyssFactory, add, mult, exp, tetr,
+		abyssFactory, rotorizedFactory,
+		add, mult, exp, tetr,
 		// production 
 		abyssForge, proximitySmelter,
 		// turrets
@@ -89,6 +90,19 @@ public class AbyssBlocks implements ContentList {
 				new UnitPlan(AbyssUnitTypes.antra, 60f * 40f, with(Items.silicon, 20, AbyssItems.abyss, 35))
 			);
 		}};
+		rotorizedFactory = new UnitFactory("rotorized-factory") {{
+			requirements(Category.units, with(
+				AbyssItems.balestenite, 150,
+				Items.silicon, 120,
+				Items.titanium, 100
+			));
+			size = 3f;
+			health = 220;
+			consumes.power(2f);
+			plans = Seq.with(
+				new UnitPlan (AbyssUnitTypes.katerni, 60f * 30, with(Items.silicon, 10, AbyssItems.balestenite, 30))
+			);
+		}};
 		add = new Reconstructor("reconstructor3") {{
 			requirements(Category.units, with(Items.copper, 200, Items.lead, 120, Items.silicon, 90));
 
@@ -99,7 +113,8 @@ public class AbyssBlocks implements ContentList {
 			constructTime = 60f * 10f;
 
 			upgrades.addAll(
-				new UnitType[]{AbyssUnitTypes.antra, AbyssUnitTypes.karma}
+				new UnitType[]{AbyssUnitTypes.antra, AbyssUnitTypes.karma},
+				new UnitType[]{AbyssUnitTypes.katerni, AbyssUnitTypes.termina}
 			);
 		}};
 		mult = new Reconstructor("reconstructor5") {{
@@ -112,7 +127,8 @@ public class AbyssBlocks implements ContentList {
 			constructTime = 60f * 30f;
 
 			upgrades.addAll(
-				new UnitType[]{AbyssUnitTypes.karma, AbyssUnitTypes.kalerbi}
+				new UnitType[]{AbyssUnitTypes.karma, AbyssUnitTypes.kalerbi},
+				new UnitType[]{AbyssUnitTypes.termina, AbyssUnitTypes.solanra}
 			);
 		}};
 		exp = new Reconstructor("reconstructor7") {{

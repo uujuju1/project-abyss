@@ -129,8 +129,8 @@ public class AbyssTechTree implements ContentList {
 			node(AbyssBlocks.point, Seq.with(new Produce(AbyssItems.balestenite)));
 		});
 		
-		extendNode(Blocks.navalFactory, () -> {
-			node(AbyssBlocks.abyssFactory, Seq.with(new Produce(AbyssItems.abyss)), () -> {
+		extendNode(Blocks.airFactory, () -> {
+			node(AbyssBlocks.rotorizedFactory, Seq.with(new Produce(AbyssItems.balestenite)), () -> {
 				node(AbyssUnitTypes.antra, () -> {
 					node(AbyssUnitTypes.karma, Seq.with(new Research(AbyssBlocks.add)), () -> {
 						node(AbyssUnitTypes.kalerbi, Seq.with(new Research(AbyssBlocks.mult)), () -> {
@@ -138,6 +138,19 @@ public class AbyssTechTree implements ContentList {
 								node(AbyssUnitTypes.tolonia, Seq.with(new Research(AbyssBlocks.tetr)));
 							});
 						});
+					});
+				});
+			});
+		});
+		extendNode(Blocks.navalFactory, () -> {
+			node(AbyssBlocks.abyssFactory, Seq.with(new Produce(AbyssItems.abyss)), () -> {
+				node(AbyssUnitTypes.katerni, () -> {
+					node(AbyssUnitTypes.termina, Seq.with(new Research(AbyssBlocks.add)), () -> {
+						node(AbyssUnitTypes.solanra, Seq.with(new Research(AbyssBlocks.mult))/*, () -> {
+							node(AbyssUnitTypes.kodene, Seq.with(new Research(AbyssBlocks.exp)), () -> {
+								node(AbyssUnitTypes.tolonia, Seq.with(new Research(AbyssBlocks.tetr)));
+							});
+						}*/);
 					});
 				});
 			});
