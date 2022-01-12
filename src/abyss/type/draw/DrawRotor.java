@@ -32,7 +32,7 @@ public class DrawRotor {
 		float rx = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float ry = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
 
-		for (int i = blurAmount; i > 0; i++) {
+		for (int i = blurAmount; i > 0; i--) {
 			float a = 1f/blurAmount * i;
 			Draw.alpha(a);
 			Draw.rect(rotorRegion, rx, ry, Time.time * 5f + unit.rotation - a);
