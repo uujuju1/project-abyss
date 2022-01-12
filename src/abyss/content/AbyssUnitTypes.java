@@ -5,6 +5,7 @@ import arc.struct.*;
 import mindustry.content.*;
 import mindustry.entities.*;
 import mindustry.entities.bullet.*;
+import mindustry.entities.abilities.*;
 import mindustry.world.meta.*;
 import mindustry.gen.*;
 import mindustry.ctype.ContentList;

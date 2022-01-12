@@ -30,7 +30,7 @@ public class DrawRotor {
 		float rx = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float ry = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
 
-		Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation - a);
+		Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation);
 		Draw.rect(jointRegion, rx, ry, unit.rotation - 90f);
 	}
 }
