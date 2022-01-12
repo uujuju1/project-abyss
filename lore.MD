@@ -14,3 +14,12 @@ when the item was created a bunch of units nearby got corrupted, becoming extrem
 
 years later the current serpulo's inhabitants managed to create the abyss and replicate its units, but without the corruption to the units.
 ##
+
+## Balestenite
+An item that has great durability and nearly frictionless surface
+<br> created with the purpose of making rotor based units
+
+### story
+Crux started researching rotor-based units and had come up with an interesting idea.
+<br> Balestenite, a highly smooth alloy of copper and metaglass, capable of supporting high stretching tension and a nearly frictionless surface.
+<br> But after the 5th prototype the Project Helicopter was discontinued since space exploration got Crux's interest.
