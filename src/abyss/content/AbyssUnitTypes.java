@@ -292,7 +292,7 @@ public class AbyssUnitTypes implements ContentList {
 						backColor = Color.valueOf("B0B0B0");
 					}};
 				}},
-				new Weapon("abyss-copter-misile-mount") {{
+				new Weapon("abyss-copter-missile-mount") {{
 					x = 5.75f;
 					y = 6f;
 					reload = 60f;
@@ -493,7 +493,7 @@ public class AbyssUnitTypes implements ContentList {
 			hitSize = 28f;
 
 			rotors.add(
-				new DrawRotor(name + "-rotors") {{
+				new DrawRotor(name + "-rotor") {{
 					x = 0f;
 					y = 12f;
 					s = 25f;

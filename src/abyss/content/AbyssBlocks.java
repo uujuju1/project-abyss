@@ -143,7 +143,8 @@ public class AbyssBlocks implements ContentList {
 			liquidCapacity = 60f;
 
 			upgrades.addAll(
-				new UnitType[]{AbyssUnitTypes.kalerbi, AbyssUnitTypes.kodene}
+				new UnitType[]{AbyssUnitTypes.kalerbi, AbyssUnitTypes.kodene},
+				new UnitType[]{AbyssUnitTypes.solanra, AbyssUnitTypes.deuteria}
 			);
 		}};
 		tetr = new Reconstructor("reconstructor9") {{
@@ -158,7 +159,8 @@ public class AbyssBlocks implements ContentList {
 			liquidCapacity = 180f;
 
 			upgrades.addAll(
-				new UnitType[]{AbyssUnitTypes.kodene, AbyssUnitTypes.tolonia}
+				new UnitType[]{AbyssUnitTypes.kodene, AbyssUnitTypes.tolonia},
+				new UnitType[]{AbyssUnitTypes.deuteria, AbyssUnitTypes.atomega}
 			);
 		}};
 

@@ -146,11 +146,11 @@ public class AbyssTechTree implements ContentList {
 			node(AbyssBlocks.abyssFactory, Seq.with(new Produce(AbyssItems.abyss)), () -> {
 				node(AbyssUnitTypes.katerni, () -> {
 					node(AbyssUnitTypes.termina, Seq.with(new Research(AbyssBlocks.add)), () -> {
-						node(AbyssUnitTypes.solanra, Seq.with(new Research(AbyssBlocks.mult))/*, () -> {
-							node(AbyssUnitTypes.kodene, Seq.with(new Research(AbyssBlocks.exp)), () -> {
-								node(AbyssUnitTypes.tolonia, Seq.with(new Research(AbyssBlocks.tetr)));
+						node(AbyssUnitTypes.solanra, Seq.with(new Research(AbyssBlocks.mult)), () -> {
+							node(AbyssUnitTypes.deuteria, Seq.with(new Research(AbyssBlocks.exp)), () -> {
+								node(AbyssUnitTypes.atomega, Seq.with(new Research(AbyssBlocks.tetr)));
 							});
-						}*/);
+						});
 					});
 				});
 			});
