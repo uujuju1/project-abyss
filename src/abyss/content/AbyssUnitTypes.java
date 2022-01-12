@@ -16,7 +16,7 @@ import abyss.type.draw.*;
 public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
-		katerni, termina, solanra;
+		katerni, termina, solanra, deuteria;
 
 	@Override
 	public void load() {
@@ -390,8 +390,88 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					reload = 240f;
 					recoil = 0f;
-					bullet = new MissileBulletType(8f, 300) {{
+					bullet = new MissileBulletType(8f, 200) {{
 						lifetime = 35f;
+						width = 12f;
+						height = 18f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
+					}};
+				}}
+			);
+		}};
+		deuteria = new RotorUnitType("deuteria") {{
+			health = 6540;
+			speed = 1.5f;
+			range = 300f;
+			maxRange = range;
+			hitSize = 22f;
+
+			rotors.add(
+				new DrawRotor(name + "-rotor") {{
+					x = 0f;
+					y = 4f;
+					s = 20f;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("abyss-copter-mount") {{
+					x = 3f;
+					y = 23f;
+					reload = 10f;
+					recoil = 0.5f;
+					bullet = new BasicBulletType(4f, 50) {{
+						width = 8f;
+						height = 10f;
+						lifetime = 75f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
+					}};
+				}},
+				new Weapon("abyss-copter-missile-mount") {{
+					x = 3.75f;
+					y = 17f;
+					reload = 10f;
+					recoil = 1f;
+					bullet = new MissileBulletType(6f, 75) {{
+						width = 9f;
+						height = 11f;
+						lifetime = 50f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
+					}};
+				}},
+				new Weapon("abyss-copter-big-mount") {{
+					x = 6f;
+					y = 3f;
+					reload = 30f;
+					recoil = 2f;
+					bullet = new LaserBulletType(120) {{
+						width = 10f;
+						length = 300f;
+						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+					}};
+				}},
+				new Weapon("abyss-copter-missile-mount") {{
+					x = 12f;
+					y = -3f;
+					reload = 10f;
+					recoil = 1f;
+					bullet = new LaserBulletType(50) {{
+						width = 10f;
+						length = 300f;
+						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+					}};
+				}}
+			);
+			weapons.add(
+				new Weapon() {{
+					x = y = 0f;
+					reload = 120f;
+					recoil = 0f;
+					bullet = new MissileBulletType(8f, 300) {{
+						lifetime = 45f;
 						width = 12f;
 						height = 18f;
 						frontColor = Color.valueOf("ffffff");
