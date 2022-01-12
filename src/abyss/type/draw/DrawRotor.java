@@ -17,8 +17,6 @@ public class DrawRotor {
 	public float y = 0f;
 	public float s = 0f;
 
-	public int blurAmount = 10;
-
 	public DrawRotor(String name) {
 		this.name = name;
 	}
@@ -32,12 +30,7 @@ public class DrawRotor {
 		float rx = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float ry = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
 
-		for (int i = blurAmount; i > 0; i--) {
-			float a = 1f/blurAmount * i;
-			Draw.alpha(a);
-			Draw.rect(rotorRegion, rx, ry, Time.time * 5f + unit.rotation - a);
-		}
-		Draw.alpha(1f);
-		Draw.rect(jointRegion, rx, ry, 90f - unit.rotation);
+		Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation - a);
+		Draw.rect(jointRegion, rx, ry, unit.rotation - 90f);
 	}
 }
