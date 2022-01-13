@@ -3,6 +3,6 @@ name: "abyss"
 author: "Uujuju"
 main: "abyss.ProjectAbyss"
 description: "A Mindustry Java mod that im working on."
-version: 0.1
+version: 0.3
 minGameVersion: 135
 java: true
