@@ -14,6 +14,7 @@ import mindustry.type.*;
 import mindustry.entities.bullet.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
+import mindustry.world.blocks.distribution.*;
 import mindustry.world.blocks.units.*;
 import mindustry.world.blocks.production.*;
 import mindustry.world.blocks.defense.*;
@@ -30,6 +31,8 @@ import static mindustry.type.ItemStack.with;
 
 public class AbyssBlocks implements ContentList {
 	public static Block 
+		// production
+		kaleniumConveyor,
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
 		// units
@@ -46,6 +49,15 @@ public class AbyssBlocks implements ContentList {
 
 	@Override
 	public void load() {
+		kaleniumConveyor = new Conveyor("kalenium-conveyor") {{
+			requirements(Category.distribution, with(
+				AbyssItems.kalenium, 1,
+				AbyssItems.silicon, 1
+			));
+			speed = 0.1f;
+			displaySpeed = 14f;
+		}};
+
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
