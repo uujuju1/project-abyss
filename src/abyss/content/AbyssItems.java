@@ -16,7 +16,7 @@ public class AbyssItems implements ContentList {
 			cost = 2;
 		}};
 		kalenium = new Item("kalenium", Color.valueOf("DC8268")) {{
-			cost = 5
+			cost = 5;
 		}};
 	}
 }
