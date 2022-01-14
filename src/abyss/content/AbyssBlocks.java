@@ -39,7 +39,7 @@ public class AbyssBlocks implements ContentList {
 		abyssFactory, rotorizedFactory,
 		add, mult, exp, tetr,
 		// production 
-		abyssForge, proximitySmelter,
+		abyssForge, proximitySmelter, blastKiln,
 		// turrets
 		kardone, delamine, selena, kardeni,
 		liner, point,
@@ -52,10 +52,10 @@ public class AbyssBlocks implements ContentList {
 		kaleniumConveyor = new Conveyor("kalenium-conveyor") {{
 			requirements(Category.distribution, with(
 				AbyssItems.kalenium, 1,
-				AbyssItems.silicon, 1
+				Items.silicon, 1
 			));
 			speed = 0.1f;
-			displaySpeed = 14f;
+			displayedSpeed = 14f;
 		}};
 
 		voidWall = new UnstableWall("void-wall") {{
@@ -211,6 +211,22 @@ public class AbyssBlocks implements ContentList {
 				Items.metaglass, 2
 			));
 			outputItem = new ItemStack(AbyssItems.balestenite, 2);
+		}};
+		blastKiln = new CrowdedCrafter("blast-kiln") {{
+			requirements(Category.crafting, with(
+				AbyssItems.balestenite, 300,
+				Items.silicon, 450,
+				Items.titanium, 350,
+				Items.plastanium, 220,
+			));
+			size = 4;
+			health = 300;
+			consumes.items(with(
+				Items.plastanium, 3,
+				Items.silicon, 6,
+				Items.balestenite, 4
+			));
+			outputItem = new ItemStack(AbyssItems.kalenium, 3);
 		}};
 
 		kardone = new ItemTurret("kardone") {{
