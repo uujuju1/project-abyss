@@ -1,10 +1,12 @@
 package abyss.world.blocks.production;
 
 import mindustry.gen.*;
-import mindustry.world.blocks.production.GenericCrafter.*;
+import mindustry.world.blocks.production.GenericCrafter;
 
 public class CrowdedCrafter extends GenericCrafter {
-	public CrowdedCrafter(String name) {}
+	public CrowdedCrafter(String name) {
+		super(name);
+	}
 
 	public class CrowdedCrafterBuild extends GenericCrafterBuild {
 		public boolean getBuild() {
@@ -16,14 +18,13 @@ public class CrowdedCrafter extends GenericCrafter {
 			}
 			return hasBuild;
 		}
+		
+		@Override
 		public boolean shouldConsume() {
-			if(outputItem != null && items.get(outputItem.item) + outputItem.amount > itemCapacity){
-				return false;
-			}
 			if (!this.getBuild()) {
 				return false;
 			}
-			return true;
+			super.shouldConsume();
 		}
 	}
 }
