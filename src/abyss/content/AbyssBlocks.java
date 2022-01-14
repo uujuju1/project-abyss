@@ -217,7 +217,7 @@ public class AbyssBlocks implements ContentList {
 				AbyssItems.balestenite, 300,
 				Items.silicon, 450,
 				Items.titanium, 350,
-				Items.plastanium, 220,
+				Items.plastanium, 220
 			));
 			size = 4;
 			health = 300;
