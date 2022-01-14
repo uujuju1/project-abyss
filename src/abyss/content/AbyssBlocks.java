@@ -224,7 +224,7 @@ public class AbyssBlocks implements ContentList {
 			consumes.items(with(
 				Items.plastanium, 3,
 				Items.silicon, 6,
-				Items.balestenite, 4
+				AbyssItems.balestenite, 4
 			));
 			outputItem = new ItemStack(AbyssItems.kalenium, 3);
 		}};

@@ -18,13 +18,14 @@ public class CrowdedCrafter extends GenericCrafter {
 			}
 			return hasBuild;
 		}
-		
+
 		@Override
 		public boolean shouldConsume() {
 			if (!this.getBuild()) {
 				return false;
 			}
 			super.shouldConsume();
+			return true;
 		}
 	}
 }
