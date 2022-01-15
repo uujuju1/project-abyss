@@ -397,6 +397,11 @@ public class AbyssBlocks implements ContentList {
 			}};
 		}};
 		heatGen = new HeatGenerator("heat-generator") {{
+			requirements(Category.production, with(
+				AbyssItems.kalenium, 60,
+				Items.silicon, 80,
+				Items.titanium, 40
+			));
 			size = 1;
 			health = 160;
 			minHeat = 25f;
