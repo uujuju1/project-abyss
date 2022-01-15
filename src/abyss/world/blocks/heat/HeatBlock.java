@@ -2,13 +2,12 @@ package abyss.world.blocks.heat;
 
 import arc.*;
 import arc.util.*;
+import mindustry.graphics.*;
 import mindustry.gen.*;
 import mindustry.ui.*;
 import mindustry.world.Block;
 
 public class HeatBlock extends Block {
-	// damage that the block does when destroyed * block size
-	public int explodeDamage = 16; 
 	// min heat that the block can have
 	public float minHeat = 25f;
 	// max heat that the block can have
@@ -16,7 +15,7 @@ public class HeatBlock extends Block {
 
 	public HeatBlock(String name) {
 		super(name);
-		solid = destructible = true;
+		solid = destructible = sync = true;
 	}
 
 	// @Override
@@ -26,7 +25,7 @@ public class HeatBlock extends Block {
 	// }
 
 	public class HeatBlockBuild extends Building {
-		float heat = minHeat;
+		public float heat = minHeat;
 
 		public boolean acceptHeat(Building src, float amount) {
 			return amount < maxHeat;

@@ -44,7 +44,9 @@ public class AbyssBlocks implements ContentList {
 		kardone, delamine, selena, kardeni,
 		liner, point,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter;
+		assaultScatter, supportScatter, specialistScatter,
+		// heat
+		heatGen;
 
 
 	@Override
@@ -392,6 +394,13 @@ public class AbyssBlocks implements ContentList {
 				status = StatusEffects.sapped;
 				statusDuration = 60f * 10f;
 			}};
+		}};
+		heatGen = new HeatGenerator("heat-generator") {{
+			size = 1;
+			health = 160f;
+			minHeat = 25f;
+			maxHeat = 35f;
+			
 		}};
 	}
 }
