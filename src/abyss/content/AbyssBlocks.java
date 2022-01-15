@@ -398,7 +398,7 @@ public class AbyssBlocks implements ContentList {
 		}};
 		heatGen = new HeatGenerator("heat-generator") {{
 			size = 1;
-			health = 160f;
+			health = 160;
 			minHeat = 25f;
 			maxHeat = 35f;
 		}};
