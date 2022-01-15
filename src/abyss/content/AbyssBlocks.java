@@ -26,6 +26,7 @@ import abyss.content.*;
 import abyss.graphics.*;
 import abyss.world.blocks.defense.*;
 import abyss.world.blocks.production.*;
+import abyss.world.blocks.heat.production.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -400,7 +401,6 @@ public class AbyssBlocks implements ContentList {
 			health = 160f;
 			minHeat = 25f;
 			maxHeat = 35f;
-			
 		}};
 	}
 }
