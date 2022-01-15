@@ -221,6 +221,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 4;
 			health = 300;
+			drawer = new DrawSmelter(Color.valueOf("FECEAD"));
 			consumes.items(with(
 				Items.plastanium, 3,
 				Items.silicon, 6,

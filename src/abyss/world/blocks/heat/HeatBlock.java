@@ -19,49 +19,26 @@ public class HeatBlock extends Block {
 		solid = destructible = true;
 	}
 
-	@Override
-	public void setBars() {
-		super.setBars();
-		bars.add("heat", entity -> new Bar("bar.heat", Pal.turretHeat, () -> entity.heat/maxHeat));
-	}
+	// @Override
+	// public void setBars() {
+	// 	super.setBars();
+	// 	bars.add("heat", entity -> new Bar("bar.heat", Pal.turretHeat, () -> entity.heat/maxHeat));
+	// }
 
 	public class HeatBlockBuild extends Building {
 		float heat = minHeat;
-		@Override
-		public void onDestroyed() {
-			super.onDestroyed();
-			if (this.heat < 45f) {
-				return;
-			}
-			Damage.damage(x, y, explodeDamage * this.size);
+
+		public boolean acceptHeat(Building src, float amount) {
+			return amount < maxHeat;
 		}
 
-		public boolean acceptHeat() {
-			return true;
-		}
-
-		public void addHeat(float amount) {
-			this.heat += amount;
-		}
-		public void setHeat(float amount) {
-			this.heat = amount;
-		}
-		public void distributeHeat(float amount) {
-			float dim = 0f;
-			for (int i = 0; i < this.proximity.size; i++) {
-				if (this.proximity.get(i) instanceof HeatBlockBuild) {
-					if (this.proximity.get(i).acceptHeat()) {
-						this.proximity.get(i).addHeat(amount);
-						dim++;
-					}
-				}
-			}
-			addHeat(-amount * dim);
+		public void handleHeat(Building src, float amount) {
+			if (acceptHeat(src, amount)) this.heat += amount;
 		}
 
 		public void updateHeat() {
 			if (this.heat < minHeat) {
-				this.heat -= Time.delta();
+				this.heat -= Time.delta;
 			}
 		}
 
@@ -71,7 +48,6 @@ public class HeatBlock extends Block {
 			if (this.heat > maxHeat) {
 				Core.app.exit();
 			}
-			distributeHeat(1);
 		}
 	}
 }
