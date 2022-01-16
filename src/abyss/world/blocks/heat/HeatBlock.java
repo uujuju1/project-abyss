@@ -5,6 +5,7 @@ import arc.util.*;
 import mindustry.graphics.*;
 import mindustry.gen.*;
 import mindustry.ui.*;
+import mindustry.world.meta.*;
 import mindustry.world.Block;
 
 public class HeatBlock extends Block {
