@@ -20,8 +20,14 @@ public class HeatBlock extends Block {
 		buildVisibility = BuildVisibility.shown;
 	}
 
+	@Override
+	public void setBars() {
+		super.setBars();
+		bars.add("heat" build -> new Bar("bar.heat", Pap.turretHeat, () -> build.getHeat()/maxHeat));
+	}
+
 	public class HeatBlockBuild extends Building {
-		public float heat = minHeat;
+		float heat = minHeat;
 
 		public boolean acceptHeat(Building src, float amount) {
 			return amount < maxHeat;
@@ -31,18 +37,23 @@ public class HeatBlock extends Block {
 			if (acceptHeat(src, amount)) this.heat += amount;
 		}
 
+		public float getHeat() {
+			return this.heat;
+		}
+
 		public void updateHeat() {
-			if (this.heat < minHeat) {
+			if (this.heat > minHeat) {
 				this.heat -= Time.delta;
+			}
+			if (this.heat > maxHeat) {
+				// Core.app.exit();
 			}
 		}
 
 		@Override
 		public void updateTile() {
 			updateHeat();
-			if (this.heat > maxHeat) {
-				Core.app.exit();
-			}
+
 		}
 	}
 }

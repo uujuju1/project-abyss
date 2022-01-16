@@ -5,6 +5,8 @@ import mindustry.content.*;
 import mindustry.ctype.ContentList;
 import mindustry.entities.bullet.*;
 
+import abyss.graphics.*;
+
 public class AbyssBullets implements ContentList {
 	public static BulletType
 		voidBullet1, voidBullet2, voidBullet3, voidBullet4,
@@ -46,6 +48,7 @@ public class AbyssBullets implements ContentList {
 			lifetime = 45f;
 			fragBullets = 5;
 			fragBullet = voidBullet2;
+			shootEffect = AbyssFx.abyssShootBig;
 			frontColor = Color.valueOf("2E2E2E");
 			backColor = Color.valueOf("1C1C1C");
 		}};

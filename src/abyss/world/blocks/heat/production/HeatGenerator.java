@@ -11,6 +11,8 @@ public class HeatGenerator extends HeatBlock {
 
 	public HeatGenerator(String name) {
 		super(name);
+		hasItems = true;
+		itemCapacity = 5;
 	}
 
 	public class HeatGeneratorBuild extends HeatBlock.HeatBlockBuild {
@@ -20,6 +22,7 @@ public class HeatGenerator extends HeatBlock {
 			super.updateTile();
 			if (cons.valid()) {
 				if (this.heat >= produceTime) {
+					consume();
 					handleHeat(this, heatAmount);
 					this.reload = 0f;
 				} else {

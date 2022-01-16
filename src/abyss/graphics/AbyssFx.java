@@ -76,5 +76,15 @@ public class AbyssFx {
 			Draw.alpha(1f);
 
 			Lines.circle(e.x, e.y, r);
+		}),
+		abyssShootBig = new Effect(30f, e -> {
+			Draw.color(Color.white, Color.black, e.fin());
+			float w = 1f + 5f * e.fout();
+			Drawf.tri(e.x, e.y, w, 30f * e.fout(), e.rotation);
+			Drawf.tri(e.x, e.y, w, 6f * e.fout(), e.rotation + 180f);
+			
+			Angles.randLenVectors(e.id, 10, 5f * e.fin() * 10f, e.rotation, 10f, (x, y) -> {
+				Fill.rect(e.x + x, e.y + y, 2f * e.fout(), 2f * e.fout(), 45f);
+			});
 		});
 }
