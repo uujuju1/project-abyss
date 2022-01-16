@@ -404,8 +404,12 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 1;
 			health = 160;
-			minHeat = 25f;
-			maxHeat = 35f;
+			minHeat = 30f;
+			maxHeat = 100f;
+			heatAmount = 70f;
+			consumes.items(with(
+				Items.coal, 1
+			));
 		}};
 	}
 }

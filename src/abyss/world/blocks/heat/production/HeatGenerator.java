@@ -6,7 +6,7 @@ import mindustry.world.consumers.*;
 import abyss.world.blocks.heat.HeatBlock;
 
 public class HeatGenerator extends HeatBlock {
-	public float heatAmount = 65f;
+	public float heatAmount = 69f;
 	public float produceTime = 60f;
 
 	public HeatGenerator(String name) {
@@ -18,17 +18,14 @@ public class HeatGenerator extends HeatBlock {
 		@Override
 		public void updateTile() {
 			super.updateTile();
-			if (cons.valid() && this.reload >= produceTime) {
-				handleHeat(this, heatAmount);
-				this.reload = 0f;
-			} else {
-				reload += Time.delta;
+			if (cons.valid()) {
+				if (this.heat >= produceTime) {
+					handleHeat(this, heatAmount);
+					this.reload = 0f;
+				} else {
+					this.reload += Time.delta;
+				}
 			}
-		}
-
-		@Override
-		public void updateHeat() {
-
 		}
 	}
 }
