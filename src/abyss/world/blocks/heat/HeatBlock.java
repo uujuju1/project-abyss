@@ -23,7 +23,7 @@ public class HeatBlock extends Block {
 	@Override
 	public void setBars() {
 		super.setBars();
-		bars.add("heat" build -> new Bar("bar.heat", Pap.turretHeat, () -> build.getHeat()/maxHeat));
+		bars.add("heat", build -> new Bar("bar.heat", Pap.turretHeat, () -> build.getHeat()/maxHeat));
 	}
 
 	public class HeatBlockBuild extends Building {
