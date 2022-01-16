@@ -19,16 +19,23 @@ public class HeatGenerator extends HeatBlock {
 		float reload = 0f;
 		@Override
 		public void updateTile() {
-			super.updateTile();
-			if (cons.valid()) {
+			updateHeat();
+			if (cons.valid() && shouldConsume()) {
 				if (this.reload >= produceTime) {
 					consume();
 					handleHeat(this, heatAmount);
 					this.reload = 0f;
-				} else {
-					this.reload += Time.delta;
 				}
+				this.reload += Time.delta;
 			}
+		}
+
+		@Override
+		public boolean shouldConsume() {
+			if(heatAmount != 0 && this.heat + heatAmount > maxHeat){
+				return false;
+			}
+			return true;
 		}
 	}
 }

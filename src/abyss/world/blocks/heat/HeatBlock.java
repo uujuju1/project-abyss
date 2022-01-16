@@ -58,6 +58,7 @@ public class HeatBlock extends Block {
 
 		@Override
 		public void draw() {
+			super.draw();
 			float alpha = this.heat/maxHeat;
 			Draw.alpha(alpha);
 			Draw.rect(top, x, y, 0);
