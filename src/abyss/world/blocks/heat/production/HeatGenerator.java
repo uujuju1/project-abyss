@@ -21,7 +21,7 @@ public class HeatGenerator extends HeatBlock {
 		public void updateTile() {
 			super.updateTile();
 			if (cons.valid()) {
-				if (this.heat >= produceTime) {
+				if (this.reload >= produceTime) {
 					consume();
 					handleHeat(this, heatAmount);
 					this.reload = 0f;

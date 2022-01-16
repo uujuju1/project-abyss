@@ -406,7 +406,7 @@ public class AbyssBlocks implements ContentList {
 			health = 160;
 			minHeat = 30f;
 			maxHeat = 100f;
-			heatAmount = 70f;
+			heatAmount = 30f;
 			consumes.items(with(
 				Items.coal, 1
 			));
