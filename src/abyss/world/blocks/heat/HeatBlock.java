@@ -2,13 +2,14 @@ package abyss.world.blocks.heat;
 
 import arc.*;
 import arc.util.*;
+import arc.graphics.g2d.*;
 import mindustry.graphics.*;
 import mindustry.gen.*;
-import mindustry.ui.*;
 import mindustry.world.meta.*;
 import mindustry.world.Block;
 
 public class HeatBlock extends Block {
+	public TextureRegion top;
 	// min heat that the block can have
 	public float minHeat = 25f;
 	// max heat that the block can have
@@ -21,9 +22,9 @@ public class HeatBlock extends Block {
 	}
 
 	@Override
-	public void setBars() {
-		super.setBars();
-		bars.add("heat", build -> new Bar("bar.heat", Pal.turretHeat, () -> build::getHeat()/maxHeat));
+	public void load() {
+		super.load();
+		top = Core.atlas.find(name + "-top");
 	}
 
 	public class HeatBlockBuild extends Building {
@@ -46,14 +47,20 @@ public class HeatBlock extends Block {
 				this.heat -= Time.delta;
 			}
 			if (this.heat > maxHeat) {
-				// Core.app.exit();
+				kill();
 			}
 		}
 
 		@Override
 		public void updateTile() {
 			updateHeat();
+		}
 
+		@Override
+		public void draw() {
+			float alpha = this.heat/maxHeat;
+			Draw.alpha(alpha);
+			Draw.rect(top, x, y, 0);
 		}
 	}
 }
