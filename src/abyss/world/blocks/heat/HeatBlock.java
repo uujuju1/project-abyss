@@ -16,6 +16,7 @@ public class HeatBlock extends Block {
 	public HeatBlock(String name) {
 		super(name);
 		solid = destructible = sync = true;
+		buildVisibility = BuildVisibility.shown;
 	}
 
 	// @Override
