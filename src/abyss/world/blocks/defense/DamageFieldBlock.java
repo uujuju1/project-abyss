@@ -12,8 +12,10 @@ public class DamageFieldBlock extends Block {
 	public float range = 80f;
 	public int damage = 10;
 	public @Nullable StatusEffect statusEffect;
+	public float statusEffectDuration = 60f;
 
 	public float reloadTime = 60f;
+	public boolean targetsAir = true, targetsGround = true;
 
 	public DamageFieldBlock(String name) {
 		super(name);
@@ -37,7 +39,10 @@ public class DamageFieldBlock extends Block {
 		public void updateTile() {
 			if (cons.valid()) {
 				if (reload >= reloadTime) {
-					Damage.damage(x, y, range, damage);
+					Damage.damage(this.team, x, y, range, damage, targetsAir, targetsGround);
+					if (statusEffect != null) {
+						Damage.status(this.team, x, y, range, statusEffect, statusEffectDuration, targetsAir, targetsGround);
+					}
 					reload = 0f;
 				}
 				reload += Time.delta;

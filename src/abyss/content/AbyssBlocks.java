@@ -44,7 +44,9 @@ public class AbyssBlocks implements ContentList {
 		kardone, delamine, selena, kardeni,
 		liner, point,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter;
+		assaultScatter, supportScatter, specialistScatter,
+		// sprayers
+		kaleniumSprayer, sporeSprayer, oilSprayer;
 
 	@Override
 	public void load() {
@@ -391,6 +393,46 @@ public class AbyssBlocks implements ContentList {
 				status = StatusEffects.sapped;
 				statusDuration = 60f * 10f;
 			}};
+		}};
+
+		kaleniumSprayer = new DamageFieldBlock("kalenium-sprayer") {{
+			requirements(Category.turret, with(
+				AbyssItems.kalenium, 30,
+				Items.silicon, 50,
+				Items.titanium, 40
+			));
+			size = 2f;
+			health = 160f;
+			range = 160f;
+			damage = 20f;
+			statusEffect = AbyssStatusEffects.kaleminite;
+			statusEffectDuration = 60f;
+		}};
+		sporeSprayer = new DamageFieldBlock("spore-sprayer") {{
+			requirements(Category.turret, with(
+				AbyssItems.kalenium, 40,
+				Items.silicon, 50,
+				Items.graphite, 60
+			));
+			size = 2f;
+			health = 160f;
+			range = 160f;
+			damage = 100f;
+			statusEffect = StatusEffects.sapped;
+			statusEffectDuration = 60f;
+		}};
+		oilSprayer = new DamageFieldBlock("oil-sprayer") {{
+			requirements(Category.turret, with(
+				AbyssItems.kalenium, 20,
+				Items.silicon, 70,
+				Items.metaglass, 30
+			));
+			size = 2f;
+			health = 160f;
+			range = 160f;
+			damage = 10f;
+			statusEffect = StatusEffects.tarred;
+			statusEffectDuration = 60f;
 		}};
 	}
 }
