@@ -11,6 +11,6 @@ public class AbyssStatusEffects implements ContentList {
 		kaleminite = new StatusEffect("kaleminite") {{
 			healthMultiplier = 0.8;
 			speedMultiplier = 0.8;
-		}}
+		}};
 	}
 }
