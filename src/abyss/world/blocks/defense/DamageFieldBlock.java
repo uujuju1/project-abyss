@@ -19,7 +19,7 @@ public class DamageFieldBlock extends Block {
 
 	public DamageFieldBlock(String name) {
 		super(name);
-		solid = destructible = sync = update = true;
+		solid = destructible = sync = update = hasItems = true;
 	}
 
 	@Override
@@ -37,6 +37,7 @@ public class DamageFieldBlock extends Block {
 
 		@Override
 		public void updateTile() {
+			super.updateTile();
 			if (cons.valid()) {
 				if (reload >= reloadTime) {
 					Damage.damage(this.team, x, y, range, damage, targetsAir, targetsGround);
