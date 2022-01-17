@@ -22,13 +22,14 @@ public class DamageFieldBlock extends Block {
 	@Override
 	public void drawPlace(int x, int y, int rotation, boolean valid) {
 		super.drawPlace(x, y, rotation, valid);
+		Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, range, Pal.placing);
 	}
 
 	public class DamageFieldBlockBuild extends Building {
 		float reload = 0f;
 		@Override
 		public void drawSelect() {
-			Drawf.dashCircle(x, y, range team.color);
+			Drawf.dashCircle(x, y, range, team.color);
 		}
 
 		@Override
