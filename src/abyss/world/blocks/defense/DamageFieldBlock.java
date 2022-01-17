@@ -2,6 +2,7 @@ package abyss.world.blocks.defense;
 
 import arc.util.*;
 import arc.graphics.*;
+import mindustry.graphics.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.entities.*;
@@ -22,7 +23,7 @@ public class DamageFieldBlock extends Block {
 	@Override
 	public void drawPlace(int x, int y, int rotation, boolean valid) {
 		super.drawPlace(x, y, rotation, valid);
-		Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, range, Pal.placing);
+		Drawf.dashCircle(x * 8, y * 8, range, Pal.placing);
 	}
 
 	public class DamageFieldBlockBuild extends Building {

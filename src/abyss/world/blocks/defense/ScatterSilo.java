@@ -5,6 +5,7 @@ import arc.util.*;
 import arc.graphics.*;
 import arc.scene.ui.layout.*;
 import mindustry.gen.*;
+import mindustry.graphics.*;
 import mindustry.entities.bullet.*;
 import mindustry.content.*;
 import mindustry.world.Block;
@@ -35,7 +36,7 @@ public class ScatterSilo extends Block {
 	@Override
 	public void drawPlace(int x, int y, int rotation, boolean valid){
 		super.drawPlace(x, y, rotation, valid);
-		Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, range, Pal.placing);
+		Drawf.dashCircle(x * 8, y * 8, range, Pal.placing);
 	}
 
 	public class ScatterSiloBuild extends Building {
