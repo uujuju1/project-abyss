@@ -404,7 +404,7 @@ public class AbyssBlocks implements ContentList {
 			size = 2;
 			health = 160;
 			range = 160f;
-			damage = 20f;
+			damage = 20;
 			statusEffect = AbyssStatusEffects.kaleminite;
 			statusEffectDuration = 60f;
 		}};
@@ -417,7 +417,7 @@ public class AbyssBlocks implements ContentList {
 			size = 2;
 			health = 160;
 			range = 160f;
-			damage = 100f;
+			damage = 100;
 			statusEffect = StatusEffects.sapped;
 			statusEffectDuration = 60f;
 		}};
@@ -430,7 +430,7 @@ public class AbyssBlocks implements ContentList {
 			size = 2;
 			health = 160;
 			range = 160f;
-			damage = 10f;
+			damage = 10;
 			statusEffect = StatusEffects.tarred;
 			statusEffectDuration = 60f;
 		}};

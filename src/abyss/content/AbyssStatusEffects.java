@@ -9,8 +9,8 @@ public class AbyssStatusEffects implements ContentList {
 	@Override
 	public void load() {
 		kaleminite = new StatusEffect("kaleminite") {{
-			healthMultiplier = 0.8;
-			speedMultiplier = 0.8;
+			healthMultiplier = 0.8f;
+			speedMultiplier = 0.8f;
 		}};
 	}
 }
