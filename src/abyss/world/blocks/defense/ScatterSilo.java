@@ -2,6 +2,7 @@ package abyss.world.blocks.defense;
 
 import arc.math.*;
 import arc.util.*;
+import arc.graphics.*;
 import arc.scene.ui.layout.*;
 import mindustry.gen.*;
 import mindustry.entities.bullet.*;
@@ -31,6 +32,11 @@ public class ScatterSilo extends Block {
 		stats.add(Stat.reload, reloadTime, StatUnit.seconds);
 		stats.add(Stat.range, range, StatUnit.blocks);
 	}
+	@Override
+	public void drawPlace(int x, int y, int rotation, boolean valid){
+		super.drawPlace(x, y, rotation, valid);
+		Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, range, Pal.placing);
+	}
 
 	public class ScatterSiloBuild extends Building {
 		float timer = 0f;
@@ -42,6 +48,11 @@ public class ScatterSilo extends Block {
 					timer = reloadTime;
 				}
 			});
+		}
+
+		@Override
+		public void drawSelect() {
+			Drawf.dashCircle(x, y, range, team.color);
 		}
 
 		public void shoot() {

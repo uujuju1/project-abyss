@@ -26,7 +26,6 @@ import abyss.content.*;
 import abyss.graphics.*;
 import abyss.world.blocks.defense.*;
 import abyss.world.blocks.production.*;
-import abyss.world.blocks.heat.production.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -45,10 +44,7 @@ public class AbyssBlocks implements ContentList {
 		kardone, delamine, selena, kardeni,
 		liner, point,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter,
-		// heat
-		heatGen;
-
+		assaultScatter, supportScatter, specialistScatter;
 
 	@Override
 	public void load() {
@@ -395,21 +391,6 @@ public class AbyssBlocks implements ContentList {
 				status = StatusEffects.sapped;
 				statusDuration = 60f * 10f;
 			}};
-		}};
-		heatGen = new HeatGenerator("heat-generator") {{
-			requirements(Category.production, with(
-				AbyssItems.kalenium, 60,
-				Items.silicon, 80,
-				Items.titanium, 40
-			));
-			size = 1;
-			health = 160;
-			minHeat = 30f;
-			maxHeat = 100f;
-			heatAmount = 30f;
-			consumes.items(with(
-				Items.coal, 1
-			));
 		}};
 	}
 }
