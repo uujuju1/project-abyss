@@ -1,6 +1,6 @@
 package abyss.content;
 
-import mindustry.ctype.ContentList.*;
+import mindustry.ctype.ContentList;
 import mindustry.type.StatusEffect;
 
 public class AbyssStatusEffects implements ContentList {

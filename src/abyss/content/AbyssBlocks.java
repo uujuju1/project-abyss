@@ -401,8 +401,8 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 50,
 				Items.titanium, 40
 			));
-			size = 2f;
-			health = 160f;
+			size = 2;
+			health = 160;
 			range = 160f;
 			damage = 20f;
 			statusEffect = AbyssStatusEffects.kaleminite;
@@ -414,8 +414,8 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 50,
 				Items.graphite, 60
 			));
-			size = 2f;
-			health = 160f;
+			size = 2;
+			health = 160;
 			range = 160f;
 			damage = 100f;
 			statusEffect = StatusEffects.sapped;
@@ -427,8 +427,8 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 70,
 				Items.metaglass, 30
 			));
-			size = 2f;
-			health = 160f;
+			size = 2;
+			health = 160;
 			range = 160f;
 			damage = 10f;
 			statusEffect = StatusEffects.tarred;
