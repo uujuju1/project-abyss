@@ -71,7 +71,7 @@ public class DamageFieldBlock extends Block {
 			super.draw();
 			Draw.color(statusColor);
 			Draw.rect(top, x, y, 0f);
-			Draw.z(Layer.gorundUnit + 0.001f);
+			Draw.z(Layer.groundUnit + 0.001f);
 			Draw.alpha(0.5f * alpha);
 			Fill.circle(x, y, range + Mathf.absin(2f, 1f));
 			Draw.alpha(1f * alpha);
