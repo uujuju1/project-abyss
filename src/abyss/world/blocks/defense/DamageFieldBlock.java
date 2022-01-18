@@ -39,7 +39,9 @@ public class DamageFieldBlock extends Block {
 		public void updateTile() {
 			super.updateTile();
 			if (cons.valid()) {
+				DrawStatusEffect();
 				if (reload >= reloadTime) {
+					consume();
 					Damage.damage(this.team, x, y, range, damage, targetsAir, targetsGround);
 					if (statusEffect != null) {
 						Damage.status(this.team, x, y, range, statusEffect, statusEffectDuration, targetsAir, targetsGround);
@@ -48,6 +50,17 @@ public class DamageFieldBlock extends Block {
 				}
 				reload += Time.delta;
 			}
+		}
+
+		public void DrawStatusEffect() {
+			Draw.color(statusEffect.color);
+			Draw.alpha(0.5f);
+			Fill.circle(x, y, range + Mathf.absin(2f, 1f));
+			Draw.alpha(1f);
+			Draw.color(statusEffect.color.mul(0.5f));
+			Lines.stroke(3f);
+			Lines.circle(x, y, range + Mathf.absin(2f, 1f));
+			Draw.reset();
 		}
 	}
 }
