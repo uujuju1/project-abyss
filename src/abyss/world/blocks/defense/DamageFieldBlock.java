@@ -19,7 +19,7 @@ public class DamageFieldBlock extends Block {
 
 	public DamageFieldBlock(String name) {
 		super(name);
-		solid = destructible = sync = update = hasItems = true;
+		solid = destructible = sync = update = hasItems = hasLiquids = true;
 	}
 
 	@Override

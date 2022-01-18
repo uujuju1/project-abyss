@@ -407,6 +407,9 @@ public class AbyssBlocks implements ContentList {
 			damage = 20;
 			statusEffect = AbyssStatusEffects.kaleminite;
 			statusEffectDuration = 60f;
+			consumes.items(with(
+				AbyssItems.kalenium, 1
+			));
 		}};
 		sporeSprayer = new DamageFieldBlock("spore-sprayer") {{
 			requirements(Category.turret, with(
@@ -420,6 +423,9 @@ public class AbyssBlocks implements ContentList {
 			damage = 100;
 			statusEffect = StatusEffects.sapped;
 			statusEffectDuration = 60f;
+			consumes.items(with(
+				Items.sporePod, 1
+			));
 		}};
 		oilSprayer = new DamageFieldBlock("oil-sprayer") {{
 			requirements(Category.turret, with(
@@ -433,6 +439,7 @@ public class AbyssBlocks implements ContentList {
 			damage = 10;
 			statusEffect = StatusEffects.tarred;
 			statusEffectDuration = 60f;
+			consumes.liquid(new LiquidStack(Liquids.oil, 0.1f));
 		}};
 	}
 }
