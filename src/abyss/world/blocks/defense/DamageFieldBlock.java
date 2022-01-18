@@ -17,6 +17,7 @@ public class DamageFieldBlock extends Block {
 	public @Nullable StatusEffect statusEffect;
 	public Color statusColor;
 	public float statusEffectDuration = 60f;
+	float offset;
 
 	public float reloadTime = 60f;
 	public boolean targetsAir = true, targetsGround = true;
@@ -31,13 +32,14 @@ public class DamageFieldBlock extends Block {
 	@Override
 	public void drawPlace(int x, int y, int rotation, boolean valid) {
 		super.drawPlace(x, y, rotation, valid);
-		Drawf.dashCircle(x * 8, y * 8, range, Pal.placing);
+		Drawf.dashCircle(x * 8 + offset, y * 8 + offset, range, Pal.placing);
 	}
 
 	@Override
 	public void load() {
 		super.load();
 		top = Core.atlas.find(name + "-top");
+		offset = 0.5f * size;
 	}
 
 	public class DamageFieldBlockBuild extends Building {
@@ -66,17 +68,16 @@ public class DamageFieldBlock extends Block {
 				alpha = Mathf.approachDelta(alpha, 0f, 0.007f);
 			}
 		}
-		
+
 		@Override
 		public void draw() {
 			super.draw();
-			Draw.color(statusColor);
+			Draw.color(Pal.placing);
 			Draw.rect(top, x, y, 0f);
 			Draw.z(Layer.groundUnit + 0.001f);
 			Draw.alpha(0.5f * alpha);
 			Fill.circle(x, y, range + Mathf.absin(2f, 1f));
 			Draw.alpha(1f * alpha);
-			Draw.color(statusColor.mul(0.5f));
 			Lines.stroke(3f * alpha);
 			Lines.circle(x, y, range + Mathf.absin(2f, 1f));
 			Draw.color();
