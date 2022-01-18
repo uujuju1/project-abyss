@@ -407,6 +407,7 @@ public class AbyssBlocks implements ContentList {
 			damage = 20;
 			statusEffect = AbyssStatusEffects.kaleminite;
 			statusEffectDuration = 60f;
+			statusColor = AbyssItems.kalenium.color;
 			consumes.items(with(
 				AbyssItems.kalenium, 1
 			));
@@ -423,6 +424,7 @@ public class AbyssBlocks implements ContentList {
 			damage = 100;
 			statusEffect = StatusEffects.sapped;
 			statusEffectDuration = 60f;
+			statusColor = Items.sporePod.color;
 			consumes.items(with(
 				Items.sporePod, 1
 			));
@@ -439,6 +441,7 @@ public class AbyssBlocks implements ContentList {
 			damage = 10;
 			statusEffect = StatusEffects.tarred;
 			statusEffectDuration = 60f;
+			statusColor = Liquids.oil.color;
 			consumes.liquid(Liquids.oil, 0.1f);
 		}};
 	}
