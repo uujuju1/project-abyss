@@ -15,7 +15,7 @@ public class DamageFieldBlock extends Block {
 	public float range = 80f;
 	public int damage = 10;
 	public @Nullable StatusEffect statusEffect;
-	public Color statusColor = Color.black;
+	public Color statusColor;
 	public float statusEffectDuration = 60f;
 
 	public float reloadTime = 60f;
@@ -78,7 +78,7 @@ public class DamageFieldBlock extends Block {
 			Draw.color(statusColor.mul(0.5f));
 			Lines.stroke(3f * alpha);
 			Lines.circle(x, y, range + Mathf.absin(2f, 1f));
-			Draw.reset();
+			Draw.color();
 		}
 	}
 }
