@@ -439,7 +439,7 @@ public class AbyssBlocks implements ContentList {
 			damage = 10;
 			statusEffect = StatusEffects.tarred;
 			statusEffectDuration = 60f;
-			consumes.liquid(new LiquidStack(Liquids.oil, 0.1f));
+			consumes.liquid(Liquids.oil, 0.1f);
 		}};
 	}
 }
