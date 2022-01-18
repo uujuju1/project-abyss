@@ -19,6 +19,8 @@ public class DamageFieldBlock extends Block {
 	public float reloadTime = 60f;
 	public boolean targetsAir = true, targetsGround = true;
 
+	public TextureRegion top;
+
 	public DamageFieldBlock(String name) {
 		super(name);
 		solid = destructible = sync = update = hasItems = hasLiquids = true;
@@ -30,8 +32,15 @@ public class DamageFieldBlock extends Block {
 		Drawf.dashCircle(x * 8, y * 8, range, Pal.placing);
 	}
 
+	@Override
+	public void load() {
+		super.load();
+		top = Core.atlas.find(name + "-top");
+	}
+
 	public class DamageFieldBlockBuild extends Building {
 		float reload = 0f;
+		float alpha = 0f;
 		@Override
 		public void drawSelect() {
 			Drawf.dashCircle(x, y, range, team.color);
@@ -41,7 +50,7 @@ public class DamageFieldBlock extends Block {
 		public void updateTile() {
 			super.updateTile();
 			if (cons.valid()) {
-				DrawStatusEffect();
+				alpha = Mathf.approachDelta(alpha, 1f, 0.007f);
 				if (reload >= reloadTime) {
 					consume();
 					Damage.damage(this.team, x, y, range, damage, targetsAir, targetsGround);
@@ -51,16 +60,19 @@ public class DamageFieldBlock extends Block {
 					reload = 0f;
 				}
 				reload += Time.delta;
+			} else {
+				alpha = Mathf.approachDelta(alpha, 0f, 0.007f);
 			}
 		}
 
-		public void DrawStatusEffect() {
+		public void draw() {
 			Draw.color(statusEffect.color);
-			Draw.alpha(0.5f);
+			Draw.rect(top, x, y, 0f);
+			Draw.alpha(0.5f * alpha);
 			Fill.circle(x, y, range + Mathf.absin(2f, 1f));
-			Draw.alpha(1f);
+			Draw.alpha(1f * alpha);
 			Draw.color(statusEffect.color.mul(0.5f));
-			Lines.stroke(3f);
+			Lines.stroke(3f * alpha);
 			Lines.circle(x, y, range + Mathf.absin(2f, 1f));
 			Draw.reset();
 		}
