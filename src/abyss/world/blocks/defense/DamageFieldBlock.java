@@ -66,7 +66,8 @@ public class DamageFieldBlock extends Block {
 				alpha = Mathf.approachDelta(alpha, 0f, 0.007f);
 			}
 		}
-
+		
+		@Override
 		public void draw() {
 			super.draw();
 			Draw.color(statusColor);
