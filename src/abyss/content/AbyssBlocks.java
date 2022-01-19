@@ -44,9 +44,7 @@ public class AbyssBlocks implements ContentList {
 		kardone, delamine, selena, kardeni,
 		liner, point,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter,
-		// sprayers
-		kaleniumSprayer, sporeSprayer, oilSprayer;
+		assaultScatter, supportScatter, specialistScatter;
 
 	@Override
 	public void load() {
@@ -393,56 +391,6 @@ public class AbyssBlocks implements ContentList {
 				status = StatusEffects.sapped;
 				statusDuration = 60f * 10f;
 			}};
-		}};
-
-		kaleniumSprayer = new DamageFieldBlock("kalenium-sprayer") {{
-			requirements(Category.turret, with(
-				AbyssItems.kalenium, 30,
-				Items.silicon, 50,
-				Items.titanium, 40
-			));
-			size = 2;
-			health = 160;
-			range = 160f;
-			damage = 20;
-			statusEffect = AbyssStatusEffects.kaleminite;
-			statusEffectDuration = 60f;
-			statusColor = AbyssItems.kalenium.color;
-			consumes.items(with(
-				AbyssItems.kalenium, 1
-			));
-		}};
-		sporeSprayer = new DamageFieldBlock("spore-sprayer") {{
-			requirements(Category.turret, with(
-				AbyssItems.kalenium, 40,
-				Items.silicon, 50,
-				Items.graphite, 60
-			));
-			size = 2;
-			health = 160;
-			range = 160f;
-			damage = 100;
-			statusEffect = StatusEffects.sapped;
-			statusEffectDuration = 60f;
-			statusColor = Items.sporePod.color;
-			consumes.items(with(
-				Items.sporePod, 1
-			));
-		}};
-		oilSprayer = new DamageFieldBlock("oil-sprayer") {{
-			requirements(Category.turret, with(
-				AbyssItems.kalenium, 20,
-				Items.silicon, 70,
-				Items.metaglass, 30
-			));
-			size = 2;
-			health = 160;
-			range = 160f;
-			damage = 10;
-			statusEffect = StatusEffects.tarred;
-			statusEffectDuration = 60f;
-			statusColor = Liquids.oil.color;
-			consumes.liquid(Liquids.oil, 0.1f);
 		}};
 	}
 }
