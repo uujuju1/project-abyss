@@ -17,7 +17,7 @@ import abyss.type.draw.*;
 public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
-		katerni, termina, solanra, deuteria, atomega
+		katerni, termina, solanra, deuteria, atomega,
 		saloni;
 
 	@Override
