@@ -32,9 +32,9 @@ public class RotorUnitType extends UnitType {
 	@Override
 	public void draw(Unit unit) {
 		super.draw(unit);
-        applyColor(unit);
-        rotors.each(DrawRotor -> DrawRotor.draw(unit));
-        Draw.reset();
+		applyColor(unit);
+		rotors.each(DrawRotor -> DrawRotor.draw(unit));
+		Draw.reset();
 	}
 
 	@Override

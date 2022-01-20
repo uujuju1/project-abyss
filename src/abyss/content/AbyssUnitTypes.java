@@ -17,7 +17,8 @@ import abyss.type.draw.*;
 public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
-		katerni, termina, solanra, deuteria, atomega;
+		katerni, termina, solanra, deuteria, atomega
+		saloni;
 
 	@Override
 	public void load() {
@@ -577,6 +578,37 @@ public class AbyssUnitTypes implements ContentList {
 						height = 20f;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
+					}};
+				}}
+			);
+		}};
+
+		saloni = new RotorUnitType("saloni") {{
+			health = 220;
+			speed = 2f;
+			range = 100f;
+			maxRange = range;
+			constructor = LegsUnit::create;
+
+			rotors.add(
+				new DrawRotor(name + "-rotor") {{
+					x = y = 0f;
+					s = 1f;
+					drawJoint = false;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("terrenium-mount") {{
+					x = 1.5f;
+					y = 1f;
+					reload = 30f;
+					recoil = 1f;
+					flipSprite = true;
+					bullet = new BasicBulletType(4f, 15) {{
+						width = 7f;
+						height = 9f;
+						lifetime = 25f;
 					}};
 				}}
 			);

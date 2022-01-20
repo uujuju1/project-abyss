@@ -17,6 +17,8 @@ public class DrawRotor {
 	public float y = 0f;
 	public float s = 0f;
 
+	public boolean drawJoint = true;
+
 	public DrawRotor(String name) {
 		this.name = name;
 	}
@@ -31,6 +33,8 @@ public class DrawRotor {
 		float ry = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
 
 		Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation);
-		Draw.rect(jointRegion, rx, ry, unit.rotation - 90f);
+		if (drawJoint) {
+			Draw.rect(jointRegion, rx, ry, unit.rotation - 90f);
+		}
 	}
 }
