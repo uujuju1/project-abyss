@@ -13,7 +13,7 @@ public interface EntropyBlockc {
 		handleEntropy(entropy, null);
 	}
 	default void handleEntropy(float entropy, @Nullable Building build) {
-		EntropyStorage().entropy += entropy; 
+		entropyStorage().entropy += entropy; 
 	}
 	default boolean recieveEntropy(float entropy, Building src) {
 		handleEntropy(entropy);
