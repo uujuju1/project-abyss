@@ -18,7 +18,7 @@ public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
-		saloni;
+		saloni, alerbite;
 
 	@Override
 	public void load() {
@@ -585,8 +585,9 @@ public class AbyssUnitTypes implements ContentList {
 
 		saloni = new RotorUnitType("saloni") {{
 			health = 220;
-			speed = 2f;
+			speed = 1.5f;
 			range = 100f;
+			flying = false;
 			maxRange = range;
 			constructor = LegsUnit::create;
 
@@ -609,6 +610,48 @@ public class AbyssUnitTypes implements ContentList {
 						width = 7f;
 						height = 9f;
 						lifetime = 25f;
+					}};
+				}}
+			);
+		}};
+		alerbite = new RotorUnitType("alerbite") {{
+			health = 530;
+			speed = 1.3f;
+			range = 130f;
+			maxRange = range;
+			flying = false;
+			constructor = LegsUnit::create;
+
+			rotors.add(
+				new DrawRotor(name + "-rotor") {{
+					x = y = 0f;
+					s = 1f;
+					drawJoint = false;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("terrenium-mount") {{
+					x = 3.25f;
+					y = 3f;
+					reload = 30f;
+					recoil = 1f;
+					bullet = new BasicBulletType(4f, 20) {{
+						width = 7f;
+						height = 9f;
+						lifetime = 32.5f;
+					}};
+				}},
+				new Weapon("terrenium-mount") {{
+					x = 5f;
+					y = -3f;
+					reload = 30f;
+					recoil = 2f;
+					shootSound = Sounds.missile;
+					bullet = new MissileBulletType(6f, 30) {{
+						width = 7f;
+						height = 9f;
+						lifetime = 21f;
 					}};
 				}}
 			);
