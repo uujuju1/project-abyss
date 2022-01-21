@@ -600,7 +600,7 @@ public class AbyssUnitTypes implements ContentList {
 			);
 
 			weapons.add(
-				new Weapon("terrenium-mount") {{
+				new Weapon("abyss-terrenium-mount") {{
 					x = 1.5f;
 					y = 1f;
 					reload = 30f;
@@ -621,6 +621,7 @@ public class AbyssUnitTypes implements ContentList {
 			maxRange = range;
 			flying = false;
 			constructor = LegsUnit::create;
+			hitSize = 10f;
 
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
@@ -631,7 +632,7 @@ public class AbyssUnitTypes implements ContentList {
 			);
 
 			weapons.add(
-				new Weapon("terrenium-mount") {{
+				new Weapon("abyss-terrenium-mount") {{
 					x = 3.25f;
 					y = 3f;
 					reload = 30f;
@@ -642,7 +643,7 @@ public class AbyssUnitTypes implements ContentList {
 						lifetime = 32.5f;
 					}};
 				}},
-				new Weapon("terrenium-mount") {{
+				new Weapon("abyss-terrenium-mount") {{
 					x = 5f;
 					y = -3f;
 					reload = 30f;
@@ -651,7 +652,7 @@ public class AbyssUnitTypes implements ContentList {
 					bullet = new MissileBulletType(6f, 30) {{
 						width = 7f;
 						height = 9f;
-						lifetime = 21f;
+						lifetime = 32f;
 					}};
 				}}
 			);
