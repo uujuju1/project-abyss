@@ -25,4 +25,8 @@ public interface EntropyBlockc {
 	default boolean canRecieveEntropy() {
 		return false;
 	}
+	default void overflowEntropy() {}
+	default void normalizeEntropy() {
+		if (entropyStorage().entropy < 0f) entropyStorage().entropy = 0f;
+	}
 }
