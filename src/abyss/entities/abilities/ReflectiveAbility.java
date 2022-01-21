@@ -3,13 +3,13 @@ package abyss.entities.abilities;
 import mindustry.content.*;
 import mindustry.entities.*;
 import mindustry.gen.*;
-import mindustry.entities.abilities.Ability.*;
+import mindustry.entities.abilities.Ability;
 
 public class ReflectiveAbility extends Ability {
 	public float damage, radius;
 	public boolean damagesAir, damagesGround;
 	public Effect damageEffect;
-	float health = 0f;
+	float health = -1f;
 
 	public ReflectiveAbility(float damage, float radius, boolean damagesAir, boolean damagesGround, Effect damageEffect) {
 		this.damage = damage;
@@ -34,11 +34,11 @@ public class ReflectiveAbility extends Ability {
 	}
 
 	@Override
-	public void update(Unit u) {
-		if (health > u.health) {
-			Damage.damage(u.x, u.y, radius, damage, damagesAir, damagesGround);
-			damageEffect.at(u.x, u.y);
+	public void update(Unit unit) {
+		if (health > unit.health) {
+			Damage.damage(unit.team, unit.x, unit.y, radius, damage, damagesAir, damagesGround);
+			damageEffect.at(unit.x, unit.y);
 		}
-		health = u.health;
+		health = unit.health;
 	}
 }
