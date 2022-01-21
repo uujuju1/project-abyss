@@ -2,6 +2,7 @@ package abyss.world.blocks.entropy.production;
 
 import arc.*;
 import arc.math.*;
+import arc.graphics.*;
 import arc.graphics.g2d.*;
 import abyss.world.blocks.entropy.EntropyBlock;
 
