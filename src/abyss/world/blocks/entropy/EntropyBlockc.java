@@ -15,6 +15,9 @@ public interface EntropyBlockc {
 	default void handleEntropy(float entropy, @Nullable Building build) {
 		entropyStorage().entropy += entropy; 
 	}
+	default void setEntropy(float entropy) {
+		entropyStorage();entropy = entropy;
+	}
 	default boolean recieveEntropy(float entropy, Building src) {
 		handleEntropy(entropy);
 		return true;

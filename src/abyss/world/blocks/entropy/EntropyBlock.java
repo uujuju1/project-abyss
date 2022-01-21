@@ -1,6 +1,6 @@
 package abyss.world.blocks.entropy;
 
-import mindustry.graphics.*;
+import mindustry.entities.Effect;
 import mindustry.content.*;
 import mindustry.gen.*;
 import mindustry.world.Block;
@@ -11,7 +11,9 @@ wont be available on the next releases but i will work on it*/
 
 public class EntropyBlock extends Block {
 	public float maxPulse = 100f;
+
 	public Effect entropyEffect = Fx.none;
+	public Color entropyColor = Color.valueOf("C46CC4");
 
 	public EntropyBlock(String name) {
 		super(name);
