@@ -2,12 +2,12 @@ package abyss.world.blocks.entropy.production;
 
 import arc.*;
 import arc.math.*;
-import arc.graphics.*;
 import arc.graphics.g2d.*;
 import abyss.world.blocks.entropy.EntropyBlock;
 
 public class EntropySource extends EntropyBlock {
 	public float productionSpeed = 0.007f;
+	public float maxProducion = 100f;
 
 	public TextureRegion top;
 
@@ -25,14 +25,14 @@ public class EntropySource extends EntropyBlock {
 		@Override
 		public void updateTile() {
 			super.updateTile();
-			setEntropy(Mathf.approachDelta(entropy.entropy, maxEntropy - 1f, productionSpeed));
+			setEntropy(Mathf.approachDelta(entropy.entropy, maxProducion - 1f, productionSpeed));
 		}
 
 		@Override 
 		public void draw() {
 			super.draw();
 			Draw.color(entropyColor);
-			Draw.alpha(entropy.entropy/maxEntropy);
+			Draw.alpha(entropy.entropy/maxProducion);
 			Draw.rect(top, x, y, 0);
 		}
 	}

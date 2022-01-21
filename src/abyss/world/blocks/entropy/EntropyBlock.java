@@ -1,5 +1,6 @@
 package abyss.world.blocks.entropy;
 
+import arc.graphics.*;
 import mindustry.entities.Effect;
 import mindustry.content.*;
 import mindustry.gen.*;
@@ -10,7 +11,7 @@ import abyss.world.blocks.entropy.*;
 wont be available on the next releases but i will work on it*/
 
 public class EntropyBlock extends Block {
-	public float maxPulse = 100f;
+	public float maxEntropy = 100f;
 
 	public Effect entropyEffect = Fx.none;
 	public Color entropyColor = Color.valueOf("C46CC4");
@@ -27,7 +28,7 @@ public class EntropyBlock extends Block {
 
 		@Override
 		public void overflowEntropy() {
-			if (entropy.entropy > maxPulse) {
+			if (entropy.entropy > maxEntropy) {
 				kill();
 			entropyEffect.at(x, y);
 			}
