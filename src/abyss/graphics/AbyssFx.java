@@ -91,7 +91,7 @@ public class AbyssFx {
 			Lines.stroke(1f * e.fout());
 			Draw.alpha(1f);
 			Draw.color(Color.valueOf("D9826C"), Color.valueOf("ffffff"), e.fin());
-			Angles.randLenVectors(e.id, 10, 80f * e.finpow(), (x, y) => {
+			Angles.randLenVectors(e.id, 10, 80f * e.finpow(), (x, y) -> {
 			  Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 10f * e.fout());
 			});
 			Lines.stroke(3f * e.fout());
