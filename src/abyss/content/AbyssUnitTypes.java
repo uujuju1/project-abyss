@@ -11,6 +11,7 @@ import mindustry.gen.*;
 import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
+import abyss.graphics.*;
 import abyss.type.*;
 import abyss.type.draw.*;
 
@@ -599,6 +600,8 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 
+			abilities.add(new ReflectiveAbility(15, 80, AbyssFx.terreniumExplosion, true, true));
+
 			weapons.add(
 				new Weapon("abyss-terrenium-mount") {{
 					x = 1.5f;
@@ -631,12 +634,15 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 
+			abilities.add(new ReflectiveAbility(20, 80, AbyssFx.terreniumExplosion, true, true));
+
 			weapons.add(
 				new Weapon("abyss-terrenium-mount") {{
 					x = 3.25f;
 					y = 3f;
 					reload = 30f;
 					recoil = 1f;
+					flipSprite = true;
 					bullet = new BasicBulletType(4f, 20) {{
 						width = 7f;
 						height = 9f;
@@ -648,6 +654,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -3f;
 					reload = 30f;
 					recoil = 2f;
+					flipSprite = true;
 					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(6f, 30) {{
 						width = 7f;
