@@ -712,7 +712,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -8.75f;
 					reload = 30f;
 					recoil = 2f;
-					shootSound = Sounds.missile
+					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(6f, 30) {{
 						width = 7f;
 						height = 9f;
