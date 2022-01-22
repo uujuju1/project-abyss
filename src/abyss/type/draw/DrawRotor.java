@@ -2,6 +2,7 @@ package abyss.type.draw;
 
 import arc.Core;
 import arc.util.*;
+import mindustry.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.util.Time;
@@ -41,7 +42,7 @@ public class DrawRotor {
 			Draw.z(Layer.flyingUnit + motionBlurAmount - (b/1000));
 			for (int i = 0; i < bladeCount; i++) {
 				float r = 360/bladeCount * i;
-				Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation + r);
+				Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation + r - motionBlurAmount);
 			}
 		}
 
