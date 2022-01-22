@@ -97,7 +97,5 @@ public class AbyssFx {
 			Lines.stroke(3f * e.fout());
 			Draw.alpha(e.fout());
 			Lines.circle(e.x, e.y, 120f * e.fin());
-			Draw.alpha(0.8f * e.fout());
-			Fill.circle(e.x, e.y, 120f * e.fin());
 		});
 }

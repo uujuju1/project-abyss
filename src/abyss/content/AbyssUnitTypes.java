@@ -20,7 +20,7 @@ public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
-		saloni, alerbite;
+		saloni, alerbite, laminite;
 
 	@Override
 	public void load() {
@@ -661,6 +661,62 @@ public class AbyssUnitTypes implements ContentList {
 						width = 7f;
 						height = 9f;
 						lifetime = 32f;
+					}};
+				}}
+			);
+		}};
+		laminite = new RotorUnitType("laminite") {{
+			health = 950;
+			speed = 1f;
+			range = 180f;
+			maxRange = range;
+			flying = true;
+			constructor = LegsUnit::create;
+
+			rotors.add(
+				new DrawRotor(name + "-rotor") {{
+					x = y = 0f;
+					s = 1f;
+					drawJoint = false;
+				}}
+			);
+
+			abilities.add(new ReflectiveAbility(30, 80, true, true, AbyssFx.terreniumExplosion));
+
+			weapons.add(
+				new Weapon("abyss-terrenium-artillery") {{
+					x = 7f;
+					y = -3f;
+					reload = 60f;
+					recoil = 3f;
+					shootSound = Sounds.artillery;
+					bullet = new ArtilleryBulletType(2f, 50) {{
+						width = height = 10f;
+						lifetime = 90f;
+						range = range;
+					}};
+				}},
+				new Weapon("abyss-terrenium-mount") {{
+					x = 5f;
+					y = 6f;
+					reload = 10f;
+					recoil = 1f;
+					bullet = new BasicBulletType(4f, 20) {{
+						width = 7f;
+						height = 9f;
+						lifetime = 22.5f;
+					}};
+				}},
+				new Weapon("abyss-terrenium-mount") {{
+					x = 3f;
+					y = -8.75f;
+					reload = 30f;
+					recoil = 2f;
+					shootSound = Sounds.missile
+					bullet = new MissileBulletType(6f, 30) {{
+						width = 7f;
+						height = 9f;
+						lifetime = 20f;
 					}};
 				}}
 			);
