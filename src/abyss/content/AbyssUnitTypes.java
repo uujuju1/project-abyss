@@ -598,7 +598,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
-					bladeCount = 3f;
+					bladeCount = 3;
 				}}
 			);
 
@@ -633,7 +633,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
-					bladeCount = 6f;
+					bladeCount = 6;
 				}}
 			);
 
