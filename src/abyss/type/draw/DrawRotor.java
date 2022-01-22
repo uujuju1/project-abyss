@@ -17,7 +17,7 @@ public class DrawRotor {
 	public float y = 0f;
 	public float s = 0f;
 
-	public int bladeCount = 4f;
+	public int bladeCount = 4;
 
 	public boolean drawJoint = true;
 
