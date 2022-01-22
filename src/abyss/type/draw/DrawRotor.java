@@ -18,6 +18,7 @@ public class DrawRotor {
 	public float s = 0f;
 
 	public int bladeCount = 4;
+	public int motionBlurAmount = 10;
 
 	public boolean drawJoint = true;
 
@@ -34,11 +35,16 @@ public class DrawRotor {
 		float rx = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float ry = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
 
-		for (int i = 0; i < bladeCount; i++) {
-			float r = 360/bladeCount * i;
-			Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation);
+		for (int b = 0; i < motionBlurAmount; i++) {
+			float a = 1/motionBlurAmount * i;
+			Draw.alpha(a);
+			Draw.z(Layer.flyingUnit + motionBlurAmount - (i/1000));
+			for (int i = 0; i < bladeCount; i++) {
+				float r = 360/bladeCount * i;
+				Draw.rect(rotorRegion, rx, ry, Time.time * s + unit.rotation + r);
+			}
 		}
-		
+
 		if (drawJoint) {
 			Draw.rect(jointRegion, rx, ry, unit.rotation - 90f);
 		}
