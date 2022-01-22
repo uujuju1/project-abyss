@@ -89,15 +89,15 @@ public class AbyssFx {
 		}),
 		terreniumExplosion = new Effect(60f, e -> {
 			Lines.stroke(1f * e.fout());
-			Draw.alpha(1f)
-			Draw.color(Color.valueOf("D9826C"), Color.valueOf("ffffff"), e.fin())
+			Draw.alpha(1f);
+			Draw.color(Color.valueOf("D9826C"), Color.valueOf("ffffff"), e.fin());
 			Angles.randLenVectors(e.id, 10, 80f * e.finpow(), (x, y) => {
-			  Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 10f * e.fout())
-			})
+			  Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), 10f * e.fout());
+			});
 			Lines.stroke(3f * e.fout());
-			Draw.alpha(e.fout())
-			Lines.circle(e.x, e.y, 120f * e.fin())
-			Draw.alpha(0.8f * e.fout())
-			Fill.circle(e.x, e.y, 120f * e.fin())
+			Draw.alpha(e.fout());
+			Lines.circle(e.x, e.y, 120f * e.fin());
+			Draw.alpha(0.8f * e.fout());
+			Fill.circle(e.x, e.y, 120f * e.fin());
 		});
 }
