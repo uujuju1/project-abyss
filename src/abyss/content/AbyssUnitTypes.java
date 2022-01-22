@@ -11,6 +11,7 @@ import mindustry.gen.*;
 import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
+import abyss.entities.abilities.*;
 import abyss.graphics.*;
 import abyss.type.*;
 import abyss.type.draw.*;
