@@ -601,7 +601,7 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 
-			abilities.add(new ReflectiveAbility(15, 80, AbyssFx.terreniumExplosion, true, true));
+			abilities.add(new ReflectiveAbility(15, 80, true, true, AbyssFx.terreniumExplosion));
 
 			weapons.add(
 				new Weapon("abyss-terrenium-mount") {{
@@ -635,7 +635,7 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 
-			abilities.add(new ReflectiveAbility(20, 80, AbyssFx.terreniumExplosion, true, true));
+			abilities.add(new ReflectiveAbility(20, 80, true, true, AbyssFx.terreniumExplosion));
 
 			weapons.add(
 				new Weapon("abyss-terrenium-mount") {{
