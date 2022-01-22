@@ -598,6 +598,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
+					bladeCount = 3f;
 				}}
 			);
 
@@ -632,6 +633,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
+					bladeCount = 6f;
 				}}
 			);
 
@@ -670,7 +672,7 @@ public class AbyssUnitTypes implements ContentList {
 			speed = 1f;
 			range = 180f;
 			maxRange = range;
-			flying = true;
+			flying = false;
 			constructor = LegsUnit::create;
 
 			rotors.add(
@@ -678,6 +680,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
+					bladeCount = 8;
 				}}
 			);
 
