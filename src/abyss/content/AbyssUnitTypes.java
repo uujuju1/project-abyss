@@ -431,74 +431,74 @@ public class AbyssUnitTypes implements ContentList {
 			maxRange = range;
 			hitSize = 22f;
 
-			abilities.add(
-				new UnitSpawnAbility(katerni, 60f * 60f, 0f, -20f)
-			);
-
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
-					x = 0f;
-					y = 4f;
+					x = 11.5f;
+					y = 2.75f;
 					s = 20f;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = -11.5f;
+					y = 2.75f;
+					s = 20f;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = 11.5f;
+					y = 2.75f;
+					s = -20f;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = -11.5f;
+					y = 2.75f;
+					s = -20f;
 				}}
 			);
 
 			weapons.add(
-				new Weapon("abyss-copter-mount") {{
-					x = 3f;
-					y = 23f;
-					reload = 10f;
-					recoil = 0.5f;
-					bullet = new BasicBulletType(4f, 50) {{
-						width = 8f;
-						height = 10f;
+				new Weapon("abyss-copter-missile-mount") {{
+					x = 13.25f;
+					y = 11f;
+					reload = 30f;
+					recoil = 1f;
+					shootSound = Sounds.missile;
+					bullet = new MissileBulletType(4f, 80) {{
+						width = 7f;
+						height = 9f;
 						lifetime = 75f;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
 					}};
 				}},
 				new Weapon("abyss-copter-missile-mount") {{
-					x = 3.75f;
-					y = 17f;
-					reload = 10f;
+					x = 3.5f;
+					y = 15f;
+					reload = 30f;
 					recoil = 1f;
-					bullet = new MissileBulletType(6f, 75) {{
-						width = 9f;
-						height = 11f;
-						lifetime = 50f;
+					shootSound = Sounds.missile;
+					bullet = new MissileBulletType(4f, 80) {{
+						width = 7f;
+						height = 9f;
+						lifetime = 75f;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
 					}};
 				}},
-				new Weapon("abyss-copter-big-mount") {{
-					x = 6f;
-					y = 3f;
-					reload = 30f;
+				new Weapon("abyss-copter-spark-mount") {{
+					x = 5f;
+					y = 5f;
+					reload = 5f;
 					recoil = 2f;
-					bullet = new LaserBulletType(120) {{
-						width = 10f;
-						length = 300f;
-						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+					shootSound = Sounds.spark;
+					bullet = new LightningBulletType() {{
+						lightningLengthRand = 1;
+						damage = 70;
 					}};
 				}},
-				new Weapon("abyss-copter-missile-mount") {{
-					x = 12f;
-					y = -3f;
-					reload = 10f;
-					recoil = 1f;
-					bullet = new LaserBulletType(50) {{
-						width = 10f;
-						length = 300f;
-						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
-					}};
-				}}
-			);
-			weapons.add(
 				new Weapon() {{
 					x = y = 0f;
-					reload = 120f;
+					reload = 240f;
 					recoil = 0f;
-					bullet = new MissileBulletType(8f, 300) {{
+					bullet = new MissileBulletType(8f, 400) {{
 						lifetime = 45f;
 						width = 12f;
 						height = 18f;
