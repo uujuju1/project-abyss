@@ -231,15 +231,15 @@ public class AbyssUnitTypes implements ContentList {
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
 					x = 0f;
-					y = 5f;
+					y = 4f;
 					s = 20f;
 				}}
 			);
 
 			weapons.add(
 				new Weapon("abyss-copter-mount") {{
-					x = 5f;
-					y = 8f;
+					x = 4.75f;
+					y = 3.5f;
 					reload = 30f;
 					recoil = 1f;
 					bullet = new BasicBulletType(4f, 15) {{
@@ -251,10 +251,11 @@ public class AbyssUnitTypes implements ContentList {
 					}};
 				}},
 				new Weapon("abyss-copter-mount") {{
-					x = 3f;
-					y = 10f;
+					x = 1.5f;
+					y = 9.5f;
 					reload = 30f;
 					recoil = 1f;
+					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(6f, 20) {{
 						lifetime = 20f;
 						width = 7f;
@@ -283,8 +284,21 @@ public class AbyssUnitTypes implements ContentList {
 
 			weapons.add(
 				new Weapon("abyss-copter-mount") {{
-					x = 3f;
-					y = 12f;
+					x = 6.75f;
+					y = 4.5f;
+					reload = 10f;
+					recoil = 0.5f;
+					bullet = new BasicBulletType(4f, 25) {{
+						lifetime = 50f;
+						width = 7f;
+						height = 9f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
+					}};
+				}},
+				new Weapon("abyss-copter-mount") {{
+					x = 4.75f;
+					y = 6.5f;
 					reload = 10f;
 					recoil = 0.5f;
 					bullet = new BasicBulletType(4f, 25) {{
@@ -297,7 +311,7 @@ public class AbyssUnitTypes implements ContentList {
 				}},
 				new Weapon("abyss-copter-missile-mount") {{
 					x = 5.75f;
-					y = 6f;
+					y = -0.5f;
 					reload = 60f;
 					recoil = 2f;
 					bullet = new LaserBulletType(30) {{
