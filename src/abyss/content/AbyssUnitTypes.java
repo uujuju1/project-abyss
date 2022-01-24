@@ -346,75 +346,81 @@ public class AbyssUnitTypes implements ContentList {
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
 					x = 0f;
-					y = 7f;
+					y = 10f;
 					s = 20f;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = 0f;
+					y = -10f;
+					s = 20f;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = 9f;
+					y = -1f;
+					s = -20f;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = -9f;
+					y = -1f;
+					s = -20f;
 				}}
 			);
 
 			weapons.add(
-				new Weapon("abyss-copter-mount") {{
-					x = 3f;
-					y = 19f;
-					reload = 10f;
-					recoil = 0.5f;
-					bullet = new BasicBulletType(4f, 50) {{
-						width = 8f;
-						height = 10f;
-						lifetime = 69f;
-						frontColor = Color.valueOf("ffffff");
-						backColor = Color.valueOf("B0B0B0");
-					}};
-				}},
-				new Weapon("abyss-copter-mount") {{
-					x = 9.5f;
-					y = 10f;
-					reload = 10f;
-					recoil = 0.5f;
-					bullet = new BasicBulletType(4f, 50) {{
-						width = 8f;
-						height = 10f;
+				new Weapon("abyss-copter-missile-mount") {{
+					x = 4f;
+					y = -7f;
+					reload = 30f;
+					recoil = 1f;
+					shootSound = Sounds.missile;
+					bullet = new MissileBulletType(4f, 40) {{
+						width = 7f;
+						height = 9f;
 						lifetime = 69f;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
 					}};
 				}},
 				new Weapon("abyss-copter-missile-mount") {{
-					x = 7.25f;
-					y = 16f;
+					x = 4.25f;
+					y = 8f;
 					reload = 30f;
 					recoil = 1f;
-					bullet = new LaserBulletType(60) {{
-						width = 8f;
-						length = 276f;
-						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
+					shootSound = Sounds.missile;
+					bullet = new MissileBulletType(4f, 40) {{
+						width = 7f;
+						height = 9f;
+						lifetime = 69f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
 					}};
 				}},
 				new Weapon("abyss-copter-big-mount") {{
-					x = 10f;
-					y = 2f;
+					x = 6f;
+					y = 0f;
 					reload = 120f;
-					recoil = 2f;
-					bullet = new MissileBulletType(6f, 100) {{
-						lifetime = 60f;
-						width = 10f;
-						height = 12f;
-						frontColor = Color.valueOf("ffffff");
-						backColor = Color.valueOf("B0B0B0");
-					}}; 
-				}}
-			);
-			weapons.add(
-				new Weapon() {{
-					x = y = 0f;
-					reload = 240f;
-					recoil = 0f;
-					bullet = new MissileBulletType(8f, 200) {{
-						lifetime = 35f;
-						width = 12f;
-						height = 18f;
+					recoil = 3f;
+					shootSound = Sounds.artillery;
+					bullet = new ArtilleryBulletType(2f, 75) {{
+						width = height = 10f;
+						lifetime = 138f;
+						range = 276f;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
 					}};
+				}},
+				new Weapon() {{
+					x = y = 0f;
+					reload = 180f;
+					recoil = 0f;
+					shootSound = Sounds.shootBig;
+					bullet = new MissileBulletType(8f, 150) {{
+						width = 14f;
+						height = 18f;
+						lifetime = 80f;
+						frontColor = Color.valueOf("ffffff");
+						backColor = Color.valueOf("B0B0B0");
+					}}; 
 				}}
 			);
 		}};
