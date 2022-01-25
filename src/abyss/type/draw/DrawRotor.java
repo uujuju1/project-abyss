@@ -56,7 +56,7 @@ public class DrawRotor {
 		Draw.color(Pal.shadow);
 		for (int i = 0; i < bladeCount; i++) {
 			float r = 360/bladeCount * i;
-			Draw.rect(rotorRegion, sx + unit.shadowTX * e, sy + unit.shadowTY * e, Time.time * s + unit.rotation + r);
+			Draw.rect(rotorRegion, sx + shadowTX * e, sy + shadowTY * e, Time.time * s + unit.rotation + r);
 		}
 		Draw.color();
 	}
