@@ -50,10 +50,10 @@ public class DrawRotor {
 	public void drawShadow(Unit unit) {
 		float sx = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float sy = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
-		float e = Mathf.max(unit.elevation, elevation);
+		float e = Math.max(unit.elevation, elevation);
 		// essentially remake the rotor draw code for the shadow
 		Draw.color(Pal.shadow);
-		if (drawShadow) Draw.rect(shadowRegion, sx + shadowTX * e, sy + shadowTY * e, Time.time * s + unit.rotation + r);		
+		if (drawShadow) Draw.rect(shadowRegion, sx + shadowTX * e, sy + shadowTY * e, Time.time * s + unit.rotation);		
 		Draw.color();
 	}
 }
