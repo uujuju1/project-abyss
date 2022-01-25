@@ -20,7 +20,7 @@ public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
-		saloni, alerbite, laminite;
+		saloni, alerbite, laminite, almone;
 
 	@Override
 	public void load() {
@@ -405,6 +405,8 @@ public class AbyssUnitTypes implements ContentList {
 						width = height = 10f;
 						lifetime = 138f;
 						range = 276f;
+						splashDamage = 75;
+						splashDamageRadius = 32f;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
 					}};
@@ -717,6 +719,8 @@ public class AbyssUnitTypes implements ContentList {
 						width = height = 10f;
 						lifetime = 90f;
 						range = range;
+						splashDamage = 50;
+						splashDamageRadius = 32f;
 					}};
 				}},
 				new Weapon("abyss-terrenium-mount") {{
@@ -740,6 +744,77 @@ public class AbyssUnitTypes implements ContentList {
 						width = 7f;
 						height = 9f;
 						lifetime = 20f;
+					}};
+				}}
+			);
+		}};
+		almone = new RotorUnitType("almone") {{
+			health = 7000;
+			speed = 0.7f;
+			range = 240f;
+			maxRange = range;
+			flying = false;
+			constructor = LegsUnit::create;
+
+			rotors.add(
+				new DrawRotor(name + "-rotor") {{
+					x = y = 0f;
+					s = 1f;
+					drawJoint = false;
+					bladeCount = 5;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("abyss-terrenium-laser") {{
+					x = 14f;
+					y = 12f;
+					reload = 120f;
+					recoil = 3f;
+					shootSound = Sounds.shootLaser;
+					bullet = new LaserBulletType(120) {{
+						length = 240f;
+						width = 8f;
+					}};
+				}},
+				new Weapon("abyss-terrenium-artillery") {{
+					x = 5f;
+					y = 8.5f;
+					reload = 15f;
+					recoil = 3f;
+					shootSound = Sounds.missile;
+					bullet = new MissileBulletType(2f, 70) {{
+						width = height = 10f;
+						lifetime = 90f;
+						splashDamage = 50;
+						splashDamageRadius = 32f;
+					}};
+				}},
+				new Weapon("abyss-terrenium-artillery") {{
+					x = 11f;
+					y = 0f;
+					reload = 15f;
+					recoil = 3f;
+					shootSound = Sounds.missile;
+					bullet = new MissileyBulletType(2f, 70) {{
+						width = height = 10f;
+						lifetime = 90f;
+						splashDamage = 50;
+						splashDamageRadius = 32f;
+					}};
+				}},
+				new Weapon("abyss-terrenium-artillery") {{
+					x = 10f;
+					y = -10f;
+					reload = 30f;
+					recoil = 3f;
+					shootSound = Sounds.artillery;
+					bullet = new ArtilleryBulletType(2f, 80) {{
+						width = height = 10f;
+						lifetime = 90f;
+						range = range;
+						splashDamage = 50;
+						splashDamageRadius = 32f;
 					}};
 				}}
 			);
