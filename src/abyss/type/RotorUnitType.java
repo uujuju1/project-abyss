@@ -3,6 +3,7 @@ package abyss.type;
 import arc.graphics.g2d.Draw;
 import arc.struct.Seq;
 import arc.util.Time;
+import mindustry.graphics.*;
 import mindustry.gen.*;
 import mindustry.type.UnitType;
 
@@ -41,5 +42,14 @@ public class RotorUnitType extends UnitType {
 	public void load() {
 		super.load();
 		rotors.each(DrawRotor::load);
+	}
+
+	@Override
+	public void drawShadow(Unit unit) {
+		Draw.color(Pal.shadow);
+		float e = Math.max(unit.elevation, visualElevation);
+		Draw.rect(region, unit.x + shadowTX * e, unit.y + shadowTY * e, unit.rotation - 90);
+		rotors.each(DrawRotor -> DrawRotor.drawShadow(unit));
+		Draw.color();
 	}
 }

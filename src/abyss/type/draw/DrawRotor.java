@@ -44,4 +44,17 @@ public class DrawRotor {
 			Draw.rect(jointRegion, rx, ry, unit.rotation - 90f);
 		}
 	}
+
+	public void drawShadow(Unit unit) {
+		float sx = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
+		float sy = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
+		float e = Math.max(unit.elevation, visualElevation);
+		// essentially remake the rotor draw code for the shadow
+		Draw.color(Pal.shadow);
+		for (int i = 0; i < bladeCount; i++) {
+			float r = 360/bladeCount * i;
+			Draw.rect(rotorRegion, rx + shadowTX * e, ry + shadowTY * e, Time.time * s + unit.rotation + r);
+		}
+		Draw.color();
+	}
 }
