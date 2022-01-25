@@ -771,7 +771,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = 12f;
 					reload = 120f;
 					recoil = 3f;
-					shootSound = Sounds.shootLaser;
+					shootSound = Sounds.laser;
 					bullet = new LaserBulletType(120) {{
 						length = 240f;
 						width = 8f;
