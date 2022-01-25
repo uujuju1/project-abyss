@@ -233,6 +233,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = 0f;
 					y = 4f;
 					s = 20f;
+					elevation = visualElevation;
 				}}
 			);
 
@@ -279,6 +280,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = 0f;
 					y = 4f;
 					s = 20f;
+					elevation = visualElevation;
 				}}
 			);
 
@@ -348,21 +350,25 @@ public class AbyssUnitTypes implements ContentList {
 					x = 0f;
 					y = 10f;
 					s = 20f;
+					elevation = visualElevation;
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = 0f;
 					y = -10f;
 					s = 20f;
+					elevation = visualElevation;
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = 9f;
 					y = -1f;
 					s = -20f;
+					elevation = visualElevation;
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = -9f;
 					y = -1f;
 					s = -20f;
+					elevation = visualElevation;
 				}}
 			);
 
@@ -438,21 +444,25 @@ public class AbyssUnitTypes implements ContentList {
 					x = 11.5f;
 					y = 2.75f;
 					s = 20f;
+					elevation = visualElevation;
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = -11.5f;
 					y = 2.75f;
 					s = 20f;
+					elevation = visualElevation;
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = 11.5f;
 					y = 2.75f;
 					s = -20f;
+					elevation = visualElevation;
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = -11.5f;
 					y = 2.75f;
 					s = -20f;
+					elevation = visualElevation;
 				}}
 			);
 
@@ -522,6 +532,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = 0f;
 					y = 12f;
 					s = 25f;
+					elevation = visualElevation;
 				}}
 			);
 
@@ -621,6 +632,7 @@ public class AbyssUnitTypes implements ContentList {
 					s = 1f;
 					drawJoint = false;
 					bladeCount = 3;
+					elevation = visualElevation;
 				}}
 			);
 
@@ -656,6 +668,7 @@ public class AbyssUnitTypes implements ContentList {
 					s = 1f;
 					drawJoint = false;
 					bladeCount = 6;
+					elevation = visualElevation;
 				}}
 			);
 
@@ -703,6 +716,7 @@ public class AbyssUnitTypes implements ContentList {
 					s = 1f;
 					drawJoint = false;
 					bladeCount = 8;
+					elevation = visualElevation;
 				}}
 			);
 
@@ -762,6 +776,7 @@ public class AbyssUnitTypes implements ContentList {
 					s = 1f;
 					drawJoint = false;
 					bladeCount = 5;
+					elevation = visualElevation;
 				}}
 			);
 

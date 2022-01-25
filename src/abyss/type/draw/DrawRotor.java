@@ -15,7 +15,7 @@ public class DrawRotor {
 	public TextureRegion rotorRegion, jointRegion;
 
 	public float shadowTX = -12f, shadowTY = -13f;
-	public float visualElevation = -1f;
+	public float elevation = -1f;
 
 	public float x = 0f;
 	public float y = 0f;
@@ -51,7 +51,7 @@ public class DrawRotor {
 	public void drawShadow(Unit unit) {
 		float sx = unit.x + Angles.trnsx(unit.rotation - 90, x, y);
 		float sy = unit.y + Angles.trnsy(unit.rotation - 90, x, y);
-		float e = Math.max(unit.elevation, unit.visualElevation);
+		float e = Math.max(unit.elevation, elevation);
 		// essentially remake the rotor draw code for the shadow
 		Draw.color(Pal.shadow);
 		for (int i = 0; i < bladeCount; i++) {
