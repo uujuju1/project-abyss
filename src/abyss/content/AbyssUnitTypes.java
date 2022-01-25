@@ -631,6 +631,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
+					drawShadow = false;
 					bladeCount = 3;
 					elevation = visualElevation;
 				}}
@@ -667,6 +668,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
+					drawShadow = false;
 					bladeCount = 6;
 					elevation = visualElevation;
 				}}
@@ -715,6 +717,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
+					drawShadow = false;
 					bladeCount = 8;
 					elevation = visualElevation;
 				}}
@@ -775,6 +778,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					s = 1f;
 					drawJoint = false;
+					drawShadow = false;
 					bladeCount = 5;
 					elevation = visualElevation;
 				}}
