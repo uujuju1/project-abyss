@@ -796,7 +796,7 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 15f;
 					recoil = 3f;
 					shootSound = Sounds.missile;
-					bullet = new MissileyBulletType(2f, 70) {{
+					bullet = new MissileBulletType(2f, 70) {{
 						width = height = 10f;
 						lifetime = 90f;
 						splashDamage = 50;
