@@ -14,6 +14,9 @@ public class DrawRotor {
 	public final String name;
 	public TextureRegion rotorRegion, jointRegion;
 
+	public float shadowTX = -12f, shadowTY = -13f;
+	public float visualElevation = -1f;
+
 	public float x = 0f;
 	public float y = 0f;
 	public float s = 0f;
