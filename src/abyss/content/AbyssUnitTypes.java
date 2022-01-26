@@ -563,7 +563,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -10f;
 					s = -25f;
 					elevation = visualElevation;
-				}},
+				}}
 			);
 
 			weapons.add(
