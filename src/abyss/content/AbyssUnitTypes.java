@@ -595,7 +595,7 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 30f;
 					mirror = false;
 					recoil = 2f;
-					shots = 4f;
+					shots = 4;
 					bullet = new MissileBulletType(4f, 50) {{
 						lifetime = 90f;
 						width = 8f;
@@ -639,7 +639,7 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 
-			abilities.add(new ReflectiveAbility(15, 80, true, true, AbyssFx.terreniumExplosion));
+			abilities.add(new ReflectiveAbility(15, 80, 60, true, true, AbyssFx.terreniumExplosion));
 
 			weapons.add(
 				new Weapon("abyss-terrenium-mount") {{
@@ -676,7 +676,7 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 
-			abilities.add(new ReflectiveAbility(20, 80, true, true, AbyssFx.terreniumExplosion));
+			abilities.add(new ReflectiveAbility(20, 80, 60, true, true, AbyssFx.terreniumExplosion));
 
 			weapons.add(
 				new Weapon("abyss-terrenium-mount") {{
@@ -725,7 +725,7 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 
-			abilities.add(new ReflectiveAbility(30, 80, true, true, AbyssFx.terreniumExplosion));
+			abilities.add(new ReflectiveAbility(30, 80, 60, true, true, AbyssFx.terreniumExplosion));
 
 			weapons.add(
 				new Weapon("abyss-terrenium-artillery") {{
@@ -775,7 +775,7 @@ public class AbyssUnitTypes implements ContentList {
 			flying = false;
 			constructor = LegsUnit::create;
 
-			abilities.add(new ReflectiveAbility(45, 80, true, true, AbyssFx.terreniumExplosion));
+			abilities.add(new ReflectiveAbility(45, 80, 60, true, true, AbyssFx.terreniumExplosion));
 
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
