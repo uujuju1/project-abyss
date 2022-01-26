@@ -529,33 +529,61 @@ public class AbyssUnitTypes implements ContentList {
 
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
-					x = 0f;
-					y = 12f;
+					x = 15.75f;
+					y = 10f;
 					s = 25f;
 					elevation = visualElevation;
-				}}
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = 15.75f;
+					y = 10f;
+					s = -25f;
+					elevation = visualElevation;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = -15.75f;
+					y = -10f;
+					s = 25f;
+					elevation = visualElevation;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = -15.75f;
+					y = 10f;
+					s = -25f;
+					elevation = visualElevation;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = 0f;
+					y = -10f;
+					s = 25f;
+					elevation = visualElevation;
+				}},
+				new DrawRotor(name + "-rotor") {{
+					x = 0f;
+					y = -10f;
+					s = -25f;
+					elevation = visualElevation;
+				}},
 			);
 
 			weapons.add(
-				new Weapon("abyss-copter-big-mount") {{
+				new Weapon("abyss-copter-spark-mount") {{
 					x = 16f;
 					y = 0f;
 					reload = 30f;
 					recoil = 2f;
-					bullet = new MissileBulletType(6f, 100) {{
-						lifetime = 60f;
-						width = 10f;
-						height = 12f;
-						frontColor = Color.valueOf("ffffff");
-						backColor = Color.valueOf("B0B0B0");
+					bullet = new LaserBulletType(200) {{
+						width = 8f;
+						length = 360f;
+						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
 					}};
 				}},
-				new Weapon("abyss-copter-big-mount") {{
+				new Weapon("abyss-copter-spark-mount") {{
 					x = 5f;
 					y = -1.5f;
 					reload = 60f;
 					recoil = 2f;
-					bullet = new LaserBulletType(150) {{
+					bullet = new LaserBulletType(200) {{
 						width = 8f;
 						length = 360f;
 						colors = new Color[]{Color.valueOf("CFCFCF"), Color.valueOf("EBEBEB"), Color.white};
@@ -564,40 +592,14 @@ public class AbyssUnitTypes implements ContentList {
 				new Weapon("abyss-copter-big-mount") {{
 					x = 0f;
 					y = -30f;
-					reload = 10f;
+					reload = 30f;
 					mirror = false;
 					recoil = 2f;
-					bullet = new BasicBulletType(4f, 100) {{
+					shots = 4f;
+					bullet = new MissileBulletType(4f, 50) {{
 						lifetime = 90f;
 						width = 8f;
 						height = 10f;
-						frontColor = Color.valueOf("ffffff");
-						backColor = Color.valueOf("B0B0B0");
-					}};
-				}}
-			);
-			weapons.add(
-				new Weapon("abyss-copter-missile-mount") {{
-					x = 12f;
-					y = 24f;
-					reload = 5f;
-					recoil = 0.5f;
-					bullet = new BasicBulletType(4f, 50) {{
-						lifetime = 90f;
-						width = 7f;
-						height = 9f;
-						frontColor = Color.valueOf("ffffff");
-						backColor = Color.valueOf("B0B0B0");
-					}};
-				}},
-				new Weapon("abyss-copter-missile-mount") {{
-					x = y = 16f;
-					reload = 5f;
-					recoil = 0.5f;
-					bullet = new BasicBulletType(4f, 50) {{
-						lifetime = 90f;
-						width = 7f;
-						height = 9f;
 						frontColor = Color.valueOf("ffffff");
 						backColor = Color.valueOf("B0B0B0");
 					}};
@@ -608,7 +610,7 @@ public class AbyssUnitTypes implements ContentList {
 					mirror = false;
 					recoil = 0;
 					bullet = new MissileBulletType(8f, 400) {{
-						lifetime = 50f;
+						lifetime = 60f;
 						width = 14f;
 						height = 20f;
 						frontColor = Color.valueOf("ffffff");
@@ -772,6 +774,8 @@ public class AbyssUnitTypes implements ContentList {
 			maxRange = range;
 			flying = false;
 			constructor = LegsUnit::create;
+
+			abilities.add(new ReflectiveAbility(45, 80, true, true, AbyssFx.terreniumExplosion));
 
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
