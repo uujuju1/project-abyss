@@ -36,7 +36,7 @@ public class AbyssBlocks implements ContentList {
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
 		// units
-		abyssFactory, rotorizedFactory,
+		abyssFactory, rotorizedFactory, terreniumConstructor,
 		add, mult, exp, tetr,
 		// production 
 		abyssForge, proximitySmelter, blastKiln,
@@ -114,6 +114,20 @@ public class AbyssBlocks implements ContentList {
 				new UnitPlan (AbyssUnitTypes.katerni, 60f * 30, with(Items.silicon, 10, AbyssItems.balestenite, 30))
 			);
 		}};
+		terreniumConstructor = new UnitFactory("terrenium-constructor") {{
+			requirements(Category.units, with(
+				AbyssItems.kalenium, 150,
+				AbyssItems.balestenite, 30
+				Items.silicon, 120,
+				Items.titanium, 100
+			));
+			size = 3;
+			health = 220;
+			consumes.power(2f);
+			plans = Seq.with(
+				new UnitPlan (AbyssUnitTypes.saloni, 60f * 30, with(Items.silicon, 10, AbyssItems.kalenium, 30))
+			);
+		}};
 		add = new Reconstructor("reconstructor3") {{
 			requirements(Category.units, with(Items.copper, 200, Items.lead, 120, Items.silicon, 90));
 
@@ -125,7 +139,8 @@ public class AbyssBlocks implements ContentList {
 
 			upgrades.addAll(
 				new UnitType[]{AbyssUnitTypes.antra, AbyssUnitTypes.karma},
-				new UnitType[]{AbyssUnitTypes.katerni, AbyssUnitTypes.termina}
+				new UnitType[]{AbyssUnitTypes.katerni, AbyssUnitTypes.termina},
+				new UnitType[]{AbyssUnitTypes.saloni, AbyssUnitTypes.alerbite}
 			);
 		}};
 		mult = new Reconstructor("reconstructor5") {{
@@ -139,7 +154,8 @@ public class AbyssBlocks implements ContentList {
 
 			upgrades.addAll(
 				new UnitType[]{AbyssUnitTypes.karma, AbyssUnitTypes.kalerbi},
-				new UnitType[]{AbyssUnitTypes.termina, AbyssUnitTypes.solanra}
+				new UnitType[]{AbyssUnitTypes.termina, AbyssUnitTypes.solanra},
+				new UnitType[]{AbyssUnitTypes.alerbite, AbyssUnitTypes.laminite}
 			);
 		}};
 		exp = new Reconstructor("reconstructor7") {{
@@ -155,7 +171,8 @@ public class AbyssBlocks implements ContentList {
 
 			upgrades.addAll(
 				new UnitType[]{AbyssUnitTypes.kalerbi, AbyssUnitTypes.kodene},
-				new UnitType[]{AbyssUnitTypes.solanra, AbyssUnitTypes.deuteria}
+				new UnitType[]{AbyssUnitTypes.solanra, AbyssUnitTypes.deuteria},
+				new UnitType[]{AbyssUnitTypes.laminite, AbyssUnitTypes.almone}
 			);
 		}};
 		tetr = new Reconstructor("reconstructor9") {{
