@@ -117,7 +117,7 @@ public class AbyssBlocks implements ContentList {
 		terreniumConstructor = new UnitFactory("terrenium-constructor") {{
 			requirements(Category.units, with(
 				AbyssItems.kalenium, 150,
-				AbyssItems.balestenite, 30
+				AbyssItems.balestenite, 30,
 				Items.silicon, 120,
 				Items.titanium, 100
 			));
