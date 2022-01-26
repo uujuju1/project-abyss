@@ -527,7 +527,7 @@ public class AbyssUnitTypes implements ContentList {
 			maxRange = range;
 			hitSize = 28f;
 
-			rotors.add(
+			rotors.addAll(
 				new DrawRotor(name + "-rotor") {{
 					x = 15.75f;
 					y = 10f;
