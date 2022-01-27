@@ -867,6 +867,8 @@ public class AbyssUnitTypes implements ContentList {
 			legGroupSize = 5;
 			legLength = 20f;
 
+			abilities.add(new ReflectiveAbility(120, 80, 60, true, true, AbyssFx.terreniumExplosion));
+
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
 					x = y = 0f;
