@@ -105,7 +105,7 @@ public class AbyssTechTree implements ContentList {
 		});
 		extendNode(Blocks.kiln, () -> {
 			node(AbyssBlocks.proximitySmelter, Seq.with(new Produce(Items.titanium)));
-			node(AbyssBlocks.blastKilm, Seq.with(new Produce(Items.pyratite)));
+			node(AbyssBlocks.blastKiln, Seq.with(new Produce(Items.pyratite)));
 		});
 
 		extendNode(Blocks.additiveReconstructor, () -> {

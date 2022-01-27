@@ -188,7 +188,7 @@ public class AbyssUnitTypes implements ContentList {
 					alternate = true;
 					reload = 120f;
 					recoil = 4f;
-					shootSound = Sounds.laserBig;
+					shootSound = Sounds.laserbig;
 					bullet = new ContinuousLaserBulletType() {{
 						maxRange = range;
 						damage = 24f;
@@ -209,7 +209,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -11f;
 					reload = 120f;
 					recoil = 4f;
-					shootSound = Sounds.laserBig;
+					shootSound = Sounds.laserbig;
 					bullet = new ContinuousLaserBulletType() {{
 						maxRange = range;
 						damage = 24f;
