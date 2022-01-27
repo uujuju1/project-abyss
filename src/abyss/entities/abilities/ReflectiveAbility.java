@@ -11,6 +11,7 @@ public class ReflectiveAbility extends Ability {
 	public boolean damagesAir, damagesGround;
 	public Effect damageEffect;
 	float health = -1f;
+	float recharge = 0f;
 
 	public ReflectiveAbility(float damage, float radius, float reload, boolean damagesAir, boolean damagesGround, Effect damageEffect) {
 		this.damage = damage;
@@ -47,13 +48,13 @@ public class ReflectiveAbility extends Ability {
 
 	@Override
 	public void update(Unit unit) {
-		float recharge = 0f;
 		if (health > unit.health && recharge <= 0f) {
 			Damage.damage(unit.team, unit.x, unit.y, radius, damage, damagesAir, damagesGround);
 			damageEffect.at(unit.x, unit.y);
 			recharge = reload;
+		} else {
+			recharge -= Time.delta;
 		}
-		recharge -= Time.delta;
 		health = unit.health;
 	}
 }
