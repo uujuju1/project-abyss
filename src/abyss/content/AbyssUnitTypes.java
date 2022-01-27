@@ -572,6 +572,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = 0f;
 					reload = 30f;
 					recoil = 2f;
+					shootSound = Sounds.laser;
 					bullet = new LaserBulletType(200) {{
 						width = 8f;
 						length = 360f;
@@ -580,9 +581,10 @@ public class AbyssUnitTypes implements ContentList {
 				}},
 				new Weapon("abyss-copter-spark-mount") {{
 					x = 5f;
-					y = -1.5f;
+					y = 9f;
 					reload = 60f;
 					recoil = 2f;
+					shootSound = Sounds.laser;
 					bullet = new LaserBulletType(200) {{
 						width = 8f;
 						length = 360f;
@@ -590,12 +592,13 @@ public class AbyssUnitTypes implements ContentList {
 					}};
 				}},
 				new Weapon("abyss-copter-big-mount") {{
-					x = 0f;
-					y = -30f;
+					x = 7f;
+					y = -1.5f;
 					reload = 30f;
 					mirror = false;
 					recoil = 2f;
 					shots = 4;
+					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(4f, 50) {{
 						lifetime = 90f;
 						width = 8f;
@@ -859,7 +862,7 @@ public class AbyssUnitTypes implements ContentList {
 			speed = 0.5f;
 			range = 300f;
 			maxRange = range;
-			flying = true;
+			flying = false;
 			constructor = LegsUnit::create;
 			hitSize = 32f;
 
@@ -873,31 +876,33 @@ public class AbyssUnitTypes implements ContentList {
 				new DrawRotor(name + "-rotor") {{
 					x = y = 0f;
 					s = 1f;
-					drawJoint = true;
-					drawShadow = true;
+					drawJoint = false;
+					drawShadow = false;
 					bladeCount = 7;
 					elevation = visualElevation;
 				}}
 			);
 
 			weapons.add(
-				new Weapon("abyss-abyss-terrenium-artillery") {{
+				new Weapon("abyss-terrenium-artillery") {{
 					x = 7f;
 					y = 12f;
 					reload = 30f;
 					recoil = 1f;
+					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(6f, 150) {{
 						width = 8f;
 						height = 10f;
 						lifetime = 50f;
 					}};
 				}},
-				new Weapon("abyss-abyss-terrenium-artillery") {{
+				new Weapon("abyss-terrenium-artillery") {{
 					x = 0f;
 					y = 0f;
 					reload = 60f;
 					recoil = 1f;
-					bullet = new BasicBulletType(4f, 200) {{
+					shootSound = Sounds.artillery;
+					bullet = new ArtilleryBulletType(4f, 200) {{
 						width = 8f;
 						height = 10f;
 						lifetime = 75f;
@@ -905,7 +910,7 @@ public class AbyssUnitTypes implements ContentList {
 						collides = true;
 					}};
 				}},
-				new Weapon("abyss-abyss-terrenium-machinegun") {{
+				new Weapon("abyss-terrenium-machinegun") {{
 					x = 10f;
 					y = 5f;
 					reload = 10f;
@@ -916,7 +921,7 @@ public class AbyssUnitTypes implements ContentList {
 						lifetime = 75f;
 					}};
 				}},
-				new Weapon("abyss-abyss-terrenium-machinegun") {{
+				new Weapon("abyss-terrenium-machinegun") {{
 					x = 10f;
 					y = -10f;
 					reload = 11f;
