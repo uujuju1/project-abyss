@@ -783,8 +783,8 @@ public class AbyssUnitTypes implements ContentList {
 			constructor = LegsUnit::create;
 			hitSize = 22f;
 
-			legCount = 8f;
-			legGroupSize = 4f;
+			legCount = 8;
+			legGroupSize = 4;
 			legLength = 24f;
 
 			abilities.add(new ReflectiveAbility(45, 80, 60, true, true, AbyssFx.terreniumExplosion));
@@ -900,7 +900,7 @@ public class AbyssUnitTypes implements ContentList {
 						height = 10f;
 						lifetime = 75f;
 						range = 300f;
-						collide = true;
+						collides = true;
 					}};
 				}},
 				new Weapon("abyss-abyss-terrenium-machinegun") {{
