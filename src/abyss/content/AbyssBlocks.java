@@ -365,6 +365,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 2;
 			health = 160;
+			shootSound = Sounds.shootbig;
 			consumes.items(with(
 				AbyssItems.balestenite, 10
 			));
@@ -382,6 +383,7 @@ public class AbyssBlocks implements ContentList {
 			size = 2;
 			health = 160;
 			consumes.power(1f);
+			shootSound = Sounds.noammo;
 			bullet = new LaserBoltBulletType(4f, 10){{
 				lifetime = 30f;
 				healPercent = 0.5f;
@@ -398,6 +400,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 2;
 			health = 160;
+			shootSound = Sounds.sap;
 			consumes.items(with(
 				Items.sporePod, 10
 			));

@@ -26,7 +26,7 @@ public class ScatterSilo extends Block {
 
 	public ScatterSilo(String name) {
 		super(name);
-		solid = destructible = update = configurable = hasItems = true;
+		solid = destructible = update = configurable = true;
 	}
 
 	@Override
