@@ -188,7 +188,8 @@ public class AbyssBlocks implements ContentList {
 
 			upgrades.addAll(
 				new UnitType[]{AbyssUnitTypes.kodene, AbyssUnitTypes.tolonia},
-				new UnitType[]{AbyssUnitTypes.deuteria, AbyssUnitTypes.atomega}
+				new UnitType[]{AbyssUnitTypes.deuteria, AbyssUnitTypes.atomega},
+				new UnitType[]{AbyssUnitTypes.almone, AbyssUnitTypes.aracnophobia}
 			);
 		}};
 

@@ -143,7 +143,7 @@ public class AbyssTechTree implements ContentList {
 			});
 		});
 		extendNode(Blocks.navalFactory, () -> {
-			node(AbyssBlocks.abyssFactory, Seq.with(new Produce(AbyssItems.abyss)), () -> {
+			node(AbyssBlocks.abyssFactory, Seq.with(new Produce(AbyssItems.balestenite)), () -> {
 				node(AbyssUnitTypes.katerni, () -> {
 					node(AbyssUnitTypes.termina, Seq.with(new Research(AbyssBlocks.add)), () -> {
 						node(AbyssUnitTypes.solanra, Seq.with(new Research(AbyssBlocks.mult)), () -> {
@@ -155,5 +155,18 @@ public class AbyssTechTree implements ContentList {
 				});
 			});
 		});
+		extendNode(Blocks.groundFactory, () -> {
+			node(AbyssBlocks.terreniumConstructor, Seq.with(new Produce(AbyssItems.kalenium)), () -> {
+				node(AbyssUnitTypes.saloni, () -> {
+					node(AbyssUnitTypes.alerbite, Seq.with(new Research(AbyssBlocks.add)), () -> {
+						node(AbyssUnitTypes.laminite, Seq.with(new Research(AbyssBlocks.mult)), () -> {
+							node(AbyssUnitTypes.almone, Seq.with(new Research(AbyssBlocks.exp)), () -> {
+								node(AbyssUnitTypes.aracnophobia, Seq.with(new Research(AbyssBlocks.tetr)));
+							});
+						});
+					});
+				});
+			});
+		})
 	}
 }

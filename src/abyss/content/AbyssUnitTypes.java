@@ -20,7 +20,7 @@ public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
-		saloni, alerbite, laminite, almone;
+		saloni, alerbite, laminite, almone, aracnophobia;
 
 	@Override
 	public void load() {
@@ -665,6 +665,10 @@ public class AbyssUnitTypes implements ContentList {
 			constructor = LegsUnit::create;
 			hitSize = 10f;
 
+			legCount = 6;
+			legGroupSize = 3;
+			legLength = 12f;
+
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
 					x = y = 0f;
@@ -713,6 +717,9 @@ public class AbyssUnitTypes implements ContentList {
 			maxRange = range;
 			flying = false;
 			constructor = LegsUnit::create;
+			hitSize = 12.5f;
+
+			legLength = 16f;
 
 			rotors.add(
 				new DrawRotor(name + "-rotor") {{
@@ -774,6 +781,11 @@ public class AbyssUnitTypes implements ContentList {
 			maxRange = range;
 			flying = false;
 			constructor = LegsUnit::create;
+			hitSize = 22f;
+
+			legCount = 8f;
+			legGroupSize = 4f;
+			legLength = 24f;
 
 			abilities.add(new ReflectiveAbility(45, 80, 60, true, true, AbyssFx.terreniumExplosion));
 
@@ -840,6 +852,79 @@ public class AbyssUnitTypes implements ContentList {
 						splashDamageRadius = 32f;
 					}};
 				}}
+			);
+		}};
+		aracnophobia = new RotorUnitType("aracnophobia") {{
+			health = 20000;
+			speed = 0.5f;
+			range = 300f;
+			maxRange = range;
+			flying = true;
+			constructor = LegsUnit::create;
+			hitSize = 32f;
+
+			legCount = 10;
+			legGroupSize = 5;
+			legLength = 20f;
+
+			rotors.add(
+				new DrawRotor(name + "-rotor") {{
+					x = y = 0f;
+					s = 1f;
+					drawJoint = true;
+					drawShadow = true;
+					bladeCount = 7;
+					elevation = visualElevation;
+				}}
+			);
+
+			weapons.add(
+				new Weapon("abyss-abyss-terrenium-artillery") {{
+					x = 7f;
+					y = 12f;
+					reload = 30f;
+					recoil = 1f;
+					bullet = new MissileBulletType(6f, 150) {{
+						width = 8f;
+						height = 10f;
+						lifetime = 50f;
+					}};
+				}},
+				new Weapon("abyss-abyss-terrenium-artillery") {{
+					x = 0f;
+					y = 0f;
+					reload = 60f;
+					recoil = 1f;
+					bullet = new BasicBulletType(4f, 200) {{
+						width = 8f;
+						height = 10f;
+						lifetime = 75f;
+						range = 300f;
+						collide = true;
+					}};
+				}},
+				new Weapon("abyss-abyss-terrenium-machinegun") {{
+					x = 10f;
+					y = 5f;
+					reload = 10f;
+					recoil = 1f;
+					bullet = new BasicBulletType(4f, 70) {{
+						width = 8f;
+						height = 10f;
+						lifetime = 75f;
+					}};
+				}},
+				new Weapon("abyss-abyss-terrenium-machinegun") {{
+					x = 10f;
+					y = -10f;
+					reload = 11f;
+					recoil = 1f;
+					bullet = new BasicBulletType(4f, 70) {{
+						width = 8f;
+						height = 10f;
+						lifetime = 75f;
+					}};
+				}},
 			);
 		}};
 	}
