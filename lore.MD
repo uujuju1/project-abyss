@@ -23,3 +23,11 @@ An item that has great durability and nearly frictionless surface
 Crux started researching rotor-based units and had come up with an interesting idea.
 <br> Balestenite, a highly smooth alloy of copper and metaglass, capable of supporting high stretching tension and a nearly frictionless surface.
 <br> But after the 5th prototype the Project Helicopter was discontinued since space exploration got Crux's interest.
+##
+
+## terrenium
+small faction that brought units and items to both sharded and crux
+
+### story
+near the 2 poles of serpulo 2 aircrafts landed beams on the ground the affected region has some kalenium, which was completely mined
+<br> years later both factios managed to synthetize kalenium and finally reuse the units
