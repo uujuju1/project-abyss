@@ -36,6 +36,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					reload = 30f;
 					mirror = false;
+					shootSound = Sounds.plasmadrop;
 					bullet = new BombBulletType(27f, 30f) {{
 						width = height = hitSize * 2f;
 						lifetime = 60f;
@@ -89,6 +90,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -2.75f;
 					reload = 120f;
 					recoil = 1.5f;
+					shootSound = Sounds.laser;
 					bullet = new LaserBulletType() {{
 						length = 100f;
 						width = 8f;
@@ -127,6 +129,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -8.75f;
 					reload = 240f;
 					recoil = 4f;
+					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(4f, 200f) {{
 						width = 21f;
 						height = 27f;
@@ -141,7 +144,8 @@ public class AbyssUnitTypes implements ContentList {
 					x = 5.5f;
 					y = 8f;
 					reload = 30f;
-					recoil =2f;
+					recoil = 2f;
+					shootSound = Sounds.artillery;
 					bullet = new ArtilleryBulletType(4f, 75f) {{
 						width = height = 16f;
 						maxRange = 70f;
@@ -170,6 +174,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = 10f;
 					reload = 10f;
 					recoil = 3f;
+					shootSound = Sounds.shootBig;
 					bullet = new BasicBulletType(6f, 100f) {{
 						width = height = 16f;
 						lifetime = 53f;
@@ -183,6 +188,7 @@ public class AbyssUnitTypes implements ContentList {
 					alternate = true;
 					reload = 120f;
 					recoil = 4f;
+					shootSound = Sounds.laserBig;
 					bullet = new ContinuousLaserBulletType() {{
 						maxRange = range;
 						damage = 24f;
@@ -203,6 +209,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -11f;
 					reload = 120f;
 					recoil = 4f;
+					shootSound = Sounds.laserBig;
 					bullet = new ContinuousLaserBulletType() {{
 						maxRange = range;
 						damage = 24f;
@@ -256,6 +263,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = 9.5f;
 					reload = 30f;
 					recoil = 1f;
+					alternate = true;
 					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(6f, 20) {{
 						lifetime = 20f;
@@ -316,6 +324,8 @@ public class AbyssUnitTypes implements ContentList {
 					y = -0.5f;
 					reload = 60f;
 					recoil = 2f;
+					alternate = true;
+					shootSound = Sounds.laser;
 					bullet = new LaserBulletType(30) {{
 						width = 6f;
 						length = 200f;
@@ -327,6 +337,7 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 180f;
 					recoil = 0f;
 					mirror = false;
+					shootSound = Sounds.artillery;
 					bullet = new MissileBulletType(8f, 180) {{
 						width = 14f;
 						height = 20f;
@@ -510,6 +521,7 @@ public class AbyssUnitTypes implements ContentList {
 					x = y = 0f;
 					reload = 240f;
 					recoil = 0f;
+					shootSound = Sounds.artillery;
 					bullet = new MissileBulletType(8f, 400) {{
 						lifetime = 45f;
 						width = 12f;
@@ -611,6 +623,7 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 360f;
 					mirror = false;
 					recoil = 0;
+					shootSound = Sounds.artillery;
 					bullet = new MissileBulletType(8f, 400) {{
 						lifetime = 60f;
 						width = 14f;
@@ -703,6 +716,7 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 30f;
 					recoil = 2f;
 					flipSprite = true;
+					alternate = true;
 					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(6f, 30) {{
 						width = 7f;
@@ -832,6 +846,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = 0f;
 					reload = 15f;
 					recoil = 3f;
+					alternate = true;
 					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(2f, 70) {{
 						width = height = 10f;
@@ -900,6 +915,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = 0f;
 					reload = 60f;
 					recoil = 1f;
+					alternate = true;
 					shootSound = Sounds.artillery;
 					bullet = new ArtilleryBulletType(4f, 200) {{
 						width = 8f;
@@ -925,6 +941,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -10f;
 					reload = 11f;
 					recoil = 1f;
+					alternate = true;
 					bullet = new BasicBulletType(4f, 70) {{
 						width = 8f;
 						height = 10f;
