@@ -167,6 +167,6 @@ public class AbyssTechTree implements ContentList {
 					});
 				});
 			});
-		})
+		});
 	}
 }

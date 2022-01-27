@@ -924,7 +924,7 @@ public class AbyssUnitTypes implements ContentList {
 						height = 10f;
 						lifetime = 75f;
 					}};
-				}},
+				}}
 			);
 		}};
 	}
