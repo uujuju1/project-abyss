@@ -365,7 +365,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 2;
 			health = 160;
-			shootSound = Sounds.shootbig;
+			shootSound = Sounds.shootBig;
 			consumes.items(with(
 				AbyssItems.balestenite, 10
 			));
