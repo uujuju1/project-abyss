@@ -548,7 +548,7 @@ public class AbyssUnitTypes implements ContentList {
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = -15.75f;
-					y = 10f;
+					y = -10f;
 					s = -25f;
 					elevation = visualElevation;
 				}},
@@ -595,7 +595,6 @@ public class AbyssUnitTypes implements ContentList {
 					x = 7f;
 					y = -1.5f;
 					reload = 30f;
-					mirror = false;
 					recoil = 2f;
 					shots = 4;
 					shootSound = Sounds.missile;
