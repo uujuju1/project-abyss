@@ -900,7 +900,7 @@ public class AbyssUnitTypes implements ContentList {
 			weapons.add(
 				new Weapon("abyss-terrenium-artillery") {{
 					x = 7f;
-					y = 12f;
+					y = 17f;
 					reload = 30f;
 					recoil = 1f;
 					shootSound = Sounds.missile;
@@ -911,8 +911,8 @@ public class AbyssUnitTypes implements ContentList {
 					}};
 				}},
 				new Weapon("abyss-terrenium-artillery") {{
-					x = 0f;
-					y = 0f;
+					x = 2f;
+					y = 9f;
 					reload = 60f;
 					recoil = 1f;
 					alternate = true;
