@@ -52,9 +52,8 @@ public class ReflectiveAbility extends Ability {
 			Damage.damage(unit.team, unit.x, unit.y, radius, damage, damagesAir, damagesGround);
 			damageEffect.at(unit.x, unit.y);
 			recharge = reload;
-		} else {
-			recharge -= Time.delta;
 		}
+		recharge -= Time.delta;
 		health = unit.health;
 	}
 }
