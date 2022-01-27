@@ -542,13 +542,13 @@ public class AbyssUnitTypes implements ContentList {
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = -15.75f;
-					y = -10f;
+					y = 10f;
 					s = 25f;
 					elevation = visualElevation;
 				}},
 				new DrawRotor(name + "-rotor") {{
 					x = -15.75f;
-					y = -10f;
+					y = 10f;
 					s = -25f;
 					elevation = visualElevation;
 				}},
