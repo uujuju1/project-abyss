@@ -1,5 +1,6 @@
 package abyss.world.blocks.defense;
 
+import arc.audio.*;
 import arc.math.*;
 import arc.util.*;
 import arc.graphics.*;
@@ -21,6 +22,7 @@ public class ScatterSilo extends Block {
 	public int shots = 10;
 	// bullet created when button pressed
 	public BulletType bullet = Bullets.standardCopper;
+	public Sound shootSound = Sounds.shoot;
 
 	public ScatterSilo(String name) {
 		super(name);
@@ -62,6 +64,7 @@ public class ScatterSilo extends Block {
 				for (int i = 0; i < shots; i++) {
 					bullet.create(this, this.team, x, y, Mathf.random() * 360f);
 				}
+				shootSound.at(x, y, Mathf.random(0.9f, 1.1f));
 			}
 		}
 
