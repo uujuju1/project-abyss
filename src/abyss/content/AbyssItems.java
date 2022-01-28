@@ -5,7 +5,7 @@ import mindustry.ctype.ContentList;
 import mindustry.type.Item;
 
 public class AbyssItems implements ContentList {
-	public static Item abyss, balestenite, kalenium;
+	public static Item abyss, balestenite, kalenium, selemate;
 
 	@Override
 	public void load() {
@@ -17,6 +17,9 @@ public class AbyssItems implements ContentList {
 		}};
 		kalenium = new Item("kalenium", Color.valueOf("DC8268")) {{
 			cost = 5;
+		}};
+		selemate = new Item("selemate", Color.valueOf("A4A298")) {{
+			cost = 4;
 		}};
 	}
 }

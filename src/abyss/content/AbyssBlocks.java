@@ -35,6 +35,7 @@ public class AbyssBlocks implements ContentList {
 		kaleniumConveyor,
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
+		selemateWall, selemateWallLarge, selemateWallHuge,
 		// units
 		abyssFactory, rotorizedFactory, terreniumConstructor,
 		add, mult, exp, tetr,
@@ -43,6 +44,7 @@ public class AbyssBlocks implements ContentList {
 		// turrets
 		kardone, delamine, selena, kardeni,
 		liner, point,
+		miningun,
 		// scatters
 		assaultScatter, supportScatter, specialistScatter;
 
@@ -86,6 +88,27 @@ public class AbyssBlocks implements ContentList {
 			damage = 750;
 			damageRadius = 120;
 			explodeEffect = AbyssFx.largeVoidExplosion;
+		}};
+		selemateWall new Wall("selemate-wall") {{
+			requirements(Category.defense, with(
+				AbyssItems.selemate, 6
+			));
+			size = 1;
+			health = 500;
+		}};
+		selemateWallLarge new Wall("selemate-wall-large") {{
+			requirements(Category.defense, with(
+				AbyssItems.selemate, 24
+			));
+			size = 1;
+			health = 500 * 4;
+		}};
+		selemateWallHuge new Wall("selemate-wall-huge") {{
+			requirements(Category.defense, with(
+				AbyssItems.selemate, 54
+			));
+			size = 3;
+			health = 500 * 9;
 		}};
 
 		abyssFactory = new UnitFactory("abyss-factory") {{
@@ -355,6 +378,22 @@ public class AbyssBlocks implements ContentList {
 			range = 160f;
 			restitution = 0.05f;
 			shootType = AbyssBullets.electraBullet2;
+		}};
+		miningun = new ItemTurret("miningun") {{
+			requirements(Category.turret, with(
+				AbyssItems.selemate, 30,
+				Items.silicon, 15
+			));
+			size = 1;
+			health = 160;
+			reloadTime = 5f;
+			range = 150f;
+			restitution = 0.05f;
+			ammo(
+				AbyssItems.selemate, Bullets.standardCopper,
+				Items.graphite, Bullets.standardDense,
+				Items.silicon, Bullets.missileExplosive
+			);
 		}};
 
 		assaultScatter = new ScatterSilo("assault-scatter") {{
