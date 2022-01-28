@@ -89,21 +89,21 @@ public class AbyssBlocks implements ContentList {
 			damageRadius = 120;
 			explodeEffect = AbyssFx.largeVoidExplosion;
 		}};
-		selemateWall new Wall("selemate-wall") {{
+		selemateWall = new Wall("selemate-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.selemate, 6
 			));
 			size = 1;
 			health = 500;
 		}};
-		selemateWallLarge new Wall("selemate-wall-large") {{
+		selemateWallLarge = new Wall("selemate-wall-large") {{
 			requirements(Category.defense, with(
 				AbyssItems.selemate, 24
 			));
 			size = 1;
 			health = 500 * 4;
 		}};
-		selemateWallHuge new Wall("selemate-wall-huge") {{
+		selemateWallHuge = new Wall("selemate-wall-huge") {{
 			requirements(Category.defense, with(
 				AbyssItems.selemate, 54
 			));
