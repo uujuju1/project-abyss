@@ -12,7 +12,7 @@ public interface ForceBlockc {
 	}
 
 	// force container
-	default ForceContainer forceContainer() {}
+	default ForceContainer forceContainer() {return null;}
 
 	// set force
 	default void setForce(float force, @Nullable Building building) {
