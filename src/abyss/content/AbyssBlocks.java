@@ -456,7 +456,7 @@ public class AbyssBlocks implements ContentList {
 				statusDuration = 60f * 10f;
 			}};
 		}};
-		test = new ForceBlock("a") {{
+		test = new ForceBlock("a", Pal.lancerlaser) {{
 			size = 1;
 			health = 100;
 		}};
