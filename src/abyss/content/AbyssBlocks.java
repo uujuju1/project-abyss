@@ -24,6 +24,7 @@ import mindustry.world.draw.*;
 
 import abyss.content.*;
 import abyss.graphics.*;
+import abyss.world.blocks.force.ForceBlock;
 import abyss.world.blocks.defense.*;
 import abyss.world.blocks.production.*;
 
@@ -46,7 +47,9 @@ public class AbyssBlocks implements ContentList {
 		liner, point,
 		miningun,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter;
+		assaultScatter, supportScatter, specialistScatter,
+		// test
+		test;
 
 	@Override
 	public void load() {
@@ -452,6 +455,10 @@ public class AbyssBlocks implements ContentList {
 				status = StatusEffects.sapped;
 				statusDuration = 60f * 10f;
 			}};
+		}};
+		test = new ForceBlock("a") {{
+			size = 1;
+			health = 100;
 		}};
 	}
 }
