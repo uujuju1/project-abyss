@@ -2,6 +2,7 @@ package abyss.world.blocks.force;
 
 import arc.Core;
 import arc.util.*;
+import arc.graphics.*;
 import mindustry.ui.*;
 import mindustry.gen.*;
 import mindustry.world.Block;
