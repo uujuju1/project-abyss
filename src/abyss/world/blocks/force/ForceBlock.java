@@ -25,7 +25,7 @@ public class ForceBlock extends Block{
 		bars.add("Force", entity -> new Bar(
 			Core.bundle.get("bar.force"),
 			forceColor,
-			((ForceBlockBuild) entity).forcef())
+			() -> ((ForceBlockBuild) entity).forcef())
 		);
 	}
 
