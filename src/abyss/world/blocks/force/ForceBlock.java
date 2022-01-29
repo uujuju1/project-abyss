@@ -21,7 +21,7 @@ public class ForceBlock extends Block{
 	@Override
 	public void setBars() {
 		super.setBars();
-		bars.add("Force", () entity -> new Bar(
+		bars.add("Force", entity -> new Bar(
 			Core.bundle.get("bar.force"),
 			forceColor,
 			((ForceBlockBuild) entity).forcef())

@@ -21,7 +21,7 @@ public interface ForceBlockc {
 	default void setForce(float force) {
 		setForce(force, null);
 	}
-	default boolean recieveForce(float force Building src) {
+	default boolean recieveForce(float force, Building src) {
 		forceContainer().force += force;
 		return true;
 	}
