@@ -47,7 +47,6 @@ public class AbyssBlocks implements ContentList {
 		// turrets
 		kardone, delamine, selena, kardeni,
 		liner, point,
-		miningun,
 		// scatters
 		assaultScatter, supportScatter, specialistScatter,
 		// test
@@ -423,22 +422,6 @@ public class AbyssBlocks implements ContentList {
 			range = 160f;
 			restitution = 0.05f;
 			shootType = AbyssBullets.electraBullet2;
-		}};
-		miningun = new ItemTurret("miningun") {{
-			requirements(Category.turret, with(
-				AbyssItems.selemate, 30,
-				Items.silicon, 15
-			));
-			size = 1;
-			health = 160;
-			reloadTime = 5f;
-			range = 150f;
-			restitution = 0.05f;
-			ammo(
-				AbyssItems.selemate, Bullets.standardCopper,
-				Items.graphite, Bullets.standardDense,
-				Items.silicon, Bullets.missileExplosive
-			);
 		}};
 
 		assaultScatter = new ScatterSilo("assault-scatter") {{

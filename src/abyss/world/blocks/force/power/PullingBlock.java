@@ -1,5 +1,6 @@
 package abyss.world.blocks.force.power;
 
+import arc.Core;
 import arc.util.*;
 import arc.math.*;
 import arc.graphics.*;
@@ -39,7 +40,7 @@ public class PullingBlock extends ForceBlock {
 		@Override
 		public void draw() {
 			Draw.rect(bottom, x, y, rotdeg());
-			Draw.color(Color.lerp(cableColorFrom, cableColorTo, forcef()));
+			Draw.color(Color.valueOf(cableColorFrom).lerp(cableColorTo, forcef()));
 			Draw.rect(cable, x, y, rotdeg());
 			Draw.color();
 			super.draw();
