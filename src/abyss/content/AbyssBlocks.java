@@ -32,8 +32,8 @@ import static mindustry.type.ItemStack.with;
 
 public class AbyssBlocks implements ContentList {
 	public static Block 
-		// production
-		kaleniumConveyor,
+		// distribution
+		kaleniumConveyor, kaleniumRouter, kaleniumBridge,
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
 		selemateWall, selemateWallLarge, selemateWallHuge,
@@ -50,7 +50,7 @@ public class AbyssBlocks implements ContentList {
 		assaultScatter, supportScatter, specialistScatter,
 		// test
 		test;
-
+// titik komanya banyak banget anjing - 1237
 	@Override
 	public void load() {
 		kaleniumConveyor = new Conveyor("kalenium-conveyor") {{
@@ -60,8 +60,28 @@ public class AbyssBlocks implements ContentList {
 			));
 			speed = 0.1f;
 			displayedSpeed = 14f;
+			health = 125;
 		}};
-
+		kaleniumRouter = new Router("kalenium-router") {{
+			requirements(Category.distribution, with(
+				AbyssItems.kalenium, 1,
+				Items.silicon, 2
+			));
+			speed = 0.1f;
+			health = 154;
+		}};
+		kaleniumBridge = new BufferedItemBridge("kalenium-bridge") {{
+			requirements(Category.distribution, with(
+				AbyssItems.kalenium, 5,
+				Items.silicon, 5,
+				Items.lead, 5
+			));
+			speed = 79.6f;
+			health = 250;
+			range = 8;
+			bufferCapacity = 25;
+		}};
+		// taek - 1237
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
