@@ -104,7 +104,7 @@ public class AbyssTechTree implements ContentList {
 			node(AbyssBlocks.kaleniumRouter, Seq.with(new Produce(AbyssItems.kalenium)));
 		});
 		
-		extendNode(Blocks.bridgeConveyor, () -> {
+		extendNode(Blocks.router, () -> {
 			node(AbyssBlocks.kaleniumBridge, Seq.with(new Produce(AbyssItems.kalenium)));
 		});
 
