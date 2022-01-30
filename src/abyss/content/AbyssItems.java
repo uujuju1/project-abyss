@@ -16,7 +16,7 @@ public class AbyssItems implements ContentList {
 		}};
 		darkPowder = new Item("dark-powder", Color.valueOf("212121")) {{
 			cost = 3;
-		}}
+		}};
 
 		balestenite = new Item("balestenite", Color.valueOf("C0A8A6")) {{
 			cost = 2;
