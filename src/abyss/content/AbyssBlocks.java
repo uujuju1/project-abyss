@@ -51,7 +51,7 @@ public class AbyssBlocks implements ContentList {
 		// scatters
 		assaultScatter, supportScatter, specialistScatter,
 		// test
-		test, test2;
+		pullingWheel;
 
 	@Override
 	public void load() {
@@ -498,7 +498,7 @@ public class AbyssBlocks implements ContentList {
 				statusDuration = 60f * 10f;
 			}};
 		}};
-		test = new PullingBlock("test") {{
+		pullingWheel = new PullingBlock("pulling-wheel") {{
 			requirements(Category.logic, with(
 				AbyssItems.selemate, 96
 			));
@@ -507,14 +507,8 @@ public class AbyssBlocks implements ContentList {
 			maxForce = 200f;
 			pullMagnitude = 3f;
 			releaseMagnitude = 0.6f;
-		}};
-		test2 = new ForceBlock("test2") {{
-			requirements(Category.logic, with(
-				AbyssItems.selemate, 96
-			));
-			size = 2;
-			health = 200;
-			maxForce = 200f;
+			cableColorFrom = Color.valueOf("807E6E");
+			cableColorTo = Color.valueOf("C0B6B0");
 		}};
 	}
 }
