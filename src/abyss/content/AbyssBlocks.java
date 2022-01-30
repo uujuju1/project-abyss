@@ -51,7 +51,7 @@ public class AbyssBlocks implements ContentList {
 		// scatters
 		assaultScatter, supportScatter, specialistScatter,
 		// test
-		test;
+		test, test2;
 
 	@Override
 	public void load() {

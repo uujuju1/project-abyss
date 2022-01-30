@@ -5,6 +5,7 @@ import arc.util.*;
 import arc.graphics.*;
 import mindustry.ui.*;
 import mindustry.gen.*;
+import mindustry.graphics.*;
 import mindustry.world.Block;
 import abyss.world.blocks.force.*;
 
