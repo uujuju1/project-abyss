@@ -26,6 +26,7 @@ import abyss.content.*;
 import abyss.graphics.*;
 import abyss.world.blocks.defense.*;
 import abyss.world.blocks.production.*;
+import abyss.world.blocks.force.*;
 import abyss.world.blocks.force.power.*;
 
 import static mindustry.type.ItemStack.with;
@@ -497,7 +498,7 @@ public class AbyssBlocks implements ContentList {
 				statusDuration = 60f * 10f;
 			}};
 		}};
-		test = new PullingBlock("test", Pal.lancerLaser) {{
+		test = new PullingBlock("test") {{
 			requirements(Category.logic, with(
 				AbyssItems.selemate, 96
 			));
@@ -506,6 +507,14 @@ public class AbyssBlocks implements ContentList {
 			maxForce = 200f;
 			pullMagnitude = 3f;
 			releaseMagnitude = 0.6f;
+		}};
+		test2 = new ForceBlock("test2") {{
+			requirements(Category.logic, with(
+				AbyssItems.selemate, 96
+			));
+			size = 2;
+			health = 200;
+			maxForce = 200f;
 		}};
 	}
 }

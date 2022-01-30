@@ -10,8 +10,8 @@ import abyss.world.blocks.force.*;
 public class PullingBlock extends ForceBlock {
 	public float pullMagnitude = 1f, releaseMagnitude = 0.2f;
 
-	public PullingBlock(String name, Color forceColor) {
-		super(name, forceColor);
+	public PullingBlock(String name) {
+		super(name);
 		maxForce = 100f;
 		configurable = true;
 	}

@@ -11,11 +11,9 @@ import abyss.world.blocks.force.*;
 // block that can handle force
 public class ForceBlock extends Block{
 	public float maxForce;
-	public Color forceColor;
 
-	public ForceBlock(String name, Color forceColor) {
+	public ForceBlock(String name) {
 		super(name);
-		this.forceColor = forceColor;
 		solid = update = true;
 	}
 
@@ -33,6 +31,11 @@ public class ForceBlock extends Block{
 		public ForceContainer force = new ForceContainer();
 
 		@Override
+		public ForceContainer forceContainer() {
+			return force;
+		}
+
+		@Override
 		public float forcef() {
 			return force.force/maxForce;
 		}
@@ -45,7 +48,6 @@ public class ForceBlock extends Block{
 		@Override
 		public void updateTile() {
 			overloadForce();
-			setForce(force.force + Time.delta);
 		}
 	}
 }
