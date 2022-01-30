@@ -20,7 +20,8 @@ public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
-		saloni, alerbite, laminite, almone, aracnophobia;
+		saloni, alerbite, laminite, almone, aracnophobia.
+		solenopsis;
 
 	@Override
 	public void load() {
@@ -946,6 +947,42 @@ public class AbyssUnitTypes implements ContentList {
 						width = 8f;
 						height = 10f;
 						lifetime = 75f;
+					}};
+				}}
+			);
+		}};
+
+		solenopsis = new UnitType("solenopsis") {{
+			health = 250;
+			speed = 1f;
+			accel = 0.4f;
+			drag = 0.14f;
+			rotateSpeed = 5f;
+			trailScl = 1.3f;
+			rotateShooting = false;
+			range = 150f;
+			weapons.add(
+				new Weapon("abyss-solenopsis-mount") {{
+					x = 4.25f;
+					y = -2.75f;
+					reload = 60f;
+					recoil = 1f;
+					bullet = new MissileBulletType(2.5f, 20) {{
+						width = height = 6f;
+						lifetime = 60f;
+					}};
+				}},
+				new Weapon("abyss-solenopsis-sap") {{
+					x = 0f;
+					y = 4f;
+					reload = 30f;
+					recoil = 0.5f;
+					mirror = false;
+					maxRange = 75f;
+					bullet = new SapBulletType() {{
+						length = 75f;
+						damage = 9;
+						width = 0.6f;
 					}};
 				}}
 			);
