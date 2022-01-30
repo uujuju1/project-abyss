@@ -66,7 +66,7 @@ public class AbyssBlocks implements ContentList {
 				AbyssItems.kalenium, 1,
 				Items.silicon, 2
 			));
-			speed = 0.3f;
+			speed = 9.5f;
 		}};
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
