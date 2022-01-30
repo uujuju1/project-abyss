@@ -40,7 +40,7 @@ public class PullingBlock extends ForceBlock {
 		@Override
 		public void draw() {
 			Draw.rect(bottom, x, y, rotdeg());
-			Draw.color(Color.valueOf(cableColorFrom).lerp(cableColorTo, forcef()));
+			Draw.color(cableColorFrom.lerp(cableColorTo, forcef()));
 			Draw.rect(cable, x, y, rotdeg());
 			Draw.color();
 			super.draw();
