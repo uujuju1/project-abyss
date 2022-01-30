@@ -70,16 +70,18 @@ public class AbyssBlocks implements ContentList {
 			speed = 0.1f;
 			health = 154;
 		}};
-		kaleniumBridge = new ItemBridge("kalenium-bridge") {{
+		kaleniumBridge = new BufferedItemBridge("kalenium-bridge") {{
 			requirements(Category.distribution, with(
 				AbyssItems.kalenium, 3,
 				Items.silicon, 5,
 				Items.lead, 5
 			));
-			transportTime = 0.1f;
+			speed = 75.6f;
 			health = 250;
 			range = 7;
+			bufferCapacity = 25;
 		}};
+		// taek
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
