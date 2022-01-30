@@ -24,7 +24,6 @@ import mindustry.world.draw.*;
 
 import abyss.content.*;
 import abyss.graphics.*;
-import abyss.world.blocks.force.ForceBlock;
 import abyss.world.blocks.defense.*;
 import abyss.world.blocks.production.*;
 
@@ -42,15 +41,14 @@ public class AbyssBlocks implements ContentList {
 		add, mult, exp, tetr,
 		// production 
 		abyssForge, proximitySmelter, blastKiln,
+		crusher,
 		// turrets
 		kardone, delamine, selena, kardeni,
 		liner, point,
 		miningun,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter,
-		// test
-		test;
-// titik komanya banyak banget anjing - 1237
+		assaultScatter, supportScatter, specialistScatter;
+
 	@Override
 	public void load() {
 		kaleniumConveyor = new Conveyor("kalenium-conveyor") {{
@@ -293,6 +291,26 @@ public class AbyssBlocks implements ContentList {
 			));
 			outputItem = new ItemStack(AbyssItems.kalenium, 3);
 		}};
+		crusher = new GenericCrafter("crusher") {{
+			requirements(Category.production, with(
+				Items.silicon, 60,
+				AbyssItems.abyss, 50,
+				Items.selemate, 90
+			));
+			size = 2;
+			health = 220;
+			drawer = new DrawRotator();
+			itemCapacity = 20;
+			liquidCapacity = 60f;
+			consumes.power(0.5f);
+			consumes.items(with(
+				Items.thorium, 3,
+				Items.titanium, 2,
+				Items.silicon, 5
+			));
+			consumes.liquid(Liquids.oil, 0.4f);
+			outputItem = new ItemStack(AbyssItems.darkpowder, 4);
+		}};
 
 		kardone = new ItemTurret("kardone") {{
 			requirements(Category.turret, with(
@@ -475,11 +493,6 @@ public class AbyssBlocks implements ContentList {
 				status = StatusEffects.sapped;
 				statusDuration = 60f * 10f;
 			}};
-		}};
-		test = new ForceBlock("a", Pal.lancerLaser) {{
-			size = 1;
-			health = 100;
-			maxForce = 100;
 		}};
 	}
 }
