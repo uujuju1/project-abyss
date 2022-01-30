@@ -32,8 +32,8 @@ import static mindustry.type.ItemStack.with;
 
 public class AbyssBlocks implements ContentList {
 	public static Block 
-		// production
-		kaleniumConveyor,
+		// distribution
+		kaleniumConveyor, kaleniumRouter
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
 		selemateWall, selemateWallLarge, selemateWallHuge,
@@ -61,7 +61,13 @@ public class AbyssBlocks implements ContentList {
 			speed = 0.1f;
 			displayedSpeed = 14f;
 		}};
-
+		kaleniumConveyor = new Router("kalenium-router") {{
+			requirements(Category.distribution, with(
+				AbyssItems.kalenium, 1,
+				Items.silicon, 2
+			));
+			speed = 0.3f;
+		}};
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
