@@ -26,6 +26,7 @@ import abyss.content.*;
 import abyss.graphics.*;
 import abyss.world.blocks.defense.*;
 import abyss.world.blocks.production.*;
+import abyss.world.blocks.force.power.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -47,7 +48,9 @@ public class AbyssBlocks implements ContentList {
 		liner, point,
 		miningun,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter;
+		assaultScatter, supportScatter, specialistScatter,
+		// test
+		test;
 
 	@Override
 	public void load() {
@@ -494,5 +497,15 @@ public class AbyssBlocks implements ContentList {
 				statusDuration = 60f * 10f;
 			}};
 		}};
+		test = new PullingBlock("test", Pal.lancerLaser) {{
+			requirements(Category.logic, with(
+				AbyssItems.selemate, 96
+			));
+			size = 2;
+			health = 200;
+			maxForce = 200f;
+			pullMagnitude = 3f;
+			releaseMagnitude = 0.6f;
+		}}
 	}
 }
