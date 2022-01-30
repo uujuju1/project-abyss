@@ -60,6 +60,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			speed = 0.1f;
 			displayedSpeed = 14f;
+			health = 125;
 		}};
 		kaleniumRouter = new Router("kalenium-router") {{
 			requirements(Category.distribution, with(
@@ -67,6 +68,7 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 2
 			));
 			speed = 9.5f;
+			health = 85
 		}};
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
