@@ -20,7 +20,7 @@ public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
-		saloni, alerbite, laminite, almone, aracnophobia.
+		saloni, alerbite, laminite, almone, aracnophobia,
 		solenopsis;
 
 	@Override
