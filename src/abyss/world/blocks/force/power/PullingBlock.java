@@ -4,7 +4,7 @@ import arc.util.*;
 import arc.math.*;
 import arc.graphics.*;
 import arc.scene.ui.layout.*;
-import mindustry.graphics.*;
+import mindustry.gen.*;
 import abyss.world.blocks.force.*;
 
 public class PullingBlock extends ForceBlock {
