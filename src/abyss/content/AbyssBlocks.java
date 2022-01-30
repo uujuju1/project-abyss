@@ -50,7 +50,7 @@ public class AbyssBlocks implements ContentList {
 		assaultScatter, supportScatter, specialistScatter,
 		// test
 		test;
-// titik komanya banyak banget anjing
+// titik komanya banyak banget anjing - 1237
 	@Override
 	public void load() {
 		kaleniumConveyor = new Conveyor("kalenium-conveyor") {{
@@ -72,16 +72,16 @@ public class AbyssBlocks implements ContentList {
 		}};
 		kaleniumBridge = new BufferedItemBridge("kalenium-bridge") {{
 			requirements(Category.distribution, with(
-				AbyssItems.kalenium, 3,
+				AbyssItems.kalenium, 5,
 				Items.silicon, 5,
 				Items.lead, 5
 			));
-			speed = 75.6f;
+			speed = 79.6f;
 			health = 250;
-			range = 7;
+			range = 8;
 			bufferCapacity = 25;
 		}};
-		// taek
+		// taek - 1237
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
