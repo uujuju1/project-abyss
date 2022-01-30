@@ -17,7 +17,7 @@ public class PullingBlock extends ForceBlock {
 	}
 
 	public class PullingBlockBuild extends ForceBlock.ForceBlockBuild {
-		boolean willPull = false;
+		public boolean willPull = false;
 
 		@Override
 		public void buildConfiguration(Table table) {
@@ -26,6 +26,7 @@ public class PullingBlock extends ForceBlock {
 
 		@Override
 		public void updateTile() {
+			super.updateTile();
 			if (willPull) {
 				setForce(Math.min(force.force + (Time.delta * pullMagnitude), maxForce));
 			} else {
