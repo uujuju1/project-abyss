@@ -295,7 +295,7 @@ public class AbyssBlocks implements ContentList {
 			requirements(Category.production, with(
 				Items.silicon, 60,
 				AbyssItems.abyss, 50,
-				Items.selemate, 90
+				AbyssItems.selemate, 90
 			));
 			size = 2;
 			health = 220;
@@ -309,7 +309,7 @@ public class AbyssBlocks implements ContentList {
 				Items.silicon, 5
 			));
 			consumes.liquid(Liquids.oil, 0.4f);
-			outputItem = new ItemStack(AbyssItems.darkpowder, 4);
+			outputItem = new ItemStack(AbyssItems.darkPowder, 4);
 		}};
 
 		kardone = new ItemTurret("kardone") {{
