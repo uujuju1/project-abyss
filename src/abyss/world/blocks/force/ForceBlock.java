@@ -44,7 +44,9 @@ public class ForceBlock extends Block{
 
 		@Override
 		public void overloadForce() {
-			kill();
+			if (force.force > maxForce) {
+				kill();
+			}
 		}
 
 		@Override
