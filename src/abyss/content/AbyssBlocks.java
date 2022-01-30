@@ -506,6 +506,6 @@ public class AbyssBlocks implements ContentList {
 			maxForce = 200f;
 			pullMagnitude = 3f;
 			releaseMagnitude = 0.6f;
-		}}
+		}};
 	}
 }
