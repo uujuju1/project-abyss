@@ -961,6 +961,8 @@ public class AbyssUnitTypes implements ContentList {
 			trailScl = 1.3f;
 			rotateShooting = false;
 			range = 150f;
+			maxRange = range;
+			constructor = UnitWaterMove::create;
 			weapons.add(
 				new Weapon("abyss-solenopsis-mount") {{
 					x = 4.25f;
