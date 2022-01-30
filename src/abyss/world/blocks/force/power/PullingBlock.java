@@ -28,9 +28,9 @@ public class PullingBlock extends ForceBlock {
 		public void updateTile() {
 			super.updateTile();
 			if (willPull) {
-				setForce(Math.min(force.force + (Time.delta * pullMagnitude), maxForce));
+				setForce(Math.min(force.force + (Time.delta * pullMagnitude), maxForce), this);
 			} else {
-				setForce(Math.max(force.force - (Time.delta * releaseMagnitude), 0f));
+				setForce(Math.max(force.force - (Time.delta * releaseMagnitude), 0f), this);
 			}
 		}
 	}
