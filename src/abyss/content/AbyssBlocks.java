@@ -73,7 +73,7 @@ public class AbyssBlocks implements ContentList {
 		kaleniumBridge = new ItemBridge("kalenium-bridge") {{
 			requirements(Category.distribution, with(
 				AbyssItems.kalenium, 3,
-				Items.silicon, 5
+				Items.silicon, 5,
 				Items.lead, 5
 			));
 			transportTime = 0.1f;
