@@ -44,7 +44,7 @@ public class PullingBlock extends ForceBlock {
 			Draw.rect(cable, x, y, rotdeg());
 			Draw.color();
 			super.draw();
-			Draw.rect(top, x, y, rotdeg() + (forcef() * 720f));
+			Draw.rect(top, x, y, rotdeg() + Math.min(forcef() * 400f, 360));
 		}
 
 		@Override
