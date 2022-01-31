@@ -2,6 +2,7 @@ package abyss.content;
 
 import arc.graphics.Color;
 import arc.struct.*;
+import mindustry.graphics.*;
 import mindustry.content.*;
 import mindustry.entities.*;
 import mindustry.entities.bullet.*;

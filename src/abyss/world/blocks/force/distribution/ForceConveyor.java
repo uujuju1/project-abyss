@@ -17,7 +17,7 @@ public class ForceConveyor extends ForceBlock {
 		@Override
 		public boolean acceptForce(float force, Building src) {
 			if (src instanceof ForceBlock.ForceBlockBuild && ((ForceBlockBuild) back()).outputsForce(0f, this)) {
-				ForeBlockBuild back = ((ForceBlockBuild) back());
+				ForceBlockBuild back = ((ForceBlockBuild) back());
 				if (back instanceof ForceConveyorBuild && back.rotdeg() == this.rotdeg()) {
 					return true;
 				}
