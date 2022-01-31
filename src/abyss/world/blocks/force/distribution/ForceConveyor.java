@@ -1,7 +1,7 @@
 package abyss.world.blocks.force.distribution;
 
 import mindustry.gen.*;
-import abyss.world.blocks.force.power.*.*;
+import abyss.world.blocks.force.power.*;
 import abyss.world.blocks.force.*;
 
 public class ForceConveyor extends ForceBlock {
@@ -15,7 +15,7 @@ public class ForceConveyor extends ForceBlock {
 
 		@Override
 		public boolean acceptForce(float force, Building src) {
-			if (src instanceof PullingBlockBuild || src instanceof ForceConveyorBuild) return true;
+			if (src instanceof PullingBlock.PullingBlockBuild || src instanceof ForceConveyorBuild) return true;
 			return false;
 		}
 
