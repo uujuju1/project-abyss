@@ -22,7 +22,7 @@ public class ForceConveyor extends ForceBlock {
 		@Override
 		public void updateTile() {
 			super.updateTile();
-			if (acceptForce(0f, back())) setForce((ForceBlockBuild back()).forceContainter().force);
+			if (acceptForce(0f, back())) setForce(((ForceBlockBuild) back().forceContainer().force), this);
 		}
 	}
 }
