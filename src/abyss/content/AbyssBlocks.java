@@ -27,6 +27,7 @@ import abyss.graphics.*;
 import abyss.world.blocks.defense.*;
 import abyss.world.blocks.production.*;
 import abyss.world.blocks.force.*;
+import abyss.world.blocks.force.distribution.*;
 import abyss.world.blocks.force.power.*;
 
 import static mindustry.type.ItemStack.with;
@@ -50,7 +51,7 @@ public class AbyssBlocks implements ContentList {
 		// scatters
 		assaultScatter, supportScatter, specialistScatter,
 		// test
-		pullingWheel;
+		pullingWheel, cableConveyor;
 
 	@Override
 	public void load() {
@@ -492,6 +493,14 @@ public class AbyssBlocks implements ContentList {
 			releaseMagnitude = 0.6f;
 			cableColorFrom = Color.valueOf("807E6E");
 			cableColorTo = Color.valueOf("C0B6B0");
+			buildVisibility = BuildVisibility.sandboxOnly;
+		}};
+		cableConveyor = new ForceConveyor("cable-conveyor") {{
+			requirements(Category.logic, with(
+				AbyssItems.selemate, 96
+			));
+			size = 1;
+			health = 80;
 		}};
 	}
 }
