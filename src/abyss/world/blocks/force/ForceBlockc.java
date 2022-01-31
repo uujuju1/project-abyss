@@ -26,6 +26,9 @@ public interface ForceBlockc {
 	default boolean acceptForce(float force, Building src) {
 		return true;
 	}
+	default boolean outputsForce(float force, Building out) {
+		return true;
+	}
 
 	// extra stuff
 	default void drawForce() {}

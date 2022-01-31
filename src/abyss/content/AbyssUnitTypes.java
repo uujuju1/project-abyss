@@ -969,6 +969,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -2.75f;
 					reload = 60f;
 					recoil = 1f;
+					rotate = true;
 					bullet = new MissileBulletType(2.5f, 20) {{
 						width = height = 6f;
 						lifetime = 60f;
@@ -981,10 +982,12 @@ public class AbyssUnitTypes implements ContentList {
 					recoil = 0.5f;
 					mirror = false;
 					maxRange = 75f;
+					rotate = true;
 					bullet = new SapBulletType() {{
 						length = 75f;
 						damage = 9;
 						width = 0.6f;
+						color = Pal.sap;
 					}};
 				}}
 			);

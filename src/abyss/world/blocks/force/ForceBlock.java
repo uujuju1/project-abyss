@@ -11,6 +11,7 @@ import abyss.world.blocks.force.*;
 
 // block that can handle force
 public class ForceBlock extends Block{
+	public boolean outputsForce = true;
 	public float maxForce;
 	public Color forceColor = Pal.lancerLaser;
 
