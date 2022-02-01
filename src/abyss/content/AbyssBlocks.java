@@ -35,7 +35,7 @@ import static mindustry.type.ItemStack.with;
 public class AbyssBlocks implements ContentList {
 	public static Block 
 		// distribution
-		kaleniumConveyor, kaleniumRouter, kaleniumBridge, kaleniumDistributor
+		kaleniumConveyor, kaleniumRouter, kaleniumBridge, kaleniumDistributor,
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
 		selemateWall, selemateWallLarge, selemateWallHuge,
