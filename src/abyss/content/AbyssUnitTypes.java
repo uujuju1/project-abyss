@@ -993,7 +993,7 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 		}};
-		cricetiae = new UnitType() {{
+		cricetiae = new UnitType("cricetiae") {{
 			health = 580;
 			speed = 0.83f;
 			accel = 0.4f;
