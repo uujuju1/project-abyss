@@ -74,26 +74,24 @@ public class AbyssBlocks implements ContentList {
 		}};
 		kaleniumBridge = new BufferedItemBridge("kalenium-bridge") {{
 			requirements(Category.distribution, with(
-				AbyssItems.kalenium, 5,
-				Items.silicon, 5,
+				AbyssItems.kalenium, 8,
+				Items.silicon, 7,
 				Items.lead, 5
 			));
-			speed = 0.1f;
+			speed = 90.8f;
 			health = 250;
 			range = 8;
 			bufferCapacity = 25;
 		}};
 		kaleniumDistributor = new Router("kalenium-distributor") {{
 			requirements(Category.distribution, with(
-				AbyssItems.kalenium, 5,
-				Items.silicon, 5,
-				Items.lead, 5
+				AbyssItems.kalenium, 6,
+				Items.silicon, 3
 			));
 			size = 2;
-			speed = 79.6f;
+			speed = 0.1f;
 			health = 850;
 		}};
-		// spritenya distributor bakal gw buat nanti.
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
