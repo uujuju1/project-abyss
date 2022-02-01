@@ -35,7 +35,7 @@ import static mindustry.type.ItemStack.with;
 public class AbyssBlocks implements ContentList {
 	public static Block 
 		// distribution
-		kaleniumConveyor, kaleniumRouter, kaleniumBridge,
+		kaleniumConveyor, kaleniumRouter, kaleniumBridge, kaleniumDistributor,
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
 		selemateWall, selemateWallLarge, selemateWallHuge,
@@ -74,16 +74,24 @@ public class AbyssBlocks implements ContentList {
 		}};
 		kaleniumBridge = new BufferedItemBridge("kalenium-bridge") {{
 			requirements(Category.distribution, with(
-				AbyssItems.kalenium, 5,
-				Items.silicon, 5,
+				AbyssItems.kalenium, 8,
+				Items.silicon, 7,
 				Items.lead, 5
 			));
-			speed = 79.6f;
+			speed = 90.8f;
 			health = 250;
 			range = 8;
 			bufferCapacity = 25;
 		}};
-		// taek - 1237
+		kaleniumDistributor = new Router("kalenium-distributor") {{
+			requirements(Category.distribution, with(
+				AbyssItems.kalenium, 6,
+				Items.silicon, 3
+			));
+			size = 2;
+			speed = 0.1f;
+			health = 850;
+		}};
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
