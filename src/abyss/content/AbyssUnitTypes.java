@@ -1005,6 +1005,7 @@ public class AbyssUnitTypes implements ContentList {
 			trailScl = 1.9f;
 			range = 240f;
 			maxRange = range;
+			constructor = UnitWaterMove::create;
 			weapons.add(
 				new Weapon("abyss-cricetiae-liquid") {{
 					x = 3.5f;
@@ -1036,8 +1037,8 @@ public class AbyssUnitTypes implements ContentList {
 					bullet = new BasicBulletType(1.5f, 50, "abyss-big-artillery") {{
 						width = height = 14f;
 						lifetime = 240f;
-						fragbullets = 3;
-						fragbullets = new BasicBulletType(1.5f, 10, "abyss-big-artillery") {{
+						fragBullets = 3;
+						fragBullet = new BasicBulletType(1.5f, 10, "abyss-big-artillery") {{
 							width = height = 7f;
 							lifetime = 26f;
 						}};

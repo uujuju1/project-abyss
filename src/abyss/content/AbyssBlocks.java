@@ -51,7 +51,7 @@ public class AbyssBlocks implements ContentList {
 		// scatters
 		assaultScatter, supportScatter, specialistScatter,
 		// test
-		pullingWheel, cableConveyor;
+		pullingWheel, cableShaft;
 
 	@Override
 	public void load() {
@@ -509,7 +509,7 @@ public class AbyssBlocks implements ContentList {
 			requirements(Category.logic, with(
 				AbyssItems.selemate, 1
 			));
-			drawers.add(new DrawCable());
+			// drawers.add(new DrawCable());
 			size = 1;
 			health = 80;
 		}};
