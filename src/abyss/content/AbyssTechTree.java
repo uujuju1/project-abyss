@@ -108,6 +108,10 @@ public class AbyssTechTree implements ContentList {
 			node(AbyssBlocks.kaleniumBridge, Seq.with(new Produce(AbyssItems.kalenium)));
 		});
 
+		extendNode(Blocks.distributor, () -> {
+			node(AbyssBlocks.kaleniumDistributor, Seq.with(new Produce(AbyssItems.kalenium)));
+		});
+
 		extendNode(Blocks.plastaniumCompressor, () -> {
 			node(AbyssBlocks.abyssForge, Seq.with(new Produce(Items.thorium)), () -> {
 				node(AbyssBlocks.crusher, Seq.with(new Produce(AbyssItems.abyss), new Research(Blocks.siliconCrucible)));
