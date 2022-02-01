@@ -22,7 +22,7 @@ public class AbyssUnitTypes implements ContentList {
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
 		saloni, alerbite, laminite, almone, aracnophobia,
-		solenopsis;
+		solenopsis, cricetiae;
 
 	@Override
 	public void load() {
@@ -960,7 +960,7 @@ public class AbyssUnitTypes implements ContentList {
 			drag = 0.14f;
 			rotateSpeed = 5f;
 			trailScl = 1.3f;
-			rotateShooting = false;
+			rotateShooting = true;
 			range = 150f;
 			maxRange = range;
 			constructor = UnitWaterMove::create;
@@ -970,7 +970,7 @@ public class AbyssUnitTypes implements ContentList {
 					y = -2.75f;
 					reload = 60f;
 					recoil = 1f;
-					rotate = true;
+					rotate = false;
 					bullet = new MissileBulletType(2.5f, 20) {{
 						width = height = 6f;
 						lifetime = 60f;
@@ -989,6 +989,58 @@ public class AbyssUnitTypes implements ContentList {
 						damage = 9;
 						width = 0.6f;
 						color = Pal.sap;
+					}};
+				}}
+			);
+		}};
+		cricetiae = new UnitType() {{
+			health = 580;
+			speed = 0.83f;
+			accel = 0.4f;
+			drag = 0.14f;
+			rotateSpeed = 4f;
+			trailLength = 22;
+			trailX = 5.5f;
+			trailY = -4f;
+			trailScl = 1.9f;
+			range = 240f;
+			maxRange = range;
+			weapons.add(
+				new Weapon("abyss-cricetiae-liquid") {{
+					x = 3.5f;
+					y = 7f;
+					reload = 10f;
+					recoil = 0.5f;
+					maxRange = 160f;
+					bullet = new LiquidBulletType(Liquids.slag) {{
+						speed = 2f;
+						lifetime = 80f;
+					}};
+				}},
+				new Weapon("abyss-cricetiae-artillery") {{
+					x = 4.25f;
+					y = 0.5f;
+					reload = 30f;
+					recoil = 1.5f;
+					bullet = new ArtilleryBulletType(2f, 35) {{
+						width = height = 9f;
+						lifetime = 120f;
+					}};
+				}},
+				new Weapon("abyss-cricetiae-big") {{
+					x = 0f;
+					y = -7.25f;
+					reload = 60f;
+					recoil = 2f;
+					mirror = false;
+					bullet = new BasicBulletType(1.5f, 50, "abyss-big-artillery") {{
+						width = height = 14f;
+						lifetime = 240f;
+						fragbullets = 3;
+						fragbullets = new BasicBulletType(1.5f, 10, "abyss-big-artillery") {{
+							width = height = 7f;
+							lifetime = 26f;
+						}};
 					}};
 				}}
 			);

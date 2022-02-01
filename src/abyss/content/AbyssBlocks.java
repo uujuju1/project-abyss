@@ -74,11 +74,11 @@ public class AbyssBlocks implements ContentList {
 		}};
 		kaleniumBridge = new BufferedItemBridge("kalenium-bridge") {{
 			requirements(Category.distribution, with(
-				AbyssItems.kalenium, 8,
-				Items.silicon, 7,
+				AbyssItems.kalenium, 5,
+				Items.silicon, 5,
 				Items.lead, 5
 			));
-			speed = 90.8f;
+			speed = 79.6f;
 			health = 250;
 			range = 8;
 			bufferCapacity = 25;
@@ -92,6 +92,7 @@ public class AbyssBlocks implements ContentList {
 			speed = 0.1f;
 			health = 850;
 		}};
+
 		voidWall = new UnstableWall("void-wall") {{
 			requirements(Category.defense, with(
 				AbyssItems.abyss, 6
@@ -196,7 +197,8 @@ public class AbyssBlocks implements ContentList {
 			upgrades.addAll(
 				new UnitType[]{AbyssUnitTypes.antra, AbyssUnitTypes.karma},
 				new UnitType[]{AbyssUnitTypes.katerni, AbyssUnitTypes.termina},
-				new UnitType[]{AbyssUnitTypes.saloni, AbyssUnitTypes.alerbite}
+				new UnitType[]{AbyssUnitTypes.saloni, AbyssUnitTypes.alerbite},
+				new UnitType[]{AbyssUnitTypes.solenopsis, AbyssUnitTypes.cricetiae}
 			);
 		}};
 		mult = new Reconstructor("reconstructor5") {{
@@ -503,10 +505,11 @@ public class AbyssBlocks implements ContentList {
 			cableColorTo = Color.valueOf("C0B6B0");
 			buildVisibility = BuildVisibility.sandboxOnly;
 		}};
-		cableConveyor = new ForceConveyor("cable-conveyor") {{
+		cableShaft = new ForceConveyor("cable-shaft") {{
 			requirements(Category.logic, with(
-				AbyssItems.selemate, 96
+				AbyssItems.selemate, 1
 			));
+			drawers.add(new DrawCable());
 			size = 1;
 			health = 80;
 		}};
