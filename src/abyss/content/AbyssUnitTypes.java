@@ -1153,7 +1153,7 @@ public class AbyssUnitTypes implements ContentList {
 					rotate = true;
 					mirror = false;
 					shootSound = Sounds.laserbig;
-					bullet = new ContinuousLaserBulletType(1500) {{
+					bullet = new ContinuousLaserBulletType(50) {{
 						width = 10f;
 						length = maxRange;
 						lifetime = 192f;
