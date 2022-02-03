@@ -1097,8 +1097,9 @@ public class AbyssUnitTypes implements ContentList {
 					y = 10f;
 					reload = 60f;
 					recoil = 1f;
-					shots = 3f;
-					spreat = 15f;
+					shots = 3;
+					spread = 15;
+					rotate = true;
 					shootSound = Sounds.shotgun;
 					bullet = new ShrapnelBulletType() {{
 						width = 8f;
@@ -1112,8 +1113,9 @@ public class AbyssUnitTypes implements ContentList {
 					y = -9f;
 					reload = 60f;
 					recoil = 1f;
-					shots = 3f;
-					spreat = 15f;
+					shots = 3;
+					spread = 15;
+					rotate = true;
 					shootSound = Sounds.shotgun;
 					bullet = new ShrapnelBulletType() {{
 						width = 8f;
