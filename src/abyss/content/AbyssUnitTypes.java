@@ -1140,8 +1140,8 @@ public class AbyssUnitTypes implements ContentList {
 			range = 320f;
 			maxRange = range;
 			abilities.add(
-				new UnitSpawnAbility(katerni, 60f * 60f, x = 10f, y = -12f),
-				new UnitSpawnAbility(katerni, 60f * 60f, x = -10f, y = -12f)
+				new UnitSpawnAbility(katerni, 60f * 60f, 10f, -12f),
+				new UnitSpawnAbility(katerni, 60f * 60f, -10f, -12f)
 			);
 			weapons.add(
 				new Weapon("abyss-carcharodon-plasma-mount") {{
