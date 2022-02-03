@@ -231,7 +231,8 @@ public class AbyssBlocks implements ContentList {
 			upgrades.addAll(
 				new UnitType[]{AbyssUnitTypes.kalerbi, AbyssUnitTypes.kodene},
 				new UnitType[]{AbyssUnitTypes.solanra, AbyssUnitTypes.deuteria},
-				new UnitType[]{AbyssUnitTypes.laminite, AbyssUnitTypes.almone}
+				new UnitType[]{AbyssUnitTypes.laminite, AbyssUnitTypes.almone},
+				new UnitType[]{AbyssUnitTypes.oryctolagus, AbyssUnitTypes.carcharodon}
 			);
 		}};
 		tetr = new Reconstructor("reconstructor9") {{

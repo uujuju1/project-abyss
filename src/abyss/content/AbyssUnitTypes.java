@@ -22,7 +22,7 @@ public class AbyssUnitTypes implements ContentList {
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
 		saloni, alerbite, laminite, almone, aracnophobia,
-		solenopsis, cricetiae, oryctolagus;
+		solenopsis, cricetiae, oryctolagus, carcharodon;
 
 	@Override
 	public void load() {
@@ -1100,6 +1100,7 @@ public class AbyssUnitTypes implements ContentList {
 					shots = 3;
 					spacing = 15;
 					rotate = true;
+					alternate = true;
 					shootSound = Sounds.shotgun;
 					bullet = new ShrapnelBulletType() {{
 						width = 8f;
@@ -1122,6 +1123,54 @@ public class AbyssUnitTypes implements ContentList {
 						length = 80f;
 						fromColor = Pal.sapBullet;
 						toColor = Pal.sapBulletBack;
+					}};
+				}}
+			);
+		}};
+		carcharodon = new UnitType("carcharodon") {{
+			health = 11500;
+			speed = 0.60f;
+			accel = 0.4f;
+			drag = 0.14f;
+			rotateSpeed = 1.3f;
+			trailLength = 50;
+			trailX = 18f;
+			trailY = -21f;
+			trailScl = 3f;
+			range = 320f;
+			maxRange = range;
+			abilities.add(
+				new UnitSpawnAbility(katerni, 60f * 60f, x = 10f, y = -12f),
+				new UnitSpawnAbility(katerni, 60f * 60f, x = -10f, y = -12f)
+			);
+			weapons.add(
+				new Weapon("abyss-carcharodon-plasma-mount") {{
+					x = y = 0f;
+					reload = 600f;
+					recoil = 5f;
+					rotate = true;
+					mirror = false;
+					shootSound = Sounds.laserbig;
+					bullet = new ContinuousLaserBulletType(1500) {{
+						width = 10f;
+						length = maxRange;
+						lifetime = 192f;
+						colors = new Color[]{Pal.sapBullet, Pal.sapBulletBack, Pal.sap};
+					}};
+				}},
+				new Weapon("abyss-carcharodon-missile-mount") {{
+					x = 16.75f;
+					y = 0f;
+					reload = 10f;
+					recoil = 1f;
+					rotate = true;
+					maxRange = 160f;
+					shootSound = Sounds.shootBig;
+					bullet = new MissileBulletType(6f, 45) {{
+						width = height = 10f;
+						lifetime = 26f;
+						frontColor = Pal.sapBullet;
+						backColor = Pal.sapBulletBack;
 					}};
 				}}
 			);
