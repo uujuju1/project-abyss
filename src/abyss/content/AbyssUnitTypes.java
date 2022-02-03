@@ -1139,6 +1139,8 @@ public class AbyssUnitTypes implements ContentList {
 			trailScl = 3f;
 			range = 320f;
 			maxRange = range;
+			constructor = UnitWaterMove::create;
+			hitSize = 30f;
 			abilities.add(
 				new UnitSpawnAbility(katerni, 60f * 60f, 10f, -12f),
 				new UnitSpawnAbility(katerni, 60f * 60f, -10f, -12f)
