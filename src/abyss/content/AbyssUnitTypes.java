@@ -22,7 +22,7 @@ public class AbyssUnitTypes implements ContentList {
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
 		saloni, alerbite, laminite, almone, aracnophobia,
-		solenopsis, cricetiae;
+		solenopsis, cricetiae, oryctolagus;
 
 	@Override
 	public void load() {
@@ -963,17 +963,20 @@ public class AbyssUnitTypes implements ContentList {
 			rotateShooting = true;
 			range = 150f;
 			maxRange = range;
+			hitSize = 8.75f;
 			constructor = UnitWaterMove::create;
 			weapons.add(
 				new Weapon("abyss-solenopsis-mount") {{
 					x = 4.25f;
 					y = -2.75f;
-					reload = 60f;
+					reload = 30f;
 					recoil = 1f;
 					rotate = false;
 					bullet = new MissileBulletType(2.5f, 20) {{
 						width = height = 6f;
 						lifetime = 60f;
+						frontColor = Pal.sapBullet;
+						backColor = Pal.sapBulletBack;
 					}};
 				}},
 				new Weapon("abyss-solenopsis-sap") {{
@@ -984,6 +987,7 @@ public class AbyssUnitTypes implements ContentList {
 					mirror = false;
 					maxRange = 75f;
 					rotate = true;
+					shootSound = Sounds.sap;
 					bullet = new SapBulletType() {{
 						length = 75f;
 						damage = 9;
@@ -1005,6 +1009,7 @@ public class AbyssUnitTypes implements ContentList {
 			trailScl = 1.9f;
 			range = 240f;
 			maxRange = range;
+			hitSize = 11f;
 			constructor = UnitWaterMove::create;
 			weapons.add(
 				new Weapon("abyss-cricetiae-liquid") {{
@@ -1013,6 +1018,8 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 10f;
 					recoil = 0.5f;
 					maxRange = 160f;
+					rotate = true;
+					shootSound = Sounds.flame;
 					bullet = new LiquidBulletType(Liquids.slag) {{
 						speed = 2f;
 						lifetime = 80f;
@@ -1023,9 +1030,13 @@ public class AbyssUnitTypes implements ContentList {
 					y = 0.5f;
 					reload = 30f;
 					recoil = 1.5f;
+					rotate = true;
+					shootSound = Sounds.artillery;
 					bullet = new ArtilleryBulletType(2f, 35) {{
 						width = height = 9f;
 						lifetime = 120f;
+						frontColor = Pal.sapBullet;
+						backColor = Pal.sapBulletBack;
 					}};
 				}},
 				new Weapon("abyss-cricetiae-big") {{
@@ -1033,15 +1044,82 @@ public class AbyssUnitTypes implements ContentList {
 					y = -7.25f;
 					reload = 60f;
 					recoil = 2f;
+					rotate = true;
 					mirror = false;
+					shootSound = Sounds.shootBig;
 					bullet = new BasicBulletType(1.5f, 50, "abyss-big-artillery") {{
 						width = height = 14f;
 						lifetime = 240f;
 						fragBullets = 3;
+						frontColor = Pal.sapBullet;
+						backColor = Pal.sapBulletBack;
 						fragBullet = new BasicBulletType(1.5f, 10, "abyss-big-artillery") {{
 							width = height = 7f;
 							lifetime = 26f;
+							frontColor = Pal.sapBullet;
+							backColor = Pal.sapBulletBack;
 						}};
+					}};
+				}}
+			);
+		}};
+		oryctolagus = new UnitType("oryctolagus") {{
+			health = 900;
+			speed = 0.80f;
+			accel = 0.4f;
+			drag = 0.14f;
+			rotateSpeed = 2.5f;
+			trailLength = 23;
+			trailX = 9f;
+			trailY = -9f;
+			trailScl = 2f;
+			range = 285f;
+			maxRange = range;
+			hitSize = 17.5f;
+			constructor = UnitWaterMove::create;
+			weapons.add(
+				new Weapon("abyss-oryctolagus-big-mount") {{
+					x = y = 0f;
+					reload = 120f;
+					recoil = 2f;
+					rotate = true;
+					mirror = false;
+					shootSound = Sounds.shootBig;
+					bullet = new BasicBulletType(4f, 60) {{
+						width = height = 14f;
+						lifetime = 71.25f;
+						frontColor = Pal.sapBullet;
+						backColor = Pal.sapBulletBack;
+					}};
+				}},
+				new Weapon("abyss-oryctolagus-laser") {{
+					x = 6f;
+					y = 10f;
+					reload = 60f;
+					recoil = 1f;
+					shots = 3f;
+					spreat = 15f;
+					shootSound = Sounds.shotgun;
+					bullet = new ShrapnelBulletType() {{
+						width = 8f;
+						length = 80f;
+						fromColor = Pal.sapBullet;
+						toColor = Pal.sapBulletBack;
+					}};
+				}},
+				new Weapon("abyss-oryctolagus-laser") {{
+					x = 7f;
+					y = -9f;
+					reload = 60f;
+					recoil = 1f;
+					shots = 3f;
+					spreat = 15f;
+					shootSound = Sounds.shotgun;
+					bullet = new ShrapnelBulletType() {{
+						width = 8f;
+						length = 80f;
+						fromColor = Pal.sapBullet;
+						toColor = Pal.sapBulletBack;
 					}};
 				}}
 			);

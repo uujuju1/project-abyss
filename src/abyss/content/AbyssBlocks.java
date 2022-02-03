@@ -213,7 +213,8 @@ public class AbyssBlocks implements ContentList {
 			upgrades.addAll(
 				new UnitType[]{AbyssUnitTypes.karma, AbyssUnitTypes.kalerbi},
 				new UnitType[]{AbyssUnitTypes.termina, AbyssUnitTypes.solanra},
-				new UnitType[]{AbyssUnitTypes.alerbite, AbyssUnitTypes.laminite}
+				new UnitType[]{AbyssUnitTypes.alerbite, AbyssUnitTypes.laminite},
+				new UnitType[]{AbyssUnitTypes.cricetiae, AbyssUnitTypes.oryctolagus}
 			);
 		}};
 		exp = new Reconstructor("reconstructor7") {{
