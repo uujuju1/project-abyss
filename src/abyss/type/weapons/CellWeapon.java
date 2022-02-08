@@ -8,8 +8,8 @@ import arc.math.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.graphics.*;
+import mindustry.entities.*;
 import mindustry.entities.units.*;
-import mindustry.entities.type.*;
 // weapon with custom cell drawing based on unit's health
 public class CellWeapon extends Weapon {
 	public TextureRegion cellRegion;
