@@ -1198,7 +1198,7 @@ public class AbyssUnitTypes implements ContentList {
 			weapons.add(
 				new CellWeapon("abyss-orcinus-foreshadow") {{
 					x = y = 0f;
-					reload = 600f;
+					reload = 300f;
 					recoil = 8f;
 					rotate = true;
 					mirror = false;
@@ -1227,6 +1227,8 @@ public class AbyssUnitTypes implements ContentList {
 					bullet = new ArtilleryBulletType(2f, 60) {{
 						range = maxRange;
 						lifetime = 100f;
+						collides = true;
+						width = height = 15f;
 						frontColor = Pal.sapBullet;
 						backColor = Pal.sapBulletBack;
 					}};
@@ -1241,6 +1243,8 @@ public class AbyssUnitTypes implements ContentList {
 					bullet = new ArtilleryBulletType(2f, 60) {{
 						range = maxRange;
 						lifetime = 100f;
+						collides = true;
+						width = height = 15f;
 						frontColor = Pal.sapBullet;
 						backColor = Pal.sapBulletBack;
 					}};
@@ -1254,6 +1258,8 @@ public class AbyssUnitTypes implements ContentList {
 					bullet = new ArtilleryBulletType(2f, 100) {{
 						range = maxRange;
 						lifetime = 150f;
+						collides = true;
+						width = height = 15f;
 						frontColor = Pal.sapBullet;
 						backColor = Pal.sapBulletBack;
 					}};
