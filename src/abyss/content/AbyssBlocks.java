@@ -180,7 +180,7 @@ public class AbyssBlocks implements ContentList {
 				new UnitPlan (AbyssUnitTypes.saloni, 60f * 30, with(Items.silicon, 10, AbyssItems.kalenium, 30))
 			);
 		}};
-		specialistAssembler = new UnitFactory("terrenium-constructor") {{
+		specialistAssembler = new UnitFactory("specialist-assembler") {{
 			requirements(Category.units, with(
 				Items.metaglass, 60,
 				Items.silicon, 120,
