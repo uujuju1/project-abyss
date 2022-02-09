@@ -1213,7 +1213,7 @@ public class AbyssUnitTypes implements ContentList {
 						speed = brange;
 						hitShake = 6f;
 						ammoMultiplier = 1f;
-					}}
+					}};
 				}},
 				new Weapon("orcinus-artillery") {{
 					x = 16f;
@@ -1255,7 +1255,7 @@ public class AbyssUnitTypes implements ContentList {
 						frontColor = Pal.sapBullet;
 						backColor = Pal.sapBulletBack;
 					}};
-				}},
+				}}
  			);
 		}};
 	}
