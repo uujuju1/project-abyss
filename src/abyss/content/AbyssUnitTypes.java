@@ -13,6 +13,7 @@ import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
 import abyss.entities.abilities.*;
+import abyss.type.weapons.*;
 import abyss.graphics.*;
 import abyss.type.*;
 import abyss.type.draw.*;
@@ -22,7 +23,7 @@ public class AbyssUnitTypes implements ContentList {
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
 		saloni, alerbite, laminite, almone, aracnophobia,
-		solenopsis, cricetiae, oryctolagus, carcharodon;
+		solenopsis, cricetiae, oryctolagus, carcharodon, orcinus;
 
 	@Override
 	public void load() {
@@ -1155,7 +1156,7 @@ public class AbyssUnitTypes implements ContentList {
 					shootSound = Sounds.laserbig;
 					bullet = new ContinuousLaserBulletType(50) {{
 						width = 10f;
-						length = maxRange;
+						length = 320f;
 						lifetime = 192f;
 						colors = new Color[]{Pal.sapBullet, Pal.sapBulletBack, Pal.sap};
 					}};
@@ -1176,6 +1177,86 @@ public class AbyssUnitTypes implements ContentList {
 					}};
 				}}
 			);
+		}};
+		orcinus = new UnitType("orcinus") {{
+			health = 21000f;
+			speed = 0.65f;
+			drag = 0.17f;
+			hitSize = 58f;
+			armor = 16f;
+			accel = 0.2f;
+			rotateSpeed = 1.1f;
+			rotateShooting = false;
+			trailLength = 70;
+			trailX = 23f;
+			trailY = -32f;
+			trailScl = 3.5f;
+			range = 400f;
+			maxRange = range;
+			weapons.add(
+				new CellWeapon("orcinus-foreshadow") {{
+					x = y = 0f;
+					reload = 600f;
+					recoil = 8f;
+					rotate = true;
+					mirror = false;
+					shootSound = Sounds.railgun;
+					bullet = new PointBulletType(){{
+						shootEffect = Fx.instShoot;
+						hitEffect = Fx.instHit;
+						smokeEffect = Fx.smokeCloud;
+						trailEffect = Fx.instTrail;
+						despawnEffect = Fx.instBomb;
+						trailSpacing = 20f;
+						damage = 1750;
+						buildingDamageMultiplier = 0.25f;
+						speed = brange;
+						hitShake = 6f;
+						ammoMultiplier = 1f;
+					}}
+				}},
+				new Weapon("orcinus-artillery") {{
+					x = 16f;
+					y = -36f;
+					reload = 60f;
+					alternate = true;
+					rotate = true;
+					maxRange = 200f;
+					bullet = new ArtilleryBulletType(2f, 60) {{
+						range = maxRange;
+						lifetime = 100f;
+						frontColor = Pal.sapBullet;
+						backColor = Pal.sapBulletBack;
+					}};
+				}},
+				new Weapon("orcinus-artillery") {{
+					x = 14f;
+					y = 20f;
+					reload = 60f;
+					alternate = false;
+					rotate = true;
+					maxRange = 200f;
+					bullet = new ArtilleryBulletType(2f, 60) {{
+						range = maxRange;
+						lifetime = 100f;
+						frontColor = Pal.sapBullet;
+						backColor = Pal.sapBulletBack;
+					}};
+				}},
+				new Weapon("orcinus-artillery") {{
+					x = 24f;
+					y = 0f;
+					reload = 120f;
+					rotate = true;
+					maxRange = 300f;
+					bullet = new ArtilleryBulletType(2f, 100) {{
+						range = maxRange;
+						lifetime = 150f;
+						frontColor = Pal.sapBullet;
+						backColor = Pal.sapBulletBack;
+					}};
+				}},
+ 			);
 		}};
 	}
 }
