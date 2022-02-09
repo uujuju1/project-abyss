@@ -18,7 +18,7 @@ public class ProjectAbyss extends Mod{
 	public void loadContent(){
 		new AbyssItems().load();
 		new AbyssBullets().load();
-		new AbyssStatusEffects().load();
+		new AbyssEnviromnent().load();
 		new AbyssUnitTypes().load();
 		new AbyssBlocks().load();
 		new AbyssTechTree().load();
