@@ -1193,6 +1193,8 @@ public class AbyssUnitTypes implements ContentList {
 			trailScl = 3.5f;
 			range = 400f;
 			maxRange = range;
+			constructor = UnitWaterMove::create;
+			hitSize = 42.5f;
 			weapons.add(
 				new CellWeapon("orcinus-foreshadow") {{
 					x = y = 0f;
