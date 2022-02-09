@@ -41,7 +41,6 @@ public class AbyssBlocks implements ContentList {
 		add, mult, exp, tetr,
 		// production 
 		abyssForge, proximitySmelter, blastKiln,
-		crusher,
 		// turrets
 		kardone, delamine, selena, kardeni,
 		liner, point,
@@ -314,26 +313,6 @@ public class AbyssBlocks implements ContentList {
 				AbyssItems.balestenite, 4
 			));
 			outputItem = new ItemStack(AbyssItems.kalenium, 3);
-		}};
-		crusher = new GenericCrafter("crusher") {{
-			requirements(Category.production, with(
-				Items.silicon, 60,
-				AbyssItems.abyss, 50,
-				AbyssItems.selemate, 90
-			));
-			size = 2;
-			health = 220;
-			drawer = new DrawRotator();
-			itemCapacity = 20;
-			liquidCapacity = 60f;
-			consumes.power(0.5f);
-			consumes.items(with(
-				Items.thorium, 3,
-				Items.titanium, 2,
-				Items.silicon, 5
-			));
-			consumes.liquid(Liquids.oil, 0.4f);
-			outputItem = new ItemStack(AbyssItems.darkPowder, 4);
 		}};
 
 		kardone = new ItemTurret("kardone") {{
