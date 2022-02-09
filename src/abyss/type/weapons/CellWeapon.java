@@ -20,6 +20,7 @@ public class CellWeapon extends Weapon {
 
 	@Override
 	public void load() {
+		super.load();
 		cellRegion = Core.atlas.find(name + "-cell");
 	}
 
