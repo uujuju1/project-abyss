@@ -33,7 +33,7 @@ public class CellWeapon extends Weapon {
 		applyColor(unit);
 
 		Draw.color(cellColor(unit));
-		Draw.rect(cellRegion, unit.x, unit.y, mount.rotation - 90);
+		Draw.rect(cellRegion, unit.x, unit.y, (mount.rotation - 90) + (unit.rotation - 90));
 		Draw.reset();
 	}
 
