@@ -1196,7 +1196,7 @@ public class AbyssUnitTypes implements ContentList {
 			constructor = UnitWaterMove::create;
 			hitSize = 42.5f;
 			weapons.add(
-				new CellWeapon("orcinus-foreshadow") {{
+				new CellWeapon("abyss-orcinus-foreshadow") {{
 					x = y = 0f;
 					reload = 600f;
 					recoil = 8f;
@@ -1217,7 +1217,7 @@ public class AbyssUnitTypes implements ContentList {
 						ammoMultiplier = 1f;
 					}};
 				}},
-				new Weapon("orcinus-artillery") {{
+				new Weapon("abyss-orcinus-artillery") {{
 					x = 16f;
 					y = -36f;
 					reload = 60f;
@@ -1231,7 +1231,7 @@ public class AbyssUnitTypes implements ContentList {
 						backColor = Pal.sapBulletBack;
 					}};
 				}},
-				new Weapon("orcinus-artillery") {{
+				new Weapon("abyss-orcinus-artillery") {{
 					x = 14f;
 					y = 20f;
 					reload = 60f;
@@ -1245,7 +1245,7 @@ public class AbyssUnitTypes implements ContentList {
 						backColor = Pal.sapBulletBack;
 					}};
 				}},
-				new Weapon("orcinus-artillery") {{
+				new Weapon("abyss-orcinus-artillery") {{
 					x = 24f;
 					y = 0f;
 					reload = 120f;
