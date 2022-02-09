@@ -26,9 +26,6 @@ import abyss.content.*;
 import abyss.graphics.*;
 import abyss.world.blocks.defense.*;
 import abyss.world.blocks.production.*;
-import abyss.world.blocks.force.*;
-import abyss.world.blocks.force.distribution.*;
-import abyss.world.blocks.force.power.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -40,7 +37,7 @@ public class AbyssBlocks implements ContentList {
 		voidWall, voidWallLarge, voidWallHuge,
 		selemateWall, selemateWallLarge, selemateWallHuge,
 		// units
-		abyssFactory, rotorizedFactory, terreniumConstructor,
+		abyssFactory, rotorizedFactory, terreniumConstructor, specialistAssembler,
 		add, mult, exp, tetr,
 		// production 
 		abyssForge, proximitySmelter, blastKiln,
@@ -49,9 +46,7 @@ public class AbyssBlocks implements ContentList {
 		kardone, delamine, selena, kardeni,
 		liner, point,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter,
-		// test
-		pullingWheel, cableShaft;
+		assaultScatter, supportScatter, specialistScatter;
 
 	@Override
 	public void load() {
@@ -183,6 +178,19 @@ public class AbyssBlocks implements ContentList {
 			consumes.power(2f);
 			plans = Seq.with(
 				new UnitPlan (AbyssUnitTypes.saloni, 60f * 30, with(Items.silicon, 10, AbyssItems.kalenium, 30))
+			);
+		}};
+		specialistAssembler = new UnitFactory("terrenium-constructor") {{
+			requirements(Category.units, with(
+				Items.metaglass, 60,
+				Items.silicon, 120,
+				Items.titanium, 100
+			));
+			size = 3;
+			health = 220;
+			consumes.power(2f);
+			plans = Seq.with(
+				new UnitPlan (AbyssUnitTypes.solenopsis, 60f * 30, with(Items.silicon, 10, Items.metaglass, 30))
 			);
 		}};
 		add = new Reconstructor("reconstructor3") {{
@@ -493,27 +501,6 @@ public class AbyssBlocks implements ContentList {
 				status = StatusEffects.sapped;
 				statusDuration = 60f * 10f;
 			}};
-		}};
-		pullingWheel = new PullingBlock("pulling-wheel") {{
-			requirements(Category.logic, with(
-				AbyssItems.selemate, 96
-			));
-			size = 2;
-			health = 200;
-			maxForce = 200f;
-			pullMagnitude = 3f;
-			releaseMagnitude = 0.6f;
-			cableColorFrom = Color.valueOf("807E6E");
-			cableColorTo = Color.valueOf("C0B6B0");
-			buildVisibility = BuildVisibility.sandboxOnly;
-		}};
-		cableShaft = new ForceConveyor("cable-shaft") {{
-			requirements(Category.logic, with(
-				AbyssItems.selemate, 1
-			));
-			// drawers.add(new DrawCable());
-			size = 1;
-			health = 80;
 		}};
 	}
 }

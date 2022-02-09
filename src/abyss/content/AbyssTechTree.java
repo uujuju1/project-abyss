@@ -108,10 +108,6 @@ public class AbyssTechTree implements ContentList {
 			node(AbyssBlocks.kaleniumBridge, Seq.with(new Produce(AbyssItems.kalenium)));
 		});
 
-		extendNode(Blocks.distributor, () -> {
-			node(AbyssBlocks.kaleniumDistributor, Seq.with(new Produce(AbyssItems.kalenium)));
-		});
-
 		extendNode(Blocks.plastaniumCompressor, () -> {
 			node(AbyssBlocks.abyssForge, Seq.with(new Produce(Items.thorium)), () -> {
 				node(AbyssBlocks.crusher, Seq.with(new Produce(AbyssItems.abyss), new Research(Blocks.siliconCrucible)));
@@ -171,6 +167,17 @@ public class AbyssTechTree implements ContentList {
 						node(AbyssUnitTypes.solanra, Seq.with(new Research(AbyssBlocks.mult)), () -> {
 							node(AbyssUnitTypes.deuteria, Seq.with(new Research(AbyssBlocks.exp)), () -> {
 								node(AbyssUnitTypes.atomega, Seq.with(new Research(AbyssBlocks.tetr)));
+							});
+						});
+					});
+				});
+			});
+			node(AbyssBlocks.specialistAssembler, Seq.with(new research(UnitTypes.bryde)), () -> {
+				node(AbyssUnitTypes.solenopsis, () -> {
+					node(AbyssUnitTypes.cricetiae, Seq.with(new Research(AbyssBlocks.add)), () -> {
+						node(AbyssUnitTypes.oryctolagus, Seq.with(new Research(AbyssBlocks.mult)), () -> {
+							node(AbyssUnitTypes.carcharodon, Seq.with(new Research(AbyssBlocks.exp)), () -> {
+								node(AbyssUnitTypes.orcinus, Seq.with(new Research(AbyssBlocks.tetr)));
 							});
 						});
 					});
