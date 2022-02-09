@@ -172,7 +172,7 @@ public class AbyssTechTree implements ContentList {
 					});
 				});
 			});
-			node(AbyssBlocks.specialistAssembler, Seq.with(new research(UnitTypes.bryde)), () -> {
+			node(AbyssBlocks.specialistAssembler, Seq.with(new Research(UnitTypes.bryde)), () -> {
 				node(AbyssUnitTypes.solenopsis, () -> {
 					node(AbyssUnitTypes.cricetiae, Seq.with(new Research(AbyssBlocks.add)), () -> {
 						node(AbyssUnitTypes.oryctolagus, Seq.with(new Research(AbyssBlocks.mult)), () -> {
