@@ -1210,7 +1210,7 @@ public class AbyssUnitTypes implements ContentList {
 						trailSpacing = 20f;
 						damage = 1750;
 						buildingDamageMultiplier = 0.25f;
-						speed = brange;
+						speed = range;
 						hitShake = 6f;
 						ammoMultiplier = 1f;
 					}};
