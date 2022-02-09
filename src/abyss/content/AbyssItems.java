@@ -6,15 +6,12 @@ import mindustry.type.Item;
 
 public class AbyssItems implements ContentList {
 	public static Item 
-		abyss, darkPowder,
+		abyss,
 		balestenite, kalenium, selemate;
 
 	@Override
 	public void load() {
 		abyss = new Item("abyss", Color.valueOf("212121")) {{
-			cost = 3;
-		}};
-		darkPowder = new Item("dark-powder", Color.valueOf("212121")) {{
 			cost = 3;
 		}};
 
