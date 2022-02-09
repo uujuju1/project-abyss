@@ -4,7 +4,7 @@ import mindustry.world.blocks.environment.*;
 import mindustry.ctype.ContentList;
 import abyss.content.*;
 
-public class AbyssEnvironment implements ContentList {
+public class AbyssEnviromnent implements ContentList {
 	public static Floor granite, calcarium;
 	public static OreBlock oreSelemate;
 
