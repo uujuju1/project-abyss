@@ -36,6 +36,6 @@ public class AbyssPlanets implements ContentList {
 			atmosphereRadOut = 0.3f;
 			startSector = 30;
 			alwaysUnlocked = true;
-		}}
+		}};
 	}
 }
