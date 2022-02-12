@@ -1,10 +1,10 @@
 package abyss.type.weapons;
 
 import arc.*;
+import arc.math.*;
 import arc.util.*;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
-import arc.math.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 import mindustry.graphics.*;
@@ -30,10 +30,16 @@ public class CellWeapon extends Weapon {
 	}
 
 	public void drawCell(Unit unit, WeaponMount mount){
+		float
+			rotation = unit.rotation - 90,
+			weaponRotation = rotation + (rotate ? mount.rotation : 0),
+			recoil = -((mount.reload) / reload * this.recoil),
+			wx = unit.x + Angles.trnsx(rotation, x, y) + Angles.trnsx(weaponRotation, 0, recoil),
+			wy = unit.y + Angles.trnsy(rotation, x, y) + Angles.trnsy(weaponRotation, 0, recoil);
 		applyColor(unit);
 
 		Draw.color(cellColor(unit));
-		Draw.rect(cellRegion, unit.x, unit.y, (mount.rotation - 90) + unit.rotation);
+		Draw.rect(cellRegion, wx, wy, weaponRotation);
 		Draw.reset();
 	}
 
