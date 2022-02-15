@@ -14,6 +14,7 @@ import mindustry.type.*;
 import mindustry.entities.bullet.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
+import mindustry.world.blocks.power.*;
 import mindustry.world.blocks.units.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.defense.turrets.*;
@@ -334,13 +335,13 @@ public class AbyssBlocks implements ContentList {
 				AbyssItems.abyss, 5
 			));
 			consumes.liquid(AbyssItems.heavyOil, 0.16f);
-			outputLiquid = new LiquidStack(Items.plastanium, 4);
+			outputItem = new ItemStack(Items.plastanium, 4);
 		}};
 		heavyRefiner = new GenericCrafter("heavy-refiner") {{
 			requirements(Category.crafting, with(
 				Items.silicon, 60,
 				Items.graphite, 30,
-				Items.selemate, 80,
+				AbyssItems.selemate, 80,
 				Items.lead, 100
 			));
 			size = 2;
@@ -353,7 +354,7 @@ public class AbyssBlocks implements ContentList {
 			requirements(Category.crafting, with(
 				Items.silicon, 60,
 				Items.graphite, 30,
-				Items.selemate, 80,
+				AbyssItems.selemate, 80,
 				Items.lead, 100
 			));
 			size = 2;
