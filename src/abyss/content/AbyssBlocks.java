@@ -14,11 +14,11 @@ import mindustry.type.*;
 import mindustry.entities.bullet.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
-import mindustry.world.blocks.distribution.*;
 import mindustry.world.blocks.units.*;
-import mindustry.world.blocks.production.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.defense.turrets.*;
+import mindustry.world.blocks.production.*;
+import mindustry.world.blocks.distribution.*;
 import mindustry.world.meta.*;
 import mindustry.world.draw.*;
 
@@ -41,6 +41,9 @@ public class AbyssBlocks implements ContentList {
 		add, mult, exp, tetr,
 		// production 
 		abyssForge, proximitySmelter, blastKiln,
+		plasticSolidifier, heavyRefiner, lightRefiner,
+		// powah
+		oilBurner,
 		// turrets
 		kardone, delamine, selena, kardeni,
 		liner, point,
@@ -189,7 +192,7 @@ public class AbyssBlocks implements ContentList {
 			health = 220;
 			consumes.power(2f);
 			plans = Seq.with(
-				new UnitPlan (AbyssUnitTypes.solenopsis, 60f * 30, with(Items.silicon, 10, Items.metaglass, 30))
+				new UnitPlan (AbyssUnitTypes.solenopsis, 60f * 30, with(Items.silicon, 10, Items.metaglass, 30, Items.plastanium, 5))
 			);
 		}};
 		add = new Reconstructor("reconstructor3") {{
@@ -313,6 +316,64 @@ public class AbyssBlocks implements ContentList {
 				AbyssItems.balestenite, 4
 			));
 			outputItem = new ItemStack(AbyssItems.kalenium, 3);
+		}};
+		plasticSolidifier = new GenericCrafter("plastic-solidifier") {{
+			requirements(Category.crafting, with(
+				Items.plastanium, 80,
+				Items.thorium, 50,
+				Items.silicon, 120,
+				AbyssItems.selemate, 80
+			));
+			size = 3;
+			health = 220;
+			drawer = new DrawLiquid();
+			consumes.power(2.5f);
+			consumes.items(with(
+				Items.titanium, 4,
+				Items.silicon, 6,
+				AbyssItems.abyss, 5
+			));
+			consumes.liquid(AbyssItems.heavyOil, 0.16f);
+			outputLiquid = new LiquidStack(Items.plastanium, 4);
+		}};
+		heavyRefiner = new GenericCrafter("heavy-refiner") {{
+			requirements(Category.crafting, with(
+				Items.silicon, 60,
+				Items.graphite, 30,
+				Items.selemate, 80,
+				Items.lead, 100
+			));
+			size = 2;
+			health = 160;
+			drawer = new DrawLiquid();
+			consumes.liquid(Liquids.oil, 0.2f);
+			outputLiquid = new LiquidStack(AbyssItems.heavyOil, 0.1f);
+		}};
+		lightRefiner = new GenericCrafter("light-refiner") {{
+			requirements(Category.crafting, with(
+				Items.silicon, 60,
+				Items.graphite, 30,
+				Items.selemate, 80,
+				Items.lead, 100
+			));
+			size = 2;
+			health = 160;
+			drawer = new DrawLiquid();
+			consumes.liquid(Liquids.oil, 0.2f);
+			outputLiquid = new LiquidStack(AbyssItems.lightOil, 0.1f);
+		}};
+
+		oilBurner = new ItemLiquidGenerator(false, true, "oil-burner") {{
+			requirements(Category.power, with(
+				Items.silicon, 50,
+				Items.graphite, 40,
+				AbyssItems.selemate, 80,
+				Items.lead, 75
+			));
+			size = 2;
+			health = 200;
+			consumes.liquid(AbyssItems.lightOil);
+			powerProduction = 3f;
 		}};
 
 		kardone = new ItemTurret("kardone") {{
