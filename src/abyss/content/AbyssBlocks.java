@@ -373,7 +373,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 2;
 			health = 200;
-			consumes.liquid(AbyssItems.lightOil);
+			consumes.liquid(AbyssItems.lightOil, 0.1f);
 			powerProduction = 3f;
 		}};
 
