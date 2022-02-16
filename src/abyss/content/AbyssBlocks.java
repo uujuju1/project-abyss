@@ -346,7 +346,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 2;
 			health = 160;
-			crafTime = 1f;
+			craftTime = 1f;
 			drawer = new DrawLiquid();
 			consumes.liquid(Liquids.oil, 0.2f);
 			outputLiquid = new LiquidStack(AbyssItems.heavyOil, 0.1f);
@@ -360,7 +360,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 2;
 			health = 160;
-			crafTime = 1f;
+			craftTime = 1f;
 			drawer = new DrawLiquid();
 			consumes.liquid(Liquids.oil, 0.2f);
 			outputLiquid = new LiquidStack(AbyssItems.lightOil, 0.1f);
