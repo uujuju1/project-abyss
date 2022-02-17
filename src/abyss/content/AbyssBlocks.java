@@ -391,6 +391,7 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 2;
 			health = 160;
+			liquidCapacity = 60f;
 			consumes.liquid(AbyssItems.lightOil, 0.1f);
 			powerProduction = 3f;
 		}};
