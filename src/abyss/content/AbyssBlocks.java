@@ -377,7 +377,7 @@ public class AbyssBlocks implements ContentList {
 			drawer = new DrawSmelter(Color.valueOf("E8DDD6"));
 			consumes.items(with(
 				Items.copper, 2,
-				Items.lead 2,
+				Items.lead, 2
 			));
 			outputItem = new ItemStack(AbyssItems.selemate, 2);
 		}};
