@@ -17,6 +17,11 @@ public class BaseItemTurret extends ItemTurret {
 		wing = Core.atlas.find(name + "-wing");
 	}
 
+	@Override
+	public TextureRegion[] icons() {
+		return new TextureRegion[]{baseRegion, icon};
+	}
+
 	public class BaseItemTurretBuild extends ItemTurret.ItemTurretBuild {
 		@Override
 		public void draw() {
