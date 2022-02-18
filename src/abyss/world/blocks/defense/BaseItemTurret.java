@@ -8,7 +8,7 @@ public class BaseItemTurret extends ItemTurret {
 	public TextureRegion icon, wing;
 
 	public BaseItemTurret(String name) {
-		super.name();
+		super(name);
 	}
 
 	@Override
