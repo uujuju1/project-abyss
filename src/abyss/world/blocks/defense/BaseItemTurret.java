@@ -19,7 +19,7 @@ public class BaseItemTurret extends ItemTurret {
 
 	@Override
 	public TextureRegion[] icons() {
-		return new TextureRegion[]{baseRegion, icon};
+		return new TextureRegion[]{icon};
 	}
 
 	public class BaseItemTurretBuild extends ItemTurret.ItemTurretBuild {
