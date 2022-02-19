@@ -11,7 +11,9 @@ public class AbyssBullets implements ContentList {
 	public static BulletType
 		voidBullet1, voidBullet2, voidBullet3, voidBullet4,
 
-		electraBullet1, electraBullet2;
+		electraBullet1, electraBullet2,
+
+		singularityBullet;
 
 	@Override
 	public void load() {
@@ -72,5 +74,15 @@ public class AbyssBullets implements ContentList {
 			ammoMultiplier = 1f;
 		}};
 		
+		singularityBullet = new ArtilleryBulletType(2.5, 30, "abyss-explosive-bullet") {{
+			lifetime = 480f;
+			drag = 0.1f;
+			width = height = 8f;
+			collides = false;
+			splashDamage = 60;
+			splashDamageRadius = 32f;
+			frontColor = Color.valueOf("2E2E2E");
+			backColor = Color.valueOf("1C1C1C");
+		}};
 	}
 }

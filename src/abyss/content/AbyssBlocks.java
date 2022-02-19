@@ -48,6 +48,7 @@ public class AbyssBlocks implements ContentList {
 		// turrets
 		kardone, delamine, selena, kardeni,
 		liner, point,
+		fission,
 		// scatters
 		assaultScatter, supportScatter, specialistScatter;
 
@@ -503,6 +504,22 @@ public class AbyssBlocks implements ContentList {
 			range = 160f;
 			restitution = 0.05f;
 			shootType = AbyssBullets.electraBullet2;
+		}};
+		fission = new BaseItemTurret("fission") {{
+			requirements(Category.turret, with(
+				AbyssItems.singularityCore, 30,
+				Items.plastanium, 40,
+				Items.silicon, 80,
+				Items.graphite, 120
+			));
+			size = 3;
+			health = 800;
+			reloadTime = 120;
+			range = 240;
+			restitution = 0.05f;
+			ammo(
+				AbyssItems.singularityCore, AbyssBullets.singularityBullet
+			);
 		}};
 
 		assaultScatter = new ScatterSilo("assault-scatter") {{

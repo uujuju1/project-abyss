@@ -6,7 +6,7 @@ import mindustry.type.*;
 
 public class AbyssItems implements ContentList {
 	public static Item 
-		abyss,
+		abyss, singularityCore,
 		balestenite, kalenium, selemate;
 	public static Liquid
 		heavyOil, lightOil;
@@ -15,6 +15,9 @@ public class AbyssItems implements ContentList {
 	public void load() {
 		abyss = new Item("abyss", Color.valueOf("212121")) {{
 			cost = 3;
+		}};
+		singularityCore = new Item("singularity-core", Color.valueOf("212121")) {{
+			cost = 4;
 		}};
 
 		balestenite = new Item("balestenite", Color.valueOf("C0A8A6")) {{
