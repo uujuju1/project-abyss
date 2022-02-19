@@ -74,7 +74,7 @@ public class AbyssBullets implements ContentList {
 			ammoMultiplier = 1f;
 		}};
 		
-		singularityBullet = new ArtilleryBulletType(2.5, 30, "abyss-explosive-bullet") {{
+		singularityBullet = new ArtilleryBulletType(2.5f, 30, "abyss-explosive-bullet") {{
 			lifetime = 480f;
 			drag = 0.1f;
 			width = height = 8f;
