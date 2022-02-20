@@ -26,7 +26,7 @@ public class PayloadConverter extends PayloadBlock {
 			if (payload == input) {
 				if (progress >= craftTime) {
 					progress = 0f;
-					payload = output;
+					payload = new BuildPayload(output, team);
 				}
 				progress += Time.delta;
 			}
