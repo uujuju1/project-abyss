@@ -19,6 +19,7 @@ public class PayloadConverter extends PayloadBlock {
 		@Override
 		public boolean acceptPayload(Building source, Payload payload) {
 			if (payload == input && back() == source) return true;
+			return false;
 		}
 
 		@Override
