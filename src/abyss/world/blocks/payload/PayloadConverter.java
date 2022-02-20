@@ -1,8 +1,9 @@
 package abyss.world.blocks.payload;
 
 import arc.util.*;
+import mindustry.gen.*;
 import mindustry.world.*;
-import mindustry.world.blocks.payload.*;
+import mindustry.world.blocks.payloads.*;
 // generic crafter that converts one payload into a different payload
 public class PayloadConverter extends PayloadBlock {
 	public @Nullable Block input, output;
