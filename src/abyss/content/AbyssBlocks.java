@@ -528,10 +528,10 @@ public class AbyssBlocks implements ContentList {
 				AbyssItems.singularityCore, 30,
 				Items.graphite, 20,
 				Items.silicon, 25,
-				Items.leadm 40
+				Items.lead, 40
 			));
 			size = 2;
-			health 710;
+			health = 710;
 			reloadTime = 45f;
 			range = 120f;
 			restitution = 0.05f;
