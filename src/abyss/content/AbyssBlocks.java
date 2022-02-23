@@ -48,8 +48,11 @@ public class AbyssBlocks implements ContentList {
 		// turrets
 		kardone, delamine, selena, kardeni,
 		liner, point,
+		dwarf, sequence, neutron, singularity,
 		// scatters
-		assaultScatter, supportScatter, specialistScatter;
+		assaultScatter, supportScatter, specialistScatter/*,
+		// payload
+		wallConverter*/;
 
 	@Override
 	public void load() {
@@ -504,6 +507,39 @@ public class AbyssBlocks implements ContentList {
 			restitution = 0.05f;
 			shootType = AbyssBullets.electraBullet2;
 		}};
+		dwarf = new ItemTurret("dwarf") {{
+			requirements(Category.turret, with(
+				AbyssItems.singularityCore, 10,
+				Items.graphite, 10,
+				Items.lead, 15
+			));
+			size = 1;
+			health = 180;
+			reloadTime = 30f;
+			range = 64f;
+			restitution = 0.05f;
+			inaccuracy = 1f;
+			ammo(
+				AbyssItems.singularityCore, AbyssBullets.singularityBullet1
+			);
+		}};
+		sequence = new ItemTurret("sequence") {{
+			requirements(Category.turret, with(
+				AbyssItems.singularityCore, 30,
+				Items.graphite, 20,
+				Items.silicon, 25,
+				Items.leadm 40
+			));
+			size = 2;
+			health 710;
+			reloadTime = 45f;
+			range = 120f;
+			restitution = 0.05f;
+			inaccuracy = 1f;
+			ammo(
+				AbyssItems.singularityCore, AbyssBullets.singularityBullet2
+			);
+		}};
 
 		assaultScatter = new ScatterSilo("assault-scatter") {{
 			requirements(Category.turret, with(
@@ -562,5 +598,17 @@ public class AbyssBlocks implements ContentList {
 				statusDuration = 60f * 10f;
 			}};
 		}};
+
+		/*
+		wallConverter = new PayloadConverter("wall-converter") {{
+			requirements(Category.units, with(
+				AbyssItems.singularityCore, 69
+			));
+			size = 3;
+			health = 200;
+			input = Blocks.copperWall;
+			output = Blocks.titaniumWallLarge;
+		}};
+		*/
 	}
 }
