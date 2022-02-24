@@ -74,22 +74,20 @@ public class AbyssBullets implements ContentList {
 			ammoMultiplier = 1f;
 		}};
 		
-		singularityBullet1 = new BasicBulletType(2.5f, 25, "abyss-explosive-bullet") {{
-			lifetime = 480f;
-			drag = 0.1f;
+		singularityBullet1 = new BasicBulletType(2.5f, 25) {{
+			lifetime = 25.6f;
 			width = height = 8f;
-			collides = false;
 			splashDamage = 25;
 			splashDamageRadius = 32f;
 			frontColor = Color.valueOf("2E2E2E");
 			backColor = Color.valueOf("1C1C1C");
 		}};
-		singularityBullet2 = new BasicBulletType(3f, 40, "abyss-explosive-bullet") {{
-			lifetime = 480f;
-			drag = 0.1f;
-			collides = false;
+		singularityBullet2 = new BasicBulletType(3f, 40) {{
+			lifetime = 40f;
+			width = height = 10f;
 			splashDamage = 40;
 			splashDamageRadius = 32f;
+			ammoMultiplier = 4;
 			frontColor = Color.valueOf("2E2E2E");
 			backColor = Color.valueOf("1C1C1C");
 		}};
