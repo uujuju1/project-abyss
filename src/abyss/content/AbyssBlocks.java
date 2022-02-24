@@ -135,7 +135,7 @@ public class AbyssBlocks implements ContentList {
 			requirements(Category.defense, with(
 				AbyssItems.selemate, 24
 			));
-			size = 1;
+			size = 2;
 			health = 500 * 4;
 		}};
 		selemateWallHuge = new Wall("selemate-wall-huge") {{
