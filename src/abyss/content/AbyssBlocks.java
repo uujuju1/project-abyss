@@ -552,7 +552,7 @@ public class AbyssBlocks implements ContentList {
 			size = 3;
 			health = 1620;
 			reloadTime = 120;
-			chargeSound = Sounds.laserCharge2;
+			chargeSound = Sounds.lasercharge2;
 			chargeTime = 45f;
 			// temporary
 			chargeEffect = Fx.none;
