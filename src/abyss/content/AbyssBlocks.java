@@ -554,17 +554,31 @@ public class AbyssBlocks implements ContentList {
 			reloadTime = 120;
 			chargeSound = Sounds.lasercharge2;
 			chargeTime = 45f;
-			// temporary
 			chargeEffect = AbyssFx.neutronCharge;
-
 			shootSound = Sounds.shotgun;
-			// temporary
 			shootEffect = AbyssFx.neutronShoot;
-
 			range = 168f;
 			restitution = 0.05f;
 			ammo(
 				AbyssItems.singularityCore, AbyssBullets.singularityBullet3
+			);
+		}};
+		singularity = new ItemTurret("singularity") {{
+			requirements(Category.turret, with(
+				AbyssItems.singularityCore, 120,
+				Items.thorium, 180,
+				Items.plastanium, 200,
+				Items.surgeAlloy, 80,
+				Items.silicon, 250
+			));
+			size = 4;
+			health = 2880;
+			reloadTime = 180;
+			shootSound = Sounds.shootBig;
+			range = 320f;
+			restitution = 0.05f;
+			ammo(
+				AbyssItems.singularityCore, AbyssBullets.singularityBullet4
 			);
 		}};
 

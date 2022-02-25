@@ -22,16 +22,16 @@ public class AbyssBullets implements ContentList {
 			height = 9f;
 			ammoMultiplier = 3;
 			lifetime = 32f;
-			frontColor = Color.valueOf("2E2E2E");
-			backColor = Color.valueOf("1C1C1C");
+			frontColor = Color.valueOf("FFFFFF");
+			backColor = Color.valueOf("D6D6D6");
 		}};
 		voidBullet2 = new BasicBulletType(6f, 30) {{
 			width = 9f;
 			height = 11f;
 			ammoMultiplier = 3;
 			lifetime = 40f;
-			frontColor = Color.valueOf("2E2E2E");
-			backColor = Color.valueOf("1C1C1C");
+			frontColor = Color.valueOf("FFFFFF");
+			backColor = Color.valueOf("D6D6D6");
 		}};
 		voidBullet3 = new BasicBulletType(7f, 90) {{
 			width = 11f;
@@ -40,8 +40,8 @@ public class AbyssBullets implements ContentList {
 			lifetime = 40f;
 			fragBullets = 2;
 			fragBullet = voidBullet1;
-			frontColor = Color.valueOf("2E2E2E");
-			backColor = Color.valueOf("1C1C1C");
+			frontColor = Color.valueOf("FFFFFF");
+			backColor = Color.valueOf("D6D6D6");
 		}};
 		voidBullet4 = new BasicBulletType(8f, 150) {{
 			width = 11f;
@@ -51,8 +51,8 @@ public class AbyssBullets implements ContentList {
 			fragBullets = 5;
 			fragBullet = voidBullet2;
 			shootEffect = AbyssFx.abyssShootBig;
-			frontColor = Color.valueOf("2E2E2E");
-			backColor = Color.valueOf("1C1C1C");
+			frontColor = Color.valueOf("FFFFFF");
+			backColor = Color.valueOf("D6D6D6");
 		}};
 
 		electraBullet1 = new LaserBulletType(30f) {{
@@ -79,15 +79,15 @@ public class AbyssBullets implements ContentList {
 			width = height = 8f;
 			splashDamage = 25;
 			splashDamageRadius = 32f;
-			frontColor = Color.valueOf("2E2E2E");
-			backColor = Color.valueOf("1C1C1C");
+			frontColor = Color.valueOf("FFFFFF");
+			backColor = Color.valueOf("D6D6D6");
 		}};
 		singularityBullet2 = new BasicBulletType(3f, 40) {{
 			lifetime = 40f;
 			width = height = 10f;
 			ammoMultiplier = 4;
-			frontColor = Color.valueOf("2E2E2E");
-			backColor = Color.valueOf("1C1C1C");
+			frontColor = Color.valueOf("FFFFFF");
+			backColor = Color.valueOf("D6D6D6");
 		}};
 		singularityBullet3 = new BasicBulletType(2f, 120) {{
 			lifetime = 84f;
@@ -95,8 +95,17 @@ public class AbyssBullets implements ContentList {
 			splashDamage = 120;
 			splashDamageRadius = 48f;
 			ammoMultiplier = 2;
-			frontColor = Color.valueOf("2E2E2E");
-			backColor = Color.valueOf("1C1C1C");
+			frontColor = Color.valueOf("FFFFFF");
+			backColor = Color.valueOf("D6D6D6");
+		}};
+		singularityBullet4 = new BasicBulletType(3.5, 320) {{
+			lifetime = 91.42f;
+			width = height = 14f;
+			splashDamage = 50;
+			splashDamageRadius = 48f;
+			ammoMultiplier = 2;
+			frontColor = Color.valueOf("FFFFFF");
+			backColor = Color.valueOf("D6D6D6");
 		}};
 	}
 }
