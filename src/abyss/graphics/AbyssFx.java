@@ -97,5 +97,16 @@ public class AbyssFx {
 			Lines.stroke(3f * e.fout());
 			Draw.alpha(e.fout());
 			Lines.circle(e.x, e.y, 120f * e.fin());
+		}),
+
+		neutronCharge = new Effect(30f, e -> {
+			Lines.stroke(Interp.sine.apply(e.fin() * 2) * 2)
+			Lines.poly(e.x, e.y, 4, 50 * e.fout(), 360 * e.fout())
+			Lines.poly(e.x, e.y, 4, 50 * e.fout(), 360 * e.fout() + 45)
+		}),
+		neutronShoot = new Effect(30f, e -> {
+			Drawf.tri(e.x, e.y, 8 * e.fout(), 50 * e.fout(), 0 + e.rotation);
+			Drawf.tri(e.x, e.y, 8 * e.fout(), 50 * e.fout(), 45 + e.rotation);
+			Drawf.tri(e.x, e.y, 8 * e.fout(), 50 * e.fout(), -45 + e.rotation);
 		});
 }

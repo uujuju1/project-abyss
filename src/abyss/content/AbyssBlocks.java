@@ -555,11 +555,11 @@ public class AbyssBlocks implements ContentList {
 			chargeSound = Sounds.lasercharge2;
 			chargeTime = 45f;
 			// temporary
-			chargeEffect = Fx.none;
+			chargeEffect = AbyssFx.neutronCharge;
 
 			shootSound = Sounds.shotgun;
 			// temporary
-			shootEffect = Fx.none;
+			shootEffect = AbyssFx.neutronShoot;
 
 			range = 168f;
 			restitution = 0.05f;

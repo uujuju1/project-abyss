@@ -85,8 +85,6 @@ public class AbyssBullets implements ContentList {
 		singularityBullet2 = new BasicBulletType(3f, 40) {{
 			lifetime = 40f;
 			width = height = 10f;
-			splashDamage = 40;
-			splashDamageRadius = 32f;
 			ammoMultiplier = 4;
 			frontColor = Color.valueOf("2E2E2E");
 			backColor = Color.valueOf("1C1C1C");
