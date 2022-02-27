@@ -132,7 +132,7 @@ public class AbyssFx {
 			Draw.color(Color.white, Color.valueOf("A8A8A8"), e.fin());
 			Lines.stroke(e.fout());
 			Angles.randLenVectors(e.id, 2, 15 * e.finpow(), e.rotation, 50, (x, y) -> {
-				let ang = Mathf.angle(x, y);
+				float ang = Mathf.angle(x, y);
 				Lines.lineAngle(e.x + x, e.y + y, ang, 3 * e.foutpow());
 			});
 		});
