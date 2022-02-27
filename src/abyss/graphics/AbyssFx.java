@@ -114,7 +114,7 @@ public class AbyssFx {
 			for(int i = 0; i < 5; i++) {
 				Drawf.tri(e.x, e.y, 8, 25 * e.fout(), i * (360/5) + 90 * e.fin());
 			}
-			Angles.randLenVectors(e.id, 10, 40 * e.finpow(), (x, y) => {
+			Angles.randLenVectors(e.id, 10, 40 * e.finpow(), (x, y) -> {
 				Fill.circle(e.x + x, e.y + y, Interp.sine.apply(e.fin() * 2));
 			});
 		});
