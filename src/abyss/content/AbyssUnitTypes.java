@@ -1284,7 +1284,7 @@ public class AbyssUnitTypes implements ContentList {
 					mirror = false;
 					shots = 5;
 					spacing = 1f;
-					bullet = FlameBulletType(2f, 3) {{
+					bullet = new FlameBulletType(2f, 3) {{
 						lifetime = 40f;
 						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
 					}};
