@@ -41,4 +41,6 @@ the last human on this universe, it's task is to protect his own planet & develo
 after the constructor's planet was destroyed we went off in the univers to find a similar planet to stay
 <br>he ended up finding [[unknown]] but the constructor needed to build defences since crux was after him
 <br>where the constructor landed had abundant water so navals would be userful
-<br>and after years of researching SporedWaters the 5 naval specialist's faction was created 
+<br>and after years of researching SporedWaters the 5 naval specialist's faction was created
+
+##
