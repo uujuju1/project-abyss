@@ -117,5 +117,23 @@ public class AbyssFx {
 			Angles.randLenVectors(e.id, 10, 40 * e.finpow(), (x, y) -> {
 				Fill.circle(e.x + x, e.y + y, Interp.sine.apply(e.fin() * 2));
 			});
+		}),
+
+		gasFlame = new Effect(30f, e -> {
+			Color[] colors = {Color.white, Color.valueOf("D6D6D6"), Color.valueOf("A8A8A8")}
+			for(int i = 0; i < 3; i++) {
+				Draw.color(colors[i]);
+				Angles.randLenVectors(e.id + i, 5, 80 * e.finpow(), e.rotation, i + 1 * 5, (x, y) -> {
+					Fill.circle(e.x + x, e.y + y, 3 * e.fout());
+				});
+			}
+		}),
+		gasFlameHit = new Effect(30f, e -> {
+			Draw.color(Color.white, Color.valueOf("A8A8A8"), e.fin())
+			Lines.stroke(e.fout());
+			Angles.randLenVectors(e.id, 2, 15 * e.finpow(), e.rotation, 50, (x, y) -> {
+				let ang = Mathf.angle(x, y);
+				Lines.lineAngle(e.x + x, e.y + y, ang, 3 * e.foutpow());
+			});
 		});
 }

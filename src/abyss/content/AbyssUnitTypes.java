@@ -1275,6 +1275,7 @@ public class AbyssUnitTypes implements ContentList {
 			constructor = UnitEntity::create;
 			range = 80f;
 			maxRange = range;
+			immunities.add(StatusEffects.burning);
 			weapons.add(
 				new Weapon("abyss-gas-mount") {{
 					x = 0f;
@@ -1284,9 +1285,18 @@ public class AbyssUnitTypes implements ContentList {
 					mirror = false;
 					shots = 5;
 					spacing = 1f;
-					bullet = new FlameBulletType(2f, 3) {{
-						lifetime = 40f;
-						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
+					bullet = new BulletType(2f, 3) {{
+						ammoMultiplier = 3f;
+						hitSize = 7f;
+						lifetime = 12f;
+						pierce = true;
+						statusDuration = 60f * 4;
+						shootEffect = AbyssFx.gasFlame;
+						hitEffect = AbyssFx.gasFlameHit;
+						despawnEffect = Fx.none;
+						status = StatusEffects.burning;
+						keepVelocity = false;
+						hittable = false;
 					}};
 				}}
 			);
