@@ -23,7 +23,8 @@ public class AbyssUnitTypes implements ContentList {
 		antra, karma, kalerbi, kodene, tolonia,
 		katerni, termina, solanra, deuteria, atomega,
 		saloni, alerbite, laminite, almone, aracnophobia,
-		solenopsis, cricetiae, oryctolagus, carcharodon, orcinus;
+		solenopsis, cricetiae, oryctolagus, carcharodon, orcinus,
+		gas, asteroid, comet, planet, star;
 
 	@Override
 	public void load() {
@@ -1265,6 +1266,30 @@ public class AbyssUnitTypes implements ContentList {
 					}};
 				}}
  			);
+		}};
+
+		gas = new UnitType("gas") {{
+			health = 180;
+			speed = 2f;
+			flying = true;
+			constructor = UnitEntity::create;
+			range = 80f;
+			maxRange = range;
+			weapons.add(
+				new Weapon("abyss-gas-mount") {{
+					x = 0f;
+					y = -0.5f;
+					reload = 30f;
+					rotate = true;
+					mirror = false;
+					shots = 5;
+					spacing = 1f;
+					bullet = FlameBulletType(2f, 3) {{
+						lifetime = 40f;
+						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
+					}};
+				}}
+			);
 		}};
 	}
 }
