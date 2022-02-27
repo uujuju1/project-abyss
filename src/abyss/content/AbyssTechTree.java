@@ -109,11 +109,21 @@ public class AbyssTechTree implements ContentList {
 		});
 
 		extendNode(Blocks.plastaniumCompressor, () -> {
-			node(AbyssBlocks.abyssForge, Seq.with(new Produce(Items.thorium)));
+			node(AbyssBlocks.abyssForge, Seq.with(new Produce(Items.thorium)), () -> {
+				node(AbyssBlocks.singularityCompressor, Seq.with(new Produce(AbyssItems.balestenite)));
+			});
+			node(AbyssBlocks.plasticSolidifier, Seq.with(new Produce(AbyssItems.heavyOil)));
 		});
 		extendNode(Blocks.kiln, () -> {
 			node(AbyssBlocks.proximitySmelter, Seq.with(new Produce(Items.titanium)));
 			node(AbyssBlocks.blastKiln, Seq.with(new Produce(Items.pyratite)));
+		});
+		extendNode(Blocks.oilExtractor, () -> {
+			node(AbyssBlocks.lightRefiner, Seq.with(new Produce(AbyssItems.selemate)));
+			node(AbyssBlocks.heavyRefiner, Seq.with(new Produce(AbyssItems.selemate)));
+		});
+		extendNode(Blocks.graphitePress, () -> {
+			node(AbyssBlocks.rockFurnace);
 		});
 
 		extendNode(Blocks.additiveReconstructor, () -> {
@@ -143,6 +153,15 @@ public class AbyssTechTree implements ContentList {
 		});
 		extendNode(Blocks.lancer, () -> {
 			node(AbyssBlocks.point, Seq.with(new Produce(AbyssItems.balestenite)));
+		});
+		extendNode(Blocks.hail, () -> {
+			node(AbyssBlocks.dwarf, Seq.with(new Produce(AbyssItems.singularityCore)), () -> {
+				node(AbyssBlocks.sequence, Seq.with(new Produce(Items.silicon)), () -> {
+					node(AbyssBlocks.neutron, Seq.with(new Produce(Items.plastanium)), () -> {
+						node(AbyssBlocks.singularity, Seq.with(new Produce(Items.surgeAlloy)));
+					});
+				});
+			});
 		});
 		
 		extendNode(Blocks.airFactory, () -> {

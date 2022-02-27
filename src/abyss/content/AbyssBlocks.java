@@ -43,6 +43,7 @@ public class AbyssBlocks implements ContentList {
 		// production 
 		abyssForge, proximitySmelter, blastKiln,
 		plasticSolidifier, heavyRefiner, lightRefiner, rockFurncace,
+		singularityCompressor,
 		// powah
 		oilBurner,
 		// turrets
@@ -383,6 +384,24 @@ public class AbyssBlocks implements ContentList {
 				Items.lead, 2
 			));
 			outputItem = new ItemStack(AbyssItems.selemate, 2);
+		}};
+		singularityCompressor = new GenericCrafter("singularity-compressor") {{
+			requirements(Category.crafting, with(
+				Items.plastanium, 50,
+				Items.silicon, 120,
+				Items.graphite, 200,
+				AbyssItems.balestenite, 180,
+				AbyssItems.abyss, 80
+			));
+			size = 4;
+			health = 240;
+			craftTime = 180f;
+			craftEffect = AbyssFx.singularityForged;
+			consumes.items(with(
+				AbyssItems.abyss, 2,
+				AbyssItems.balestenite, 1
+			));
+			outputItem = new ItemStack(AbyssItems.singularityCore, 2);
 		}};
 
 		oilBurner = new ItemLiquidGenerator(false, true, "oil-burner") {{
