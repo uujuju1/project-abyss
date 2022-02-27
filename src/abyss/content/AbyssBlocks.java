@@ -42,7 +42,7 @@ public class AbyssBlocks implements ContentList {
 		add, mult, exp, tetr,
 		// production 
 		abyssForge, proximitySmelter, blastKiln,
-		plasticSolidifier, heavyRefiner, lightRefiner, rockFurncace,
+		plasticSolidifier, heavyRefiner, lightRefiner, rockFurnace,
 		singularityCompressor,
 		// powah
 		oilBurner,
@@ -369,7 +369,7 @@ public class AbyssBlocks implements ContentList {
 			consumes.liquid(Liquids.oil, 0.2f);
 			outputLiquid = new LiquidStack(AbyssItems.lightOil, 0.1f);
 		}};
-		rockFurncace = new GenericCrafter("rock-furnace") {{
+		rockFurnace = new GenericCrafter("rock-furnace") {{
 			requirements(Category.crafting, with(
 				Items.copper, 40,
 				Items.lead, 80,
