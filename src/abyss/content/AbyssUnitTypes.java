@@ -1272,6 +1272,7 @@ public class AbyssUnitTypes implements ContentList {
 			health = 180;
 			speed = 2f;
 			flying = true;
+			rotateShooting = false;
 			constructor = UnitEntity::create;
 			range = 80f;
 			maxRange = range;
@@ -1283,12 +1284,11 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 30f;
 					rotate = true;
 					mirror = false;
-					shots = 5;
-					spacing = 1f;
-					bullet = new BulletType(2f, 3) {{
+					shootSound = Sounds.flame;
+					bullet = new BulletType(2f, 12) {{
 						ammoMultiplier = 3f;
 						hitSize = 7f;
-						lifetime = 12f;
+						lifetime = 40f;
 						pierce = true;
 						statusDuration = 60f * 4;
 						shootEffect = AbyssFx.gasFlame;
@@ -1297,6 +1297,27 @@ public class AbyssUnitTypes implements ContentList {
 						status = StatusEffects.burning;
 						keepVelocity = false;
 						hittable = false;
+					}};
+				}}
+			);
+		}};
+		asteroid = new UnitType("asteroid") {{
+			health = 520;
+			speed = 1.7f;
+			flying = true;
+			constructor = UnitEntity::create;
+			range = 144f;
+			maxRange = range;
+			weapons.add(
+				new Weapon("abyss-asteroid-missile") {{
+					x = 4f;
+					y = 0f;
+					reload = 30f;
+					shootSound = Sounds.missile;
+					bullet = new MissileBulletType(2.5f, 15) {{
+						width = height = 8f;
+						frontColor = Color.white;
+						backColor = Color.valueOf("D6D6D6");
 					}};
 				}}
 			);
