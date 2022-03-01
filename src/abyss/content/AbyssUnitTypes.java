@@ -1272,6 +1272,7 @@ public class AbyssUnitTypes implements ContentList {
 			health = 180;
 			speed = 2f;
 			flying = true;
+			lowAltitude = true;
 			rotateShooting = false;
 			constructor = UnitEntity::create;
 			range = 80f;
@@ -1305,9 +1306,11 @@ public class AbyssUnitTypes implements ContentList {
 			health = 520;
 			speed = 1.7f;
 			flying = true;
+			lowAltitude = true;
 			constructor = UnitEntity::create;
 			range = 144f;
 			maxRange = range;
+			hitSize = 8f;
 			weapons.add(
 				new Weapon("abyss-asteroid-missile") {{
 					x = 4f;
@@ -1326,9 +1329,13 @@ public class AbyssUnitTypes implements ContentList {
 			health = 750;
 			speed = 1.6f;
 			flying = true;
+			lowAltitude = true;
 			constructor = UnitEntity::create;
 			range = 184f;
 			maxRange = range;
+			engineSize = 5f;
+			engineOffset = 14f;
+			hitSize = 14f;
 			weapons.add(
 				new DrawableWeapon("") {{
 					x = 0f;
@@ -1363,7 +1370,7 @@ public class AbyssUnitTypes implements ContentList {
 				}},
 				new Weapon("abyss-comet-artillery") {{
 					x = 0f;
-					y = 6.75f;
+					y = -6.75f;
 					reload = 60f;
 					rotate = false;
 					mirror = false;
