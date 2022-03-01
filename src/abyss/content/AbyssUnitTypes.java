@@ -1338,13 +1338,13 @@ public class AbyssUnitTypes implements ContentList {
 					rotate = true;
 					rotateSpeed = 69420f;
 					mirror = false;
-					shootEffect = Fx.none;
 					shootSound = Sounds.plasmadrop;
 					drawer = new DrawEnergy() {{
 						colors = new Color[]{Color.valueOf("D6D6D6"), Color.white};
 					}};
 					bullet = new MissileBulletType(3f, 80) {{
 						width = height = 14f;
+						shootEffect = Fx.none;
 						frontColor = Color.white;
 						backColor = Color.valueOf("D6D6D6");
 					}};
@@ -1357,6 +1357,7 @@ public class AbyssUnitTypes implements ContentList {
 					shootSound = Sounds.laser;
 					bullet = new LaserBulletType(45) {{
 						length = 56f;
+						shootEffect = AbyssFx.gasFlameHit;
 						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
 					}};
 				}},
@@ -1369,6 +1370,7 @@ public class AbyssUnitTypes implements ContentList {
 					shootSound = Sounds.artillery;
 					bullet = new ArtilleryBulletType(2f, 65) {{
 						width = height = 10f;
+						shootEffect = Fx.gasFlame;
 						lifetime = 104f;
 						range = 208f;
 						frontColor = Color.white;
