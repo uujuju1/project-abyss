@@ -2,6 +2,10 @@ package abyss.type.draw;
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
+import mindustry.gen.*;
+import mindustry.type.*;
+import mindustry.entities.*;
+import mindustry.entities.units.*;
 
 public class DrawEnergy extends WeaponDrawer {
 	public Color[] colors = {Pal.heal, Color.white};
