@@ -22,9 +22,16 @@ public class DrawEnergy extends WeaponDrawer {
 		Fill.circle(mount.weapon.x, mount.weapon.y, (minRadius + (Mathf.sinDeg(Time.time) * mag)) * radius);
 
 		Draw.color(colors[1]);
-		Fill.circle(mount.weapon.x, mount.weapon.y, (minRadius/2 + (Mathf.sinDeg(Time.time) * mag)) * radius);
+		Fill.circle(mount.weapon.x, mount.weapon.y, (minRadius + (Mathf.sinDeg(Time.time) * mag)/2) * radius);
 	} 
 
 	@Override
-	public void drawOutline(Unit unit, WeaponMount mount) {} 
+	public void drawOutline(Unit unit, WeaponMount mount) {
+		radius = (mount.reload / mount.weapon.reload) * unit.elevation;
+		Draw.color(colors[0]);
+		Fill.circle(mount.weapon.x, mount.weapon.y, (minRadius + (Mathf.sinDeg(Time.time) * mag)) * radius);
+
+		Draw.color(colors[1]);
+		Fill.circle(mount.weapon.x, mount.weapon.y, (minRadius + (Mathf.sinDeg(Time.time) * mag)/2) * radius);
+	} 
 }
