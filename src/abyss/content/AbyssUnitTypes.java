@@ -1370,7 +1370,7 @@ public class AbyssUnitTypes implements ContentList {
 					shootSound = Sounds.artillery;
 					bullet = new ArtilleryBulletType(2f, 65) {{
 						width = height = 10f;
-						shootEffect = Fx.gasFlame;
+						shootEffect = AbyssFx.gasFlame;
 						lifetime = 104f;
 						range = 208f;
 						frontColor = Color.white;
