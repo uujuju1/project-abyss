@@ -1,4 +1,4 @@
-package abyss.type.weapon;
+package abyss.type.weapons;
 
 import mindustry.gen.*;
 import mindustry.type.*;

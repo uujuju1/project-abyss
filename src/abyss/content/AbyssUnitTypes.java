@@ -1354,7 +1354,6 @@ public class AbyssUnitTypes implements ContentList {
 					y = 1.25f;
 					reload = 30f;
 					rotate = false;
-					shootEffect = AbyssFx.gasFlameHit;
 					shootSound = Sounds.laser;
 					bullet = new LaserBulletType(45) {{
 						length = 56f;
@@ -1367,7 +1366,6 @@ public class AbyssUnitTypes implements ContentList {
 					reload = 60f;
 					rotate = false;
 					mirror = false;
-					shootEffect = Abyss.gasFlame;
 					shootSound = Sounds.artillery;
 					bullet = new ArtilleryBulletType(2f, 65) {{
 						width = height = 10f;
