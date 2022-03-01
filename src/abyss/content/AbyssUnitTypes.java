@@ -1337,7 +1337,7 @@ public class AbyssUnitTypes implements ContentList {
 			engineOffset = 14f;
 			hitSize = 14f;
 			weapons.add(
-				new DrawableWeapon("") {{
+				new Weapon("abyss-comet-plasma") {{
 					x = 0f;
 					y = 4.5f;
 					reload = 120f;
@@ -1346,9 +1346,6 @@ public class AbyssUnitTypes implements ContentList {
 					rotateSpeed = 69420f;
 					mirror = false;
 					shootSound = Sounds.plasmadrop;
-					drawer = new DrawEnergy() {{
-						colors = new Color[]{Color.valueOf("D6D6D6"), Color.white};
-					}};
 					bullet = new MissileBulletType(3f, 80) {{
 						width = height = 14f;
 						shootEffect = Fx.none;
