@@ -18,10 +18,10 @@ public class DrawEnergy extends WeaponDrawer {
 	@Override
 	public void draw(Unit unit, WeaponMount mount) {
 		radius = (mount.reload / mount.weapon.reload) * unit.elevation;
-		Draw.color(colors[1]);
+		Draw.color(colors[0]);
 		Fill.circle(mount.weapon.x, mount.weapon.y, (minRadius + (Mathf.sinDeg(Time.time) * mag)) * radius);
 
-		Draw.color(colors[2]);
+		Draw.color(colors[1]);
 		Fill.circle(mount.weapon.x, mount.weapon.y, (minRadius/2 + (Mathf.sinDeg(Time.time) * mag)) * radius);
 	} 
 
