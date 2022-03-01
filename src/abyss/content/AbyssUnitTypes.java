@@ -1383,5 +1383,59 @@ public class AbyssUnitTypes implements ContentList {
 				}}
 			);
 		}};
+		planet = new UnitType("planet") {{
+			health = 8500;
+			speed = 1.2f;
+			flying = true;
+			lowAltitude = true;
+			constructor = UnitEntity::create;
+			range = 232f;
+			maxRange = range;
+			hitSize = 28f;
+			weapons.add(
+				new Weapon("abyss-planet-large-bullet") {{
+					x = 12.75f;
+					y = 3.75f;
+					reload = 30f;
+					recoil = 2f;
+					alternate = true;
+					shootSound = Sounds.shootBig;
+					bullet = new BasicBulletType(4f, 80) {{
+						width = 12f;
+						height = 14.5f;
+						lifetime = 55f;
+						frontColor = Color.white;
+						backColor = Color.valueOf("D6D6D6");
+					}};
+				}},
+				new Weapon("abyss-planet-large-bullet") {{
+					x = 11f;
+					y = -12f;
+					reload = 30f;
+					recoil = 2f;
+					shootSound = Sounds.shootBig;
+					bullet = new BasicBulletType(4f, 80) {{
+						width = 12f;
+						height = 14.5f;
+						lifetime = 55f;
+						frontColor = Color.white;
+						backColor = Color.valueOf("D6D6D6");
+					}};
+				}},
+				new Weapon("abyss-planet-laser") {{
+					x = 0f;
+					y = 4.75f;
+					reload = 240f;
+					recoil = 5f;
+					shootSound = Sounds.laserbig;
+					bullet = new ContinuousLaserBulletType(50) {{
+						width = 10f;
+						length = range;
+						lifetime = 192f;
+						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
+					}};
+				}}
+			);
+		}};
 	}
 }
