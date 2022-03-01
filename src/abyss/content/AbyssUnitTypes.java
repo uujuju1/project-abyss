@@ -12,11 +12,11 @@ import mindustry.gen.*;
 import mindustry.ctype.ContentList;
 import mindustry.type.*;
 
-import abyss.entities.abilities.*;
-import abyss.type.weapons.*;
-import abyss.graphics.*;
 import abyss.type.*;
+import abyss.graphics.*;
 import abyss.type.draw.*;
+import abyss.type.weapons.*;
+import abyss.entities.abilities.*;
 
 public class AbyssUnitTypes implements ContentList {
 	public static UnitType 
@@ -1316,6 +1316,63 @@ public class AbyssUnitTypes implements ContentList {
 					shootSound = Sounds.missile;
 					bullet = new MissileBulletType(2.5f, 15) {{
 						width = height = 8f;
+						frontColor = Color.white;
+						backColor = Color.valueOf("D6D6D6");
+					}};
+				}}
+			);
+		}};
+		comet = new UnitType("comet") {{
+			health = 750;
+			speed = 1.6f;
+			flying = true;
+			constructor = UnitEntity::create;
+			range = 184f;
+			maxRange = range;
+			weapons.add(
+				new DrawableWeapon("") {{
+					x = 0f;
+					y = 4.5f;
+					reload = 120f;
+					recoil = 0f;
+					rotate = true;
+					rotateSpeed = 69420f;
+					mirror = false;
+					shootEffect = Fx.none;
+					shootSound = Sounds.plasmadrop;
+					drawer = new DrawEnergy() {{
+						colors = new Color[]{Color.valueOf("D6D6D6"), Color.white};
+					}};
+					bullet = new MissileBulletType(3f, 80) {{
+						width = height = 14f;
+						frontColor = Color.white;
+						backColor = Color.valueOf("D6D6D6");
+					}};
+				}},
+				new Weapon("abyss-comet-laser") {{
+					x = 5f;
+					y = 1.25f;
+					reload = 30f;
+					rotate = false;
+					shootEffect = AbyssFx.gasFlameHit;
+					shootSound = Sounds.laser;
+					bullet = new LaserBulletType(45) {{
+						length = 56f;
+						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
+					}};
+				}},
+				new Weapon("abyss-comet-artillery") {{
+					x = 0f;
+					y = 6.75f;
+					reload = 60f;
+					rotate = false;
+					mirror = false;
+					shootEffect = Abyss.gasFlame;
+					shootSound = Sounds.artillery;
+					bullet = new ArtilleryBulletType(2f, 65) {{
+						width = height = 10f;
+						lifetime = 104f;
+						range = 208f;
 						frontColor = Color.white;
 						backColor = Color.valueOf("D6D6D6");
 					}};
