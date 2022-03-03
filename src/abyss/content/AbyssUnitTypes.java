@@ -1394,11 +1394,11 @@ public class AbyssUnitTypes implements ContentList {
 			hitSize = 28f;
 			weapons.add(
 				new Weapon("abyss-stellar-large-bullet") {{
-					x = 12.75f;
+					x = -12.75f;
 					y = 3.75f;
 					reload = 30f;
 					recoil = 2f;
-					alternate = true;
+					flipSprite = true;
 					shootSound = Sounds.shootBig;
 					bullet = new BasicBulletType(4f, 80) {{
 						width = 12f;
@@ -1484,7 +1484,6 @@ public class AbyssUnitTypes implements ContentList {
 					y = 0f;
 					reload = 30f;
 					recoil = 2f;
-					alternate = true;
 					shootSound = Sounds.artillery;
 					bullet = new ArtilleryBulletType(4f, 80) {{
 						width = 12f;
