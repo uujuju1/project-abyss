@@ -1393,7 +1393,7 @@ public class AbyssUnitTypes implements ContentList {
 			maxRange = range;
 			hitSize = 28f;
 			weapons.add(
-				new Weapon("abyss-planet-large-bullet") {{
+				new Weapon("abyss-stellar-large-bullet") {{
 					x = 12.75f;
 					y = 3.75f;
 					reload = 30f;
@@ -1408,7 +1408,7 @@ public class AbyssUnitTypes implements ContentList {
 						backColor = Color.valueOf("D6D6D6");
 					}};
 				}},
-				new Weapon("abyss-planet-large-bullet") {{
+				new Weapon("abyss-stellar-large-bullet") {{
 					x = 11f;
 					y = -12f;
 					reload = 30f;
@@ -1427,12 +1427,70 @@ public class AbyssUnitTypes implements ContentList {
 					y = 4.75f;
 					reload = 240f;
 					recoil = 5f;
+					mirror = false;
+					continuous = true;
 					shootSound = Sounds.laserbig;
 					bullet = new ContinuousLaserBulletType(50) {{
 						width = 10f;
 						length = range;
 						lifetime = 192f;
 						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
+					}};
+				}}
+			);
+		}};
+		star = new UnitType("star") {{
+			health = 20000;
+			speed = 0.5f;
+			flying = true;
+			lowAltitude = true;
+			constructor = new UnitEntity::create;
+			range = 320f;
+			maxRange = range;
+			hitSize = 40f;
+			weapons.add(
+				new Weapon("abyss-star-laser") {{
+					x = 16f;
+					y = -16f;
+					reload = 60f;
+					recoil = 2f;
+					alternate = true;
+					shootSound = Sounds.laser;
+					bullet = new LaserBulletType(120) {{
+						length = 80f;
+						shootEffect = AbyssFx.gasFlameHit;
+						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
+					}};
+				}},
+				new Weapon("abyss-stellar-large-bullet") {{
+					x = 18f;
+					y = 12f;
+					reload = 20f;
+					recoil = 2f;
+					alternate = true;
+					shootSound = Sounds.shootBig;
+					bullet = new BasicBulletType(4f, 80) {{
+						width = 12f;
+						height = 14.5f;
+						lifetime = 55f;
+						frontColor = Color.white;
+						backColor = Color.valueOf("D6D6D6");
+					}};
+				}},
+				new Weapon("abyss-star-big-artillery") {{
+					x = 12.75f;
+					y = 3.75f;
+					reload = 30f;
+					recoil = 2f;
+					alternate = true;
+					shootSound = Sounds.artillery;
+					bullet = new ArtilleryBulletType(4f, 80) {{
+						width = 12f;
+						height = 14.5f;
+						lifetime = 80f;
+						range = 320f;
+						frontColor = Color.white;
+						backColor = Color.valueOf("D6D6D6");
 					}};
 				}}
 			);
