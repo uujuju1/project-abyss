@@ -158,7 +158,7 @@ public class AbyssBlocks implements ContentList {
 			consumes.power(1.3f);
 			plans = Seq.with(
 				new UnitPlan(AbyssUnitTypes.antra, 60f * 40f, with(Items.silicon, 20, AbyssItems.abyss, 35)),
-				new UnitPlan(AbyssUnitTypes.gas, 60f * 30f, with(Items.singularityCore, 30))
+				new UnitPlan(AbyssUnitTypes.gas, 60f * 30f, with(AbyssItems.singularityCore, 30))
 			);
 		}};
 		rotorizedFactory = new UnitFactory("rotorized-factory") {{
