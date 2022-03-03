@@ -1447,17 +1447,19 @@ public class AbyssUnitTypes implements ContentList {
 			constructor = UnitEntity::create;
 			range = 320f;
 			maxRange = range;
+			engineSize = 7f;
+			engineOffset = 20f;
 			hitSize = 40f;
 			weapons.add(
 				new Weapon("abyss-star-laser") {{
 					x = 16f;
 					y = -16f;
-					reload = 60f;
+					reload = 30f;
 					recoil = 2f;
 					alternate = true;
 					shootSound = Sounds.laser;
-					bullet = new LaserBulletType(120) {{
-						length = 80f;
+					bullet = new LaserBulletType(160) {{
+						length = 160f;
 						shootEffect = AbyssFx.gasFlameHit;
 						colors = new Color[]{Color.valueOf("A8A8A8"), Color.valueOf("D6D6D6"), Color.white};
 					}};
@@ -1469,7 +1471,7 @@ public class AbyssUnitTypes implements ContentList {
 					recoil = 2f;
 					alternate = true;
 					shootSound = Sounds.shootBig;
-					bullet = new BasicBulletType(4f, 80) {{
+					bullet = new BasicBulletType(4f, 120) {{
 						width = 12f;
 						height = 14.5f;
 						lifetime = 55f;
@@ -1489,6 +1491,7 @@ public class AbyssUnitTypes implements ContentList {
 						height = 14.5f;
 						lifetime = 80f;
 						range = 320f;
+						collides = true;
 						frontColor = Color.white;
 						backColor = Color.valueOf("D6D6D6");
 					}};
