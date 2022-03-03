@@ -1478,8 +1478,8 @@ public class AbyssUnitTypes implements ContentList {
 					}};
 				}},
 				new Weapon("abyss-star-big-artillery") {{
-					x = 12.75f;
-					y = 3.75f;
+					x = 10f;
+					y = 0f;
 					reload = 30f;
 					recoil = 2f;
 					alternate = true;
