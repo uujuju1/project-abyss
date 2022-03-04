@@ -3,6 +3,7 @@ package abyss.world.blocks.production;
 import arc.*;
 import arc.math.*;
 import arc.util.io.*;
+import arc.graphics.*;
 import mindustry.ui.*;
 import mindustry.world.blocks.production.GenericCrafter;
 
