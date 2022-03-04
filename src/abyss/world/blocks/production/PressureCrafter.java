@@ -5,6 +5,7 @@ import arc.math.*;
 import arc.util.io.*;
 import arc.graphics.*;
 import mindustry.ui.*;
+import mindustry.gen.*;
 import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.world.consumers.*;
 
@@ -19,7 +20,7 @@ public class PressureCrafter extends GenericCrafter {
 	public void setBars() {
 		super.setBars();
 		bars.add("BAR", entity -> new Bar(
-			Core.bundle.get("bar.pressure"),
+			"bar",
 			Color.white,
 			() -> ((PressureCrafterBuild) entity).pressuref()
 		));
@@ -36,9 +37,19 @@ public class PressureCrafter extends GenericCrafter {
 		public void updateTile() {
 			if(cons.valid()) {
 				pressure = Mathf.approachDelta(pressure, maxPressure, pressureBuildup);
-				super.updateTile();
+				if (pressure => pressureThreshold) {
+					super.updateTile();
+				}
+			} else pressure = Mathf.approachDelta(pressure, 1f, pressureBuildup);
+
+			if(outputItem != null && timer(timerDump, dumpTime / timeScale)){
+				dump(outputItem.item);
 			}
-		}
+
+			if(outputLiquid != null){
+				dumpLiquid(outputLiquid.liquid);
+			}
+		} 
 
 		@Override
 		public void write(Writes write){
