@@ -34,7 +34,7 @@ public class PressureCrafter extends GenericCrafter {
 		super.load();
 		baseRegion = Core.atlas.find(name + "-base");
 		topRegion = Core.atlas.find(name + "-top");
-		gasRegions = new TextureRegion[4]{
+		gasRegions = new TextureRegion[]{
 			Core.atlas.find(name + "-gas-" + 0),
 			Core.atlas.find(name + "-gas-" + 1),
 			Core.atlas.find(name + "-gas-" + 2),
