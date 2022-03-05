@@ -10,6 +10,9 @@ import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.world.consumers.*;
 
 public class PressureCrafter extends GenericCrafter {
+	public TextureRegion[] gasRegions;
+	public TextureRegion baseRegion, topRegion;
+	public float gasSpinScl = 1f;
 	public float maxPressure = 350f, pressureBuildup = 0.07f, pressureThreshold = 300f;
 
 	public PressureCrafter(String name) {
@@ -26,6 +29,24 @@ public class PressureCrafter extends GenericCrafter {
 		));
 	}
 
+	@Override
+	public void load() {
+		super.load();
+		baseRegion = Core.atlas.find(name + "-base");
+		topRegion = Core.atlas.find(name + "-top");
+		gasRegions = new TextureRegion[4]{
+			Core.atlas.find(name + "-gas-" + 0),
+			Core.atlas.find(name + "-gas-" + 1),
+			Core.atlas.find(name + "-gas-" + 2),
+			Core.atlas.find(name + "-gas-" + 3)
+		};
+	}
+
+	@Override
+	public TextureRegion[] icons() {
+		return new TextureRegion[]{baseRegion, region, topRegion};
+	}
+
 	public class PressureCrafterBuild extends GenericCrafter.GenericCrafterBuild {
 		public float pressure = 0f;
 
@@ -37,7 +58,7 @@ public class PressureCrafter extends GenericCrafter {
 		public void updateTile() {
 			if(cons.valid()) {
 				pressure = Mathf.approachDelta(pressure, maxPressure, pressureBuildup);
-				if (pressure => pressureThreshold) {
+				if (pressure >= pressureThreshold) {
 					super.updateTile();
 				}
 			} else pressure = Mathf.approachDelta(pressure, 1f, pressureBuildup);
@@ -49,7 +70,16 @@ public class PressureCrafter extends GenericCrafter {
 			if(outputLiquid != null){
 				dumpLiquid(outputLiquid.liquid);
 			}
-		} 
+		}
+
+		@Override
+		public void draw() {
+			Draw.rect(baseRegion, x, y, 0);
+			for (int i = 0; i < 4; i++) {
+				Draw.rect(gasRegions[i], x, y, (Time.time * gasSpinScl) + (i * gasSpinScl));
+			}
+			super.draw();
+		}
 
 		@Override
 		public void write(Writes write){

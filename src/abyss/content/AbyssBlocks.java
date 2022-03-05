@@ -399,6 +399,7 @@ public class AbyssBlocks implements ContentList {
 			health = 240;
 			craftTime = 180f;
 			craftEffect = AbyssFx.singularityForged;
+			consumes.power(3f);
 			consumes.items(with(
 				AbyssItems.abyss, 2,
 				AbyssItems.balestenite, 1
@@ -420,6 +421,7 @@ public class AbyssBlocks implements ContentList {
 				Items.coal, 2,
 				Items.graphite, 3
 			));
+			consumes.power(1.5f);
 			outputItem = new ItemStack(AbyssItems.sopreomenate, 2);
 		}};
 
