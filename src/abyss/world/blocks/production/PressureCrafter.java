@@ -13,8 +13,7 @@ import mindustry.world.consumers.*;
 
 public class PressureCrafter extends GenericCrafter {
 	public TextureRegion baseRegion, gasRegion, topRegion;
-	public Color gasColors = Color.white;
-	public float gasSpinScl = 1f;
+	public Color gasColor = Color.white;
 	public float maxPressure = 350f, pressureBuildup = 0.07f, pressureThreshold = 300f;
 
 	public PressureCrafter(String name) {
@@ -58,6 +57,9 @@ public class PressureCrafter extends GenericCrafter {
 				if (pressure >= pressureThreshold) {
 					super.updateTile();
 				}
+				if(Mathf.chanceDelta(updateEffectChance)){
+					updateEffect.at(getX() + Mathf.range(size * 4f), getY() + Mathf.range(size * 4));
+				}
 			} else pressure = Mathf.approachDelta(pressure, 1f, pressureBuildup);
 
 			if(outputItem != null && timer(timerDump, dumpTime / timeScale)){
@@ -75,7 +77,7 @@ public class PressureCrafter extends GenericCrafter {
 			Draw.color(gasColor);
 			Draw.alpha(pressuref());
 			Draw.rect(gasRegion, x, y, 0f);
-			Draw.alpha(1f);
+			Draw.reset();
 			super.draw();
 			Draw.rect(topRegion, x, y, 0f);
 		}
