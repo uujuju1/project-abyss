@@ -12,14 +12,8 @@ import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.world.consumers.*;
 
 public class PressureCrafter extends GenericCrafter {
-	public TextureRegion[] gasRegions;
-	public TextureRegion baseRegion, topRegion;
-	public Color[] gasColors = new Color[]{
-		Color.white,
-		Color.valueOf("D6D6D6"),
-		Color.valueOf("A8A8A8"),
-		Color.valueOf("808080")
-	};
+	public TextureRegion baseRegion, gasRegion, topRegion;
+	public Color gasColors = Color.white;
 	public float gasSpinScl = 1f;
 	public float maxPressure = 350f, pressureBuildup = 0.07f, pressureThreshold = 300f;
 
@@ -42,12 +36,7 @@ public class PressureCrafter extends GenericCrafter {
 		super.load();
 		baseRegion = Core.atlas.find(name + "-base");
 		topRegion = Core.atlas.find(name + "-top");
-		gasRegions = new TextureRegion[]{
-			Core.atlas.find(name + "-gas-" + 0),
-			Core.atlas.find(name + "-gas-" + 1),
-			Core.atlas.find(name + "-gas-" + 2),
-			Core.atlas.find(name + "-gas-" + 3)
-		};
+		gasRegion = Core.atlas.find(name + "-gas");
 	}
 
 	@Override
@@ -82,12 +71,13 @@ public class PressureCrafter extends GenericCrafter {
 
 		@Override
 		public void draw() {
-			Draw.rect(baseRegion, x, y, 0);
-			for (int i = 0; i < 4; i++) {
-				Draw.color(gasColors[i]);
-				Draw.rect(gasRegions[i], x, y, (Time.time * gasSpinScl) + (i * gasSpinScl));
-			}
+			Draw.rect(baseRegion, x, y, 0f);
+			Draw.color(gasColor);
+			Draw.alpha(pressuref());
+			Draw.rect(gasRegion, x, y, 0f);
+			Draw.alpha(1f);
 			super.draw();
+			Draw.rect(topRegion, x, y, 0f);
 		}
 
 		@Override
