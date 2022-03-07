@@ -6,7 +6,7 @@ import mindustry.ui.*;
 import mindustry.content.*;
 import mindustry.entities.*;
 import mindustry.world.meta.*;
-import mindustry.world.blocks.Wall;
+import mindustry.world.blocks.defense.Wall;
 
 public class RefractiveWall extends Wall {
 	public Color barColor = Color.white;
@@ -23,7 +23,7 @@ public class RefractiveWall extends Wall {
 	public void setStats() {
 		super.setStats();
 		stats.add(Stat.damage, damage);
-		stats.add(Stat.range, damageRadius/8, StatUnit.blocks);
+		stats.add(Stat.range, radius/8, StatUnit.blocks);
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class RefractiveWall extends Wall {
 	}
 
 	public class RefractiveWallBuild extends Wall.WallBuild {
-		public float dmg = health;
+		public float dmg = this.health;
 
 		public float dmgf() {
 			return dmg/minDamage;
@@ -45,7 +45,7 @@ public class RefractiveWall extends Wall {
 			if (dmg < health - minDamage) {
 				Damage.damage(this.team, x, y, radius, damage, targetAir, targetGround);
 				hitEffect.at(x, y);
-				dmg = health;
+				dmg = this.health;
 			}
 			dmg = Mathf.approachDelta(dmg, health, 0.07f);
 		}
