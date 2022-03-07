@@ -157,7 +157,7 @@ public class AbyssBlocks implements ContentList {
 			barColor = Pal.darkishGray;
 			hitEffect = Fx.none;
 		}};
-		largeHeavyWall = new RefractiveWall("heavy-wall=large") {{
+		heavyWalllarge = new RefractiveWall("heavy-wall=large") {{
 			size = 2;
 			health = 450 * 4;
 			damage = 50;
@@ -166,7 +166,7 @@ public class AbyssBlocks implements ContentList {
 			barColor = Pal.darkishGray;
 			hitEffect = Fx.none;
 		}};
-		hugeHeavyWall = new RefractiveWall("heavy-wall-huge") {{
+		heavyWallhuge = new RefractiveWall("heavy-wall-huge") {{
 			size = 3;
 			health = 450 * 9;
 			damage = 100;
