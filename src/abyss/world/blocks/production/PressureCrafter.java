@@ -14,17 +14,20 @@ import mindustry.world.consumers.*;
 public class PressureCrafter extends GenericCrafter {
 	public TextureRegion baseRegion, gasRegion, topRegion;
 	public Color gasColor = Color.white;
-	public float maxPressure = 350f, pressureBuildup = 0.07f, pressureThreshold = 300f;
+	public float maxPressure = 90f, pressureBuildup = 0.07f, pressureThreshold = 75f;
 
 	public PressureCrafter(String name) {
 		super(name);
+		updateEffect = new Effect(60f, e -> {
+			Fill.circle(e.x, e.y, Interp.sine.apply(e.fin() * 2));
+		});
 	}
 
 	@Override
 	public void setBars() {
 		super.setBars();
 		bars.add("BAR", entity -> new Bar(
-			"bar",
+			"BAR",
 			Color.white,
 			() -> ((PressureCrafterBuild) entity).pressuref()
 		));
@@ -78,6 +81,7 @@ public class PressureCrafter extends GenericCrafter {
 			Draw.alpha(pressuref());
 			Draw.rect(gasRegion, x, y, 0f);
 			Draw.reset();
+			Draw.alpha(1f);
 			super.draw();
 			Draw.rect(topRegion, x, y, 0f);
 		}
