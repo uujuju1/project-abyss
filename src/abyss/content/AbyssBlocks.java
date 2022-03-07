@@ -37,6 +37,7 @@ public class AbyssBlocks implements ContentList {
 		// walls
 		voidWall, voidWallLarge, voidWallHuge,
 		selemateWall, selemateWallLarge, selemateWallHuge,
+		heavyWall, heavyWallLarge, heavyWallHuge,
 		// units
 		abyssFactory, rotorizedFactory, terreniumConstructor, specialistAssembler,
 		add, mult, exp, tetr,
@@ -146,6 +147,33 @@ public class AbyssBlocks implements ContentList {
 			));
 			size = 3;
 			health = 500 * 9;
+		}};
+		heavyWall = new RefractiveWall("heavy-wall") {{
+			size = 1;
+			health = 450;
+			damage = 30;
+			minDamage = 50;
+			radius = 16;
+			barColor = Pal.darkishGray;
+			hitEffect = Fx.none;
+		}};
+		largeHeavyWall = new RefractiveWall("heavy-wall=large") {{
+			size = 2;
+			health = 450 * 4;
+			damage = 50;
+			minDamage = 100;
+			radius = 32;
+			barColor = Pal.darkishGray;
+			hitEffect = Fx.none;
+		}};
+		hugeHeavyWall = new RefractiveWall("heavy-wall-huge") {{
+			size = 3;
+			health = 450 * 9;
+			damage = 100;
+			minDamage = 250;
+			radius = 48;
+			barColor = Pal.darkishGray;
+			hitEffect = Fx.none;
 		}};
 
 		abyssFactory = new UnitFactory("abyss-factory") {{

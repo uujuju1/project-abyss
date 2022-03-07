@@ -8,6 +8,7 @@ import arc.graphics.*;
 import arc.graphics.g2d.*;
 import mindustry.ui.*;
 import mindustry.gen.*;
+import mindustry.entities.*;
 import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.world.consumers.*;
 
