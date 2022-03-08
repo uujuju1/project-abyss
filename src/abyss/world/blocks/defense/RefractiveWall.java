@@ -35,14 +35,14 @@ public class RefractiveWall extends Wall {
 	public class RefractiveWallBuild extends Wall.WallBuild {
 		public float dmg = health;
 
-		public float dmgf() {
-			return dmg/minDamage;
+		public float dmgf(){
+			return health/(dmg - minDamage);
 		}
 
 		@Override
 		public void updateTile() {
 			super.updateTile();
-			if (dmg < health - minDamage) {
+			if (dmg - minDamage > health) {
 				Damage.damage(this.team, x, y, radius, damage, targetAir, targetGround);
 				hitEffect.at(x, y);
 				dmg = health;
