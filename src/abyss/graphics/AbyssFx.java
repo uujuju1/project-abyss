@@ -135,5 +135,39 @@ public class AbyssFx {
 				float ang = Mathf.angle(x, y);
 				Lines.lineAngle(e.x + x, e.y + y, ang, 3 * e.foutpow());
 			});
-		});
+		}),
+
+		smallHeavyExplosion = new Effect(30f, e -> {
+			Draw.color(Pal.darkishGray);
+			Draw.alpha(e.fout());
+			Lines.stroke(3 * e.fout());
+
+			Fill.circle(e.x, e.y, 32 * e.fin());
+
+			Draw.color(Pal.darkestGray);
+
+			Lines.circle(e.x e.y, 32 * e.fin());
+		}),
+		mediumHeavyExplosion = new Effect(60f, e -> {
+			Draw.color(Pal.darkishGray);
+			Draw.alpha(e.fout());
+			Lines.stroke(5 * e.fout());
+
+			Fill.circle(e.x, e.y, 64 * e.fin());
+
+			Draw.color(Pal.darkestGray);
+
+			Lines.circle(e.x e.y, 64 * e.fin());
+		}),
+		higeHeavyExplosion = new Effect(90f, e -> {
+			Draw.color(Pal.darkishGray);
+			Draw.alpha(e.fout());
+			Lines.stroke(7 * e.fout());
+
+			Fill.circle(e.x, e.y, 96 * e.fin());
+
+			Draw.color(Pal.darkestGray);
+
+			Lines.circle(e.x e.y, 96 * e.fin());
+		}),
 }

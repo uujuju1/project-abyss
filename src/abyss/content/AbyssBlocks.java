@@ -149,31 +149,40 @@ public class AbyssBlocks implements ContentList {
 			health = 500 * 9;
 		}};
 		heavyWall = new RefractiveWall("heavy-wall") {{
+			requirements(Category.defense, with(
+				AbyssItems.sopreomenate, 12
+			));
 			size = 1;
 			health = 450;
 			damage = 30;
 			minDamage = 50;
 			radius = 16;
 			barColor = Pal.darkishGray;
-			hitEffect = Fx.none;
+			hitEffect = AbyssFx.smallHeavyExplosion;
 		}};
-		heavyWallLarge = new RefractiveWall("heavy-wall=large") {{
+		heavyWallLarge = new RefractiveWall("heavy-wall-large") {{
+			requirements(Category.defense, with(
+				AbyssItems.sopreomenate, 48
+			));
 			size = 2;
 			health = 450 * 4;
 			damage = 50;
 			minDamage = 100;
 			radius = 32;
 			barColor = Pal.darkishGray;
-			hitEffect = Fx.none;
+			hitEffect = AbyssFx.mediumHeavyExplosion;
 		}};
 		heavyWallHuge = new RefractiveWall("heavy-wall-huge") {{
+			requirements(Category.defense, with(
+				AbyssItems.sopreomenate, 108
+			));
 			size = 3;
 			health = 450 * 9;
 			damage = 100;
 			minDamage = 250;
 			radius = 48;
 			barColor = Pal.darkishGray;
-			hitEffect = Fx.none;
+			hitEffect = AbyssFx.hugeHeavyExplosion;
 		}};
 
 		abyssFactory = new UnitFactory("abyss-factory") {{
