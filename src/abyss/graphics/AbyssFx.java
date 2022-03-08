@@ -159,7 +159,7 @@ public class AbyssFx {
 
 			Lines.circle(e.x, e.y, 64 * e.fin());
 		}),
-		higeHeavyExplosion = new Effect(90f, e -> {
+		hugeHeavyExplosion = new Effect(90f, e -> {
 			Draw.color(Pal.darkishGray);
 			Draw.alpha(e.fout());
 			Lines.stroke(7 * e.fout());
