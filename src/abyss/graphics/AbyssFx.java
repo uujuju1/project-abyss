@@ -146,7 +146,7 @@ public class AbyssFx {
 
 			Draw.color(Pal.darkestGray);
 
-			Lines.circle(e.x e.y, 32 * e.fin());
+			Lines.circle(e.x, e.y, 32 * e.fin());
 		}),
 		mediumHeavyExplosion = new Effect(60f, e -> {
 			Draw.color(Pal.darkishGray);
@@ -157,7 +157,7 @@ public class AbyssFx {
 
 			Draw.color(Pal.darkestGray);
 
-			Lines.circle(e.x e.y, 64 * e.fin());
+			Lines.circle(e.x, e.y, 64 * e.fin());
 		}),
 		higeHeavyExplosion = new Effect(90f, e -> {
 			Draw.color(Pal.darkishGray);
@@ -168,6 +168,6 @@ public class AbyssFx {
 
 			Draw.color(Pal.darkestGray);
 
-			Lines.circle(e.x e.y, 96 * e.fin());
-		}),
+			Lines.circle(e.x, e.y, 96 * e.fin());
+		});
 }
