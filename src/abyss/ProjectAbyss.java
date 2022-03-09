@@ -21,6 +21,7 @@ public class ProjectAbyss extends Mod{
 		new AbyssEnviromnent().load();
 		new AbyssUnitTypes().load();
 		new AbyssBlocks().load();
+		new AbyssPlanets().load();
 		new AbyssTechTree().load();
 	}
 }
