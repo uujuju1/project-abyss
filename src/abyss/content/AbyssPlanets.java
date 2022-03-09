@@ -13,7 +13,7 @@ public class AbyssPlanets implements ContentList {
 
 	@Override
 	public void load() {
-		galemite = new Planet("galemite", Plantes.sun, 3, 1) {{
+		galemite = new Planet("galemite", Planets.sun, 3, 1) {{
 			generator = new GalemitePlanetGenerator();
 			meshLoader = () -> new HexMesh(this, 6);
 			atmosphereColor = Color.valueOf("3c1b8f");
