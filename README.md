@@ -1,6 +1,6 @@
 # Project Abyss
 A mod that im starting to work on
-<br> will likely be archived when i lose motivation on continuing this
+<br> will likely be archived when i lose motivation on continuing this (SPOILER) it is
 <br> the way that you can compile or implement it are in the text below
 
 ## Building for Desktop Testing
